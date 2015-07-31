@@ -1,0 +1,31 @@
+@@include('../components/head/head.html')
+
+<body>
+
+@@include('../components/noscript/noscript.html')
+
+<div class="container">
+ 
+@@include('../components/header/header.html', {
+	"login" : false
+})
+
+@@include('../components/breadcrumbs/breadcrumbs.html', {
+	"title" : "Вход / Регистрация",
+	"first" : "Главная",
+	"second" : "Вход / Регистрация",
+	"third" : false
+})
+
+@@include('../components/login/login-form.html')
+
+@@include('../components/login/registration-form.html')
+
+@@include('../components/footer/footer.html')
+        
+</div>
+
+@@include('../components/scripts/scripts.html')
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+.footer {
+	@extend .block--dark;
+	margin-top: 45px;
+	padding: 48px 40px;
+	height: 192px;
+}
+
+.f {
+	@include e('container') {
+		@extend .inline-block-vtop;
+		margin: 0 50px 0 20px;
+
+		a, a:hover, a:focus {
+			text-decoration: none;
+		}
+		ul {
+			padding-top: 10px;
+		}
+
+		li {
+			line-height: 2.45em;
+		}
+
+		@include m('social') {
+			float: right;
+			margin: 0;
+			width: 280px;
+
+			li {
+				display: inline-block;
+				padding: 10px 12px 19px 0;
+				line-height: 1em;
+			}
+		}
+	}
+
+	@include e('title') {
+		text-transform: uppercase;
+		font-weight: bold;
+		color: $clr-yelow;
+	}
+
+	@include m('yelow') {
+		color: $clr-yelow;
+	}
+
+	@include m('red') {
+		color: $clr-red;
+	}
+
+	@include e('info') {
+		font-size: 13px;
+		line-height: 1.6em;
+		font-weight: 700;
+		position: relative;
+		padding-left: 42px;
+
+		&:before {
+			background: transparent url('/images/icons-foot.png') 0 0 no-repeat;
+			content: '';
+			position: absolute;
+			height: 17px;
+			width: 17px;
+			left: 2px;
+			top: 6px;
+		}
+
+		@include m('phone') {
+			margin-top: 12px;
+		}
+
+		@include m('e-mail') {&:before {background-position: 0 -30px;}}
+	}
+}
+
+.ico__social {
+	display: inline-block;
+	height: 24px;
+	width: 24px;
+	background:transparent url('/images/icons-social.png') 0 0 no-repeat;
+
+	@include m('od') {background-position: -40px 0;}
+	@include m('fb') {background-position: -80px 0;}
+	@include m('tw') {background-position: -120px 0;}
+	@include m('ig') {background-position: -160px 0;}
+	@include m('gp') {background-position: -200px 0;}
+	@include m('am') {background-position: -240px 0;}
+}
+
+.copyright {
+	text-align: center;
+	margin: 25px 0;
+	font-size: 12px;
+}

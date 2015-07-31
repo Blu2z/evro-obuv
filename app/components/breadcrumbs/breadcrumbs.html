@@ -1,0 +1,14 @@
+<div class="title">
+	<h1>@@title</h1>
+	<ol class="breadcrumb">
+		<li><a href="#">@@first</a></li>
+
+		@@if (third === false) {<li class="active">@@second</li>}
+
+		@@if (!!third == true) {
+			<li><a href="#">@@second</a></li>
+			<li class="active">@@third</li>
+		}
+		
+	</ol>
+</div>

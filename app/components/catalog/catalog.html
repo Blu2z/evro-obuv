@@ -1,0 +1,30 @@
+@@if ( full === true ) {<div class="cat cat--full">}
+
+@@if ( full === false ) {<div class="cat">}
+
+@@if ( sort === true ) {
+	@@include('./sort.html')
+}
+
+@@if (!!title == true && !!tag == true ) {
+	<@@tag class="cat__title">@@title</@@tag>
+}
+
+@@include('./product.html', { "label" : "Последний размер" })
+
+@@include('./product.html', { "label" : "Новинка" })
+
+@@include('./product.html', { "label" : "- 20 %" })
+
+
+@@if ( !!row === true && row === 2) {
+
+@@include('./product.html', { "label" : 0 })
+
+@@include('./product.html', { "label" : "Новинка" })
+
+@@include('./product.html', { "label" : "- 20 %" })
+
+}
+
+</div>

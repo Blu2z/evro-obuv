@@ -1,0 +1,43 @@
+@@include('../components/head/head.html')
+
+<body>
+
+@@include('../components/noscript/noscript.html')
+
+<div class="container">
+ 
+@@include('../components/header/header.html', {
+	"login" : false
+})
+
+@@include('../components/breadcrumbs/breadcrumbs.html', {
+	"title" : "Новости",
+	"first" : "Главная",
+	"second" : "Новости",
+	"third" : false
+})
+
+<div class="content">
+
+@@include('../components/news/news.html')	
+
+</div>
+
+	
+@@include('../components/advantages/adv-vertical.html')	
+
+
+@@include('../components/paginator/paginator.html')
+
+@@include('../components/mail/mail-form.html', {
+	"title" : "Подпишитесь на новинки в этой категории, учитывая выбранные фильтры"
+})
+
+@@include('../components/footer/footer.html')
+        
+</div>
+
+@@include('../components/scripts/scripts.html')
+
+</body>
+</html>

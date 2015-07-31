@@ -1,0 +1,43 @@
+<!-- start: header -->
+<header class="header">
+
+@@if ( login === false ) { <div class="head__wrap clearfix mg-b--35"> }
+
+@@if ( login === true ) { <div class="head__wrap clearfix"> }
+
+        <div class="head__container head__container--logo">
+            <a href="index.html"><img src="./images/logo.png" height="42" width="236" alt="logo"></a>
+        </div>
+        <div class="head__container fl-r">
+            <div class="head__container head__container--phone">
+                <span class="head__icon head__icon--phone">8 <span class="red">800</span> 100-03-24</span>
+            </div>
+            <div class="head__container head__container--support">
+                <a href="#" class="head__icon head__icon--support">Служба поддержки</a>
+            </div>
+            <div class="head__container head__container--basket">
+                <span class="head__icon head__icon--basket"><strong>6</strong> <a href="#">товаров</a> на <strong>56 750</strong> руб.</span>
+
+                @@if ( login == true ) {
+
+                    <a href="#" class="head__icon head__icon--login">Личный кабинет</a>
+                }
+
+            </div>
+        </div>
+    </div>
+    <nav>
+        <div class="navbar">
+            <ul>
+                <li><a href="#">Магазины</a></li>
+                <li><a href="#">Женская обувь</a></li>
+                <li><a href="#">Мужская обувь</a></li>
+                <li><a href="#">Сумки</a></li>
+                <li><a href="#">Уход за обувью</a></li>
+                <li><a href="#">Акции</a></li>
+                <li><a href="#"><i class="fa fa-bars"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<!-- end: header -->

@@ -1,0 +1,55 @@
+.adv {
+	width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    height: 70px;
+    margin-top: 25px;
+    white-space: nowrap;
+    @include e('container') {
+    	display: inline-block;
+		margin-left: -4px;
+		min-width: 135px;
+		padding: 15px;
+		font-size: 12px;
+		text-align: left;
+		text-decoration: none;
+		line-height: 1.2em;
+
+		&:hover,
+		&:focus {
+			background-color: $clr-yelow;
+			border-radius: 8px;
+		}
+	}
+
+	@include e('ico') {
+		background:transparent url('/images/icons-adv.png') 0 0 no-repeat;
+		float: left;
+		height: 36px;
+		margin-right: 10px;
+		width: 36px;
+
+	 	@include m('size') {background-position: 4px 0;}
+	 	@include m('dealer') {background-position: -30px 0;}
+	 	@include m('germany') {background-position: -66px 0;}
+	 	@include m('foot') {background-position: -108px 0;}
+	 	@include m('shop') {background-position: -147px 0;}
+	 	@include m('shoping') {background-position: -187px 0;}
+	 	@include m('card') {background-position: -300px 0;}
+	 	@include m('garant') {background-position: -267px 0;}
+	}
+
+	@include m('vertical') {
+		width: 160px;
+		height: 100%;
+		padding-left: 4px;
+		float: right;
+		border-left: 1px solid $clr-gray-midle;
+		.adv__container {
+			display: block;
+			&:not(:last-child) {
+				margin-bottom: 20px;
+			}
+		}
+	}
+}

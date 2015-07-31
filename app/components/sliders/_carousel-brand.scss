@@ -1,0 +1,55 @@
+.brand {
+    @extend .slider-main;
+    overflow: hidden;
+    height: 170px;
+
+    @include e('head') {
+        @extend .block--dark;
+
+        padding: 10px 20px;
+    }
+
+    @include e('title') {
+        font-size: 18px;
+        text-transform: uppercase;
+        display: inline-block;
+    }
+
+    @include e('nav') {
+        float: right;
+        position: relative;
+        width: 13%;
+        height: 20px;
+
+        @include m('link') {
+            background:transparent url('/images/icon-sl.png') -60px 0 no-repeat;
+            position: absolute;
+            height: 16px;
+            width: 16px;
+            right: 0;
+            top: 5px;
+            &:first-child {
+                background-position: -40px 0;
+                right: 40px;
+            }
+        }
+    }
+
+    li + li {
+        margin-left: 44px;
+    }
+
+    @include e('ico') {
+        display: inline-block;
+        padding: 35px 0;
+        height: 50px;
+        width: 130px;
+        background:transparent url('/images/sprite-brands.png') 0 36px no-repeat;
+
+        @include m('2') {background-position: -127px 38px;}
+        @include m('3') {background-position: -259px 38px;}
+        @include m('4') {background-position: -397px 45px;}
+        @include m('5') {background-position: -535px 44px;}
+        @include m('6') {background-position: -672px 42px;}
+    }
+}

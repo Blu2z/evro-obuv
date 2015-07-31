@@ -1,0 +1,52 @@
+.slider-row {
+	max-width: 1000px;
+	border: 1px solid $clr-default;
+	border-radius: 8px;
+	margin: 38px auto 0;
+	white-space: nowrap;
+	position: relative;
+}
+
+.sl {
+	display: inline-block;
+
+	@include e('nav') {
+		width: 13%;
+		position: relative;
+
+
+		@include m('link') {
+			background:transparent url('/images/icon-sl.png') 0 0 no-repeat;
+			height: 16px;
+			left: 20px;
+			position: absolute;
+			top: -12px;
+			width: 16px;
+
+			&:last-child {
+				background-position: -21px 0;
+				left: 63px;
+			}
+		}
+	}
+
+	@include e('text') {
+		font-size: 16px;
+		font-weight: bold;
+		text-transform: uppercase;
+		line-height: 75px;
+		vertical-align: middle;
+
+		li:not(:first-child) {
+			display: none;
+		}
+	}
+
+	@include e('btn') {
+		position: absolute;
+		right: 0;
+		margin: 20px 20px 0 0;
+		min-width: 200px;
+		font-size: 12px;
+	}
+}

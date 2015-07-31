@@ -1,0 +1,135 @@
+.help {
+	width: 745px;
+	padding-right: 145px;
+    box-sizing: border-box;
+
+	@include e('text') {
+		margin-top: 20px
+	}
+
+	@include e('admin') {
+		font-size: 12px;
+		color: $clr-gray;
+	}
+
+	@include e('list') {
+		font-weight: bold;
+		height: 40px;
+		width: 320px;
+		display: inline-block;
+		border-radius: 8px;
+		border: 1px solid $clr-gray-r;
+		padding: 10px;
+		box-sizing: border-box;
+		position: relative;
+		cursor: pointer;
+
+		&:after {
+			background:transparent url('/images/icon-sl.png') -21px 0 no-repeat;
+			content: '';
+			height: 16px;
+			position: absolute;
+			right: 7px;
+			top: 10px;
+			transform: rotate(90deg);
+			width: 16px;
+		}
+	}
+
+	@include e('theme') {
+		// margin-top: 35px;
+	}
+
+	dd, dt {
+		padding-left: 30px;
+	}
+
+	dt {
+		cursor: pointer;
+		font-size: 18px;
+		font-weight: bold;
+		line-height: 30px;
+		padding: 8px 0 6px 30px;
+		position: relative;
+		&:before {
+			background:transparent url('/images/icon-sl.png') -21px 0 no-repeat;
+			transform: rotate(90deg);
+			content: '';
+			height: 16px;
+			width: 16px;
+			position: absolute;
+			top: 12px;
+			left: 0;
+		}
+		&:hover {
+			color: $clr-gray;
+			&:before {
+				opacity: .5;
+			}
+		}
+		&.active:before {
+			transform: rotate(-90deg);
+			opacity: .5;
+		}
+	}
+
+	dd {
+		display: none;
+		padding-bottom: 20px;
+	}
+
+	@include e('form') {
+		margin-top: 35px;
+		margin-bottom: 65px;
+		width: 450px;
+		p {
+			letter-spacing: -0.03em;
+			margin-bottom: 18px;
+		}
+		@include m('dib') {
+			display: inline-block;
+			width: 200px;
+			margin-bottom: 22px;
+			&:first-child {
+				margin-right: 15px;
+			}
+		}
+
+		label {
+			display: block;
+			font-size: 12px;
+			padding: 4px 0;
+		}
+
+		textarea {
+			width: 420px;
+			height: 215px;
+			margin-bottom: 15px;
+		}
+
+		input[type="text"] {
+			height: 40px;
+			width: 200px;
+		}
+
+		textarea, 
+		input[type="text"] {
+		    border-radius: 8px;
+		    border: 1px solid $clr-gray-default;
+		    padding: 5px 10px;
+		    box-sizing: border-box;
+		}
+
+		textarea:focus, 
+		input[type="text"]:focus {
+			border: 1px solid $clr-default;
+			outline: 0;
+		}
+	}
+}
+
+
+.test {
+	display: block !important;
+}
+

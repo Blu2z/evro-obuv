@@ -1,0 +1,79 @@
+.review {
+	@include e('container') {
+		margin-bottom: 50px;
+	}
+	@include e('img') {
+		display: inline-block;
+		width: 360px;
+		min-height: 320px;
+		img {
+			margin: 0 auto;
+		}
+	}
+	@include e('title') {
+		font-size: 24px;
+		font-weight: bold;
+	}
+	@include e('wrap') {
+		display: inline-block;
+		float: right;
+		width: 640px;
+		h6 {
+			font-size: 18px;
+			font-weight: bold;
+		}
+	}
+	@include e('last') {
+		font-size: 12px;
+		margin: 25px 0;
+		display: block;
+	}
+
+	@include e('text') {
+		margin: 5px 0;
+		line-height: 1.2em;
+	}
+
+	@include e('stars') {
+		width: 340px;
+		margin-top: 17px;
+	}
+	@include e('rating') {
+		display: inline-block;
+		width: 150px;
+		margin-bottom: 15px;
+
+		& > span {
+			display: block;
+			font-weight: bold;
+			font-size: 12px;
+		}
+	}
+	@include e('star') {
+		height: 20px;
+		width: 105px;
+		position: relative;
+		background:transparent url('/images/stars.png') -3px -18px repeat-x;
+	}
+
+	@include e('rate') {
+		position: absolute;
+		height: 20px;
+		background:transparent url('/images/stars.png') -3px 2px repeat-x;
+
+		@include m('1') {width: 20px;}
+		@include m('2') {width: 40px;}
+		@include m('3') {width: 60px;}
+		@include m('4') {width: 85px;}
+		@include m('5') {width: 105px;}
+	}
+
+	@include e('all') {
+		font-size: 12px;
+		margin-top: 10px;
+	}
+
+	@include e('desc') {
+		margin-bottom: 25px;
+	}
+}

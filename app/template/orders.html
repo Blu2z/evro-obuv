@@ -1,0 +1,29 @@
+@@include('../components/head/head.html')
+
+<body>
+
+@@include('../components/noscript/noscript.html')
+
+<div class="container">
+ 
+@@include('../components/header/header.html', {
+	"login" : false
+})
+
+@@include('../components/breadcrumbs/breadcrumbs.html', {
+	"title" : "Оформленеие заказа",
+	"first" : "Главная",
+	"second" : "Оформленеие заказа",
+	"third" : false
+})
+
+@@include('../components/orders/orders.html')
+
+@@include('../components/footer/footer.html')
+        
+</div>
+
+@@include('../components/scripts/scripts.html')
+
+</body>
+</html>

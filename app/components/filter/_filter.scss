@@ -1,0 +1,29 @@
+.filter {
+	margin-bottom: 30px;
+	@include e('cont') {
+		background-color: $clr-roze-slite;
+		border-radius: 16px;
+		border: 1px solid $clr-gray-r;
+		box-sizing: border-box;
+		display: inline-block;
+		font-size: 13px;
+		font-weight: bold;
+		height: 34px;
+		min-width: 160px;
+		padding: 10px 30px 10px 15px;
+		position: relative;
+		margin-bottom: 6px;
+		cursor: pointer;
+
+		&:after {
+			content: '';
+			position: absolute;
+			height: 16px;
+			width: 16px;
+			background:transparent url('/images/icon-sl.png') -100px 0 no-repeat;
+			right: 8px;
+			top: 8px;
+			// transform: rotate(90deg);
+		}
+	}
+}

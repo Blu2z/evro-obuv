@@ -1,0 +1,80 @@
+.m-form {
+	margin-top: 25px;
+
+	@include e('wrap') {
+		@extend .block--dark;
+		padding: 10px 20px;
+	}
+	
+
+	@include e('container') {
+		@extend .inline-block-vtop;
+
+
+		@include m('checkbox') {
+			margin: 26px 28px 23px 0;
+			font-size: 12px;
+
+			label {
+				padding-left: 35px;
+				position: relative;
+				display: block;
+				line-height: 1.2em;
+				letter-spacing: 1.1px;
+			}
+
+			input[type="checkbox"] + label:before {
+				background-color: #fff;
+				border-radius: 8px;
+				border: 5px solid #fff; 
+				content: ' ';
+				cursor:pointer;
+				height: 7px;
+				left: 0;
+				position: absolute;
+				width: 7px;
+    			top: 0;
+			}
+
+			input[type="checkbox"]:checked + label:before {
+				background-color: $clr-default;
+			}
+		}
+		@include m('area') {
+			margin: 5px 0 5px 25px;
+			label, input {
+				display: block;
+				line-height: 1.5em;
+			}
+
+			input[type="text"] {
+				border-radius: 10px;
+				box-sizing: border-box;
+				font-size: 14px;
+				font-weight: bold;
+				height: 40px;
+				padding: 5px 10px;
+				width: 195px;
+				&:focus {
+					outline: 0;
+				}
+			}
+		}
+
+		@include m('btn') {
+			width: 80px;
+			margin: 28px 0 0 25px;
+		}
+	}
+
+	@include e('title') {
+		font-size: 18px;
+		font-weight: bold;
+		line-height: 2.5em;
+	}
+	
+	.button {
+		height: 40px;
+	}
+
+}

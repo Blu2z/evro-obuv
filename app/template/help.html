@@ -1,0 +1,45 @@
+@@include('../components/head/head.html')
+
+<body>
+
+@@include('../components/noscript/noscript.html')
+
+<div class="container">
+ 
+@@include('../components/header/header.html', {
+	"login" : false
+})
+
+@@include('../components/breadcrumbs/breadcrumbs.html', {
+	"title" : "Служба поддержки клиентов",
+	"first" : "Главная",
+	"second" : "Служба поддержки",
+	"third" : false
+})
+
+<p class="page__desc">
+	У вас есть вопрос? Мы рады помочь вам разобраться. Для вашего удобства все вопросы разбиты по соответствующим тематикам. 
+	Выберете ту тему к которой относится ваш вопрос и найдите ответ. Если ответ найти не удалось, напишите в службу поддержки,
+	воспользовавшись формой связи ниже.
+</p>
+
+<div class="content">
+
+@@include('../components/help/help.html')
+
+</div>
+@@include('../components/advertising/advertising.html')
+
+
+@@include('../components/paginator/paginator.html')
+
+@@include('../components/help/help-form.html')
+
+@@include('../components/footer/footer.html')
+
+</div>
+
+@@include('../components/scripts/scripts.html')
+
+</body>
+</html>

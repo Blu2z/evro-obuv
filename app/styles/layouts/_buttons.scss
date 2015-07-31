@@ -1,0 +1,38 @@
+.button {
+	border-radius: 8px;
+	text-transform: uppercase;
+	padding: 12px 20px;
+	border: none;
+	cursor: pointer;
+	transition: all .2s ease-out 0.1s;
+	text-decoration: none;
+	font-weight: bold;
+	box-sizing: border-box;
+	text-align: center;
+
+	@include m('lite') {
+		background-color: $clr-default-lite;
+		color: #fff;
+		
+		&:hover {
+			background-color: $clr-yelow;
+			color: $clr-default;
+
+		}
+	}
+	
+	@include m('default') {
+		background-color: $clr-default;
+		color: #fff;
+	}
+
+	@include m('yelow') {
+		background-color: $clr-yelow;
+		color: $clr-default;
+	}
+
+	@include m('fix') {
+		display: inline-block;
+		width: 100%;
+	}
+}

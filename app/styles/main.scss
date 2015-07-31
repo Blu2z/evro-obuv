@@ -1,0 +1,167 @@
+// bower:scss
+// endbower
+
+@import "mixins";
+
+/* core */
+@import "core/pallete";
+@import "core/extends";
+
+
+/* modules */
+
+
+/*pages*/
+// @import "modules/index";
+
+
+/*vendor*/
+@import "vendor/font-awesome/font-awesome";
+
+
+/*comonents*/
+@import "../components/header/header";
+@import "../components/advantages/adv";
+@import "../components/m-filter/main-filter";
+@import "../components/sliders/slider-row";
+@import "../components/catalog/catalog";
+@import "../components/news/news";
+@import "../components/sliders/slider-main";
+@import "../components/sliders/carousel-brand";
+@import "../components/mail/mail-form";
+@import "../components/footer/footer";
+@import "../components/breadcrumbs/breadcrumbs";
+@import "../components/sidebar/sidebar";
+@import "../components/paginator/paginator";
+@import "../components/filter/filter";
+@import "../components/help/help";
+@import "../components/advertising/advertising";
+@import "../components/login/login";
+@import "../components/reviews/reviews";
+
+
+/* layouts */
+@import "layouts/details";
+@import "layouts/buttons";
+@import "layouts/left-aside";
+@import "layouts/rigth-aside";
+
+
+/* include fonts */
+@include font-face('FontAwesome', 'fontawesome-webfont', 'font-awesome');
+
+
+/* ==============================================
+                   DOM ELEMENTS
+ ============================================== */
+html {
+    height: 100%;
+    font-size: 15px;
+}
+body {
+    font-family: "Arial Regular", arial;
+    min-height: 808px;
+    min-width: 1024px;
+    width: 100%;
+    color: $clr-default;
+    background-color: $clr-body;
+    -webkit-text-size-adjust: auto;
+}
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+   text-decoration: none;
+}
+
+strong {
+    font-weight: bold;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family:  sans-serif;
+    line-height: 1.5em;
+}
+h1 {
+    font-size: 44px;
+}
+h2 {
+    font-size: 38px;
+}
+h3 {
+    font-size: 32px;
+}
+h4 {
+    font-size: 26px;
+}
+h5 {
+    font-size: 22px;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    margin: .7em 0;
+}
+p {
+    padding: 5px 0;
+}
+
+.clearfix:before,
+.clearfix:after {
+content: " ";
+display: table;
+}
+.clearfix:after {
+visibility: hidden;
+        display: block;
+        content: "";
+        clear: both;
+        height: 0;
+        
+}
+.clearfix {
+*zoom: 1;
+}
+.slider-fix {
+    position: absolute;
+    width: 100%;
+}
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.hidden {
+    display: none;
+}
+
+.v-hidden{
+    visibility: hidden;
+}
+
+
+input[type="text"] {
+    height: 40px;
+    width: 200px;
+}
+
+textarea, 
+input[type="text"] {
+    border-radius: 8px;
+    border: 1px solid $clr-gray-default;
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
+
+textarea:focus, 
+input[type="text"]:focus {
+    border: 1px solid $clr-default;
+    outline: 0;
+}

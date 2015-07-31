@@ -1,0 +1,112 @@
+.e-form {
+	@extend .inline-block-vtop;
+	line-height: 1.5em;
+	margin-top: 20px;
+
+	@include e('login') {
+		width: 400px;
+	}
+
+	@include e('registration') {}
+
+	@include e('order') {
+		textarea {
+			width: 420px;
+			height: 105px;
+		}
+	}
+
+	@include m('inline') {
+		display: inline-block;
+		max-width: 440px;
+		vertical-align: middle;
+	}
+
+	@include m('wrap') {
+		margin: 10px 0;
+	}
+
+	@include e('prompt') {
+		font-size: 12px;
+		font-style:italic;
+		line-height: 1em;
+	}
+
+	@include e('desc') {
+		margin: 20px 0;
+	}
+
+	label {
+		display: block;
+    	font-size: 12px;
+    	padding: 4px 0;
+	}
+
+	p {
+		padding: 0;
+	}
+
+	h3 {
+		font-weight: bold;
+		font-size: 24px;
+		padding: 15px 0;
+	}
+
+	.button {
+		margin-top: 30px;
+		padding: 13px 40px;
+	}
+
+	textarea, input[type="text"] {
+		margin-right: 10px;
+	}
+
+	@include m('radio') {
+		label {
+			display: inline-block;
+			font-weight: bold;
+			position: relative;
+			padding-left: 25px;
+			cursor: pointer;
+			&:not(:last-child) {
+				margin-right: 20px;
+			}
+		}
+
+		input[type="radio"]{display: none;}
+
+		input[type="radio"] + label:before {
+				background-color: $clr-blue-lite;
+				border-radius: 8px;
+				border: 5px solid $clr-blue-lite; 
+				content: ' ';
+				cursor:pointer;
+				height: 7px;
+				left: 0;
+				position: absolute;
+				width: 7px;
+    			top: 6px;
+    			box-shadow: 0 0 0 1px $clr-default-lite;
+			}
+
+		input[type="radio"]:checked + label:before {
+			background-color: $clr-default;
+		}
+	}
+
+	@include e('person') {
+		margin-top: 0;
+		h3 {
+			padding: 0;
+		}
+	}
+
+	@include e('evro-order') {
+		& >.button {
+			width: 200px;
+			font-size: 12px;
+			padding: 7px 0;
+			margin: 0 20px 0 0; 
+		}
+	}
+}

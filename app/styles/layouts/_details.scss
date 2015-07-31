@@ -1,0 +1,51 @@
+.browserupgrade {
+    position: absolute;
+    color: red;
+    z-index: 9999;
+}
+
+.red {
+    color: $clr-red;
+}
+
+.label {
+	background-color: $clr-red;
+	border-radius: 5px;
+	color: #fff;
+	display: inline-block;
+	font-size: 12px;
+	padding: 5px 7px;
+	min-width: 60px;
+	text-align: center;
+}
+
+.block {
+	@include m('dark') {
+		border-radius: 8px;
+		background-color: $clr-default;
+		color: #fff;
+	}
+
+	@include m('white') {
+		border-radius: 8px;
+		color: $clr-default;
+	}
+}
+
+.content {
+	display: inline-block;
+	vertical-align: top;
+	max-width: 830px;
+}
+
+.page__desc {
+	display: inline-block;
+	font-size: 14px;
+	width: 920px;
+	line-height: 1.3em;
+	margin-bottom: 35px;
+}
+
+input[type="text"].input-small {
+	width: 100px;
+}

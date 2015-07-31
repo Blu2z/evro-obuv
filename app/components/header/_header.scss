@@ -1,0 +1,117 @@
+.header{}
+
+.head {
+	@include e('wrap') {
+		width: 1000px;
+		margin: 0 auto;
+		position: relative;
+		margin-top: 30px;
+	}
+
+	@include e('container') {
+		box-sizing: border-box;
+		display: inline-block;
+		white-space: nowrap;
+		vertical-align: top;
+		line-height: 1.8em;
+		font-size: 12px;
+		padding-right: 3px; 
+		strong {
+			font-size: 13px;
+			padding: 0 5px; 
+		}
+
+		&:not(:first-child) {
+			margin-left: 35px;
+		}
+
+		@include m('logo') {
+			position: absolute;
+		}
+
+		@include m('phone') {
+			font-size: 16px;
+			font-weight: bold;
+		}
+	}
+
+	@include e('icon') {
+		position: relative;
+		padding-left: 30px;
+		&:before {
+			content: '';
+			background:transparent url(/images/icons-head.png) 0 0 no-repeat;
+			position: absolute;
+			height: 20px;
+			width: 20px;
+			left: 0;
+			top: -1px;
+		}
+		
+		@include m('phone') {}
+
+		@include m('support') {
+			&:before {
+				background-position: -22px 0;
+			}
+		}
+
+		@include m('basket') {
+			&:before {
+				background-position: -43px -1px;
+			}
+		}
+
+		@include m('login') {
+			display: block;
+			margin-top: 8px;
+			padding-left: 35px;
+			&:before {
+				background-position: -65px 2px;
+			}
+		} 
+	}
+}
+.navbar {
+	width: 1000px;
+	margin: 0 auto;
+	position: relative;
+	border-radius: 10px;
+    box-sizing: border-box;
+    background-color: $clr-default;
+    color: #fff;
+    height: 50px;
+    margin-top: 15px;
+    ul {
+    	text-align: center;
+    	line-height: 50px;
+    	white-space: nowrap;
+    }
+
+    li {
+    	display: inline-block;
+    	font-size: 12px;
+    	font-weight: bold;
+    	text-transform: uppercase;
+    	&:first-child a {
+			margin-left: 0
+		}
+
+		&:last-child a {
+			margin-right: 0
+		}
+
+    	a {
+    		text-decoration: none;
+    		padding: 8px 20px;
+    		margin: 0 11%;
+
+    		&:hover,
+    		&:focus {
+    			background-color: $clr-default-lite;
+    			text-decoration: none;
+    			border-radius: 7px;
+    		}
+    	}
+    }
+}

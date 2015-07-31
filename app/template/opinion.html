@@ -1,0 +1,37 @@
+@@include('../components/head/head.html')
+
+<body>
+
+@@include('../components/noscript/noscript.html')
+
+<div class="container">
+ 
+@@include('../components/header/header.html', {
+	"login" : false
+})
+
+@@include('../components/sliders/slider-row.html')
+
+@@include('../components/breadcrumbs/breadcrumbs.html', {
+	"title" : "Отзывы",
+	"first" : "Главная",
+	"second" : "Отзывы",
+	"third" : false
+})
+
+<p class="review__desc">Выберете параметры обуви, отзывы о которой вам интересно почитать:</p>
+
+@@include('../components/filter/filter.html')
+
+@@include('../components/reviews/reviews.html')
+
+@@include('../components/paginator/paginator.html')
+
+@@include('../components/footer/footer.html')
+
+</div>
+
+@@include('../components/scripts/scripts.html')
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+.cat {
+	vertical-align: top;
+	margin-right: -20px;
+
+	@include m('full') {
+		margin: 30px -30px 30px 0;
+		.cat__product {
+			margin-right: 103px;
+			&:nth-child(3n+2) {
+				margin-right: 0;
+			}
+		}
+	}
+	
+	@include e('product') {
+		width: 260px;
+		height: 440px;
+		display: inline-block;
+		margin-top: 18px;
+		margin-bottom: 15px;
+		position: relative;
+		border: 1px solid #fff;
+		margin-right: 10px;
+
+		&:hover,
+		&:focus {
+			border-color: $clr-default-lite;
+			cursor: pointer;
+			.img--hover,
+			.cat__sizes,
+			.cat__zoom {
+				// transition: all 1s ease-out 0.5s;
+				visibility: visible;
+			}
+		}
+
+		.label {
+			position: absolute;
+			left: 10px;
+			top: 10px;
+		}
+	}
+
+	@include e('sort') {
+		font-size: 14px;
+		float: right;
+		margin-top: 10px;
+		margin-right: 30px;
+
+		ul {
+			text-align: right;
+		}
+
+		li {
+			display: inline-block;
+			margin-left: 45px;
+		}
+
+		a {
+			border-bottom: 1px dotted;
+			text-decoration: none;
+		}
+
+		.active {
+			border-bottom: none;
+			color: $clr-default-lite;
+		}
+	}
+
+	@include e('title') {
+		font-size: 24px;
+		font-weight: bold;
+	}
+
+	@include e('desc') {
+		font-weight: 700;
+		font-size: 13px;
+		padding: 0 20px;
+
+		p {
+			line-height: 1.5em;
+		}
+	}
+
+	@include e('img') {
+		position: relative;
+		height: 320px;
+
+		img {
+			position: absolute;
+			bottom: 0;
+		}
+	}
+
+	@include e('sizes') {
+		font-size: 12px;
+		padding: 0 20px;
+		visibility: hidden;
+
+		li {
+			display: inline-block;
+			font-size: 14px;
+			padding: 5px;
+
+			&.active {
+				font-size: 16px;
+				font-weight: bold;
+			}
+		}
+	}
+
+	@include e('cost') {
+		color: $clr-red;
+		font-size: 18px;
+		font-weight: bold;
+		margin-left: 20px;
+	}
+
+	@include e('zoom') {
+		font-size: 12px;
+		position: absolute;
+		bottom: 20px;
+		right: 20px;
+	}
+}

@@ -1,0 +1,44 @@
+.pag {
+	@extend .block--dark;
+	padding: 20px;
+	font-weight: bold;
+	line-height: 20px;
+
+	@include e('up') {
+		float: right;
+		font-weight: 500;
+		&:after {
+			background:transparent url('/images/icon-sl.png') -60px 0 no-repeat;
+			content: '';
+			display: inline-block;
+			height: 16px;
+			margin-left: 10px;
+			transform: rotate(-90deg);
+			vertical-align: middle;
+			width: 16px;
+		}
+	}
+
+	ul, li {
+		display: inline-block;
+	}
+	ul {
+		margin: 0 20px;
+	}
+
+	li {
+		margin: 0 10px;
+	}
+
+	.disable {
+		color: $clr-default-lite;
+	}
+	a:hover,
+	.active {
+		color: $clr-yelow;
+	}
+
+	a, a:hover, a:focus {
+		text-decoration: none;
+	}
+}

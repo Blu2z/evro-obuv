@@ -1,0 +1,253 @@
+.container > .m-filter {
+	white-space: nowrap;
+}
+.m-filter {
+	width: 1000px;
+	margin: 43px auto 0;
+	padding: 0 5px;
+    box-sizing: border-box;
+    user-select: none;
+
+	@include e('tabs') {
+		display: inline-block;
+		vertical-align: top;
+		margin-right: -8px;
+	}
+
+	@include e('tab') {
+		display: inline-block;
+	}
+
+	@include e('block') {
+		display: inline-block;
+		vertical-align: top;
+
+		@include m('shoes') {
+			white-space: normal;
+		}
+
+		@include m('heel') {
+			border-radius: 8px;
+			background-color: $clr-default;
+			color: #fff;
+			padding: 7px 0 7px 17px;
+			margin: 5px 0;
+			font-size: 12px;
+			width: 125px;
+			
+			input[type="checkbox"] + label:before {
+				background: url('/images/checkbox.png') 0 0 no-repeat;
+				content: ' ';
+				cursor:pointer;
+				display:inline-block;
+				height: 14px;
+				width: 14px;
+				border-radius: 2px; 
+				margin-right: 20px;
+			}
+
+			input[type="checkbox"]:checked + label:before {
+				background-position: -16px 0;
+			}
+
+			ul {
+				padding-top: 13px;
+			}
+
+			li {
+				line-height: 2em;
+				font-size: 14px;
+			}
+		}
+
+		@include m('color') {
+			border-radius: 8px;
+			border: 1px solid $clr-default;
+			padding: 5px 5px 5px 7px;
+			margin: 5px;
+			font-size: 12px;
+			min-height: 150px;
+
+			input[type="checkbox"] + label:before {
+				height: 22px;
+				width: 22px;
+				border: 2px solid #fff;
+			}
+
+			input[type="checkbox"]:checked + label:before {
+				border-color: $clr-default;
+			}
+		}
+
+		@include m('size') {
+			margin: 5px 0;
+			border-radius: 8px;
+			background-color: $clr-default;
+			color: #fff;
+			padding: 7px 23px 20px;
+			font-size: 12px;
+
+			ul {
+				padding: 16px 0 44px;
+			}
+
+			li + li {
+				margin-left: 6px;
+			}
+
+			li {
+				display: inline-block;
+				font-size: 14px;
+			}
+
+			input[type="checkbox"] + label {
+				border: 2px solid #fff;
+				padding: 3px;
+			}
+
+			input[type="checkbox"]:checked + label {
+				background-color: $clr-default-lite;
+				border-color: $clr-default-lite;
+			}
+
+			.button {
+				font-size: 13px;
+			}
+		}
+	}
+
+	@include e('cell') {
+		display: inline-block;
+		vertical-align: top;
+		width: 74px;
+		height: 74px;
+		background:#fff url('/images/icons-shoes.png') 0 0 no-repeat;
+		border-radius: 8px;
+		border: 1px solid $clr-default;
+		margin: 5px 1px 5px 5px;
+		position: relative;
+
+		&:hover > .tooltip {
+			display: block;
+		}
+
+		input[type="checkbox"] + label:before {
+			background: #fff url('/images/icons-shoes.png') 0 0 no-repeat;
+			height: 74px;
+			width: 74px;
+			border-radius: 7px;
+			left: 0;
+			position: absolute;
+		}
+
+		input[type="checkbox"]:checked + label:before {
+			background-color: $clr-default-lite;
+		}
+
+		.tooltip {
+			background-color: $clr-default;
+			border-radius: 8px;
+			color: #fff;
+			display: none;
+			padding: 10px 25px;
+			position: absolute;
+			top: -26px;
+			z-index: 50;
+		}
+
+		@include m('big') {
+			height: 160px;
+			margin-right: 5px;
+			width: 65px;
+			input[type="checkbox"] + label:before {
+				width: 65px;
+				height: 160px;
+				background-position: -375px 30px;
+			}
+		}
+
+		@include m('type1') {input[type="checkbox"] + label:before {background-position: -300px -35px;} }
+		@include m('type2') {input[type="checkbox"] + label:before {background-position: 4px -35px;} }
+		@include m('type3') {input[type="checkbox"] + label:before {background-position: -67px -35px;} }
+		@include m('type4') {input[type="checkbox"] + label:before {background-position: -223px -35px;} }
+		@include m('type5') {input[type="checkbox"] + label:before {background-position: -144px -35px;} }
+		@include m('type6') {
+			input[type="checkbox"] + label:before {
+				background-position: 0 25px;
+				box-sizing: border-box;
+				color: $clr-default-lite;
+				content: "Все модели";
+				padding: 20px 0 0 7px;
+			}
+
+			input[type="checkbox"]:checked + label:before {
+				color: #fff;
+				content: "Все модели";
+			} 
+		}
+	}
+}
+.f-tabs {
+	margin: 5px;
+	display: block;
+	padding: 22px 14px;
+	background-color: $clr-default;
+	color: #fff;
+	border-radius: 8px;
+	text-decoration: none;
+	&:first-child {
+		margin-bottom: 13px;
+	}
+
+	&.active {
+		background-color: $clr-default-lite;
+	}
+
+	@include e('ico') {
+		float: left;
+		background:transparent url('/images/icons-shoes.png') -70px -9px no-repeat;
+		height: 32px;
+		margin-right: 5px;
+		width: 36px;
+		@include m('man') {background-position: -100px -9px}
+	}
+}
+
+.pallete {
+	padding: 10px 0 12px;
+}
+
+.color {
+	display: inline-block;
+	margin: 1px;
+	height: 24px;
+	width: 24px;
+	box-sizing: border-box;
+	&:hover,
+	&:focus {
+		input[type="checkbox"] + label:before {
+			border-color: $clr-default;
+		}
+	}
+	@include m('1') {background-color: #d089e2;}
+	@include m('2') {background-color: #1a1a1a;}
+	@include m('3') {background-color: #1d00f0;}
+	@include m('4') {background-color: #4d8425;}
+	@include m('5') {background-color: #f4f52e;}
+	@include m('6') {background-color: #fff;}
+	@include m('7') {background-color: #924341;}
+	@include m('8') {background-color: #cf1e12;}
+	@include m('9') {background-color: #dda41c;}
+}
+
+input[type="checkbox"] {
+	display:none;
+}
+input[type="checkbox"] + label:before {
+	content: ' ';
+	cursor:pointer;
+	display:inline-block;
+}
+input[type="checkbox"] + label {
+	cursor: pointer;
+}

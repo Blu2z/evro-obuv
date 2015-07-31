@@ -1,0 +1,45 @@
+@@include('../components/head/head.html')
+
+<body>
+
+@@include('../components/noscript/noscript.html')
+
+<div class="container">
+ 
+@@include('../components/header/header.html', {
+	"login" : true
+})
+
+@@include('../components/advantages/adv.html')
+
+@@include('../components/m-filter/main-filter.html')
+
+@@include('../components/sliders/slider-row.html')
+
+@@include('../components/catalog/catalog.html', {
+	"full" : true,
+	"tag" : "h1",
+	"title" : "Лидеры продаж",
+	"sort" : true,
+	"row" : 2
+})
+
+@@include('../components/news/news-small.html', {
+	"tag" : "h2",
+	"title" : "Новости"
+})
+
+@@include('../components/sliders/carousel-brand.html')
+
+@@include('../components/mail/mail-form.html', {
+	"title" : "Самые свежие говости о новинках, трендах и скидках сети магазинов &laquo;Еврообувь&raquo;"
+})
+
+@@include('../components/footer/footer.html')
+        
+</div>
+
+@@include('../components/scripts/scripts.html')
+
+</body>
+</html>

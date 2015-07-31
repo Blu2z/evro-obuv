@@ -1,0 +1,14 @@
+.slider-main {
+	position: relative;
+	width: 100%;
+
+    ul {
+        overflow: hidden;
+        position: absolute;
+    }
+
+    li {
+        box-sizing: border-box;
+        float: left;
+    }
+}

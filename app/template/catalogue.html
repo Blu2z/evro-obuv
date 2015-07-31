@@ -1,0 +1,61 @@
+@@include('../components/head/head.html')
+
+<body>
+
+@@include('../components/noscript/noscript.html')
+
+<div class="container">
+ 
+@@include('../components/header/header.html', {
+	"login" : false
+})
+
+@@include('../components/sliders/slider-row.html')
+
+
+@@include('../components/breadcrumbs/breadcrumbs.html', {
+	"title" : "Туфли",
+	"first" : "Главная",
+	"second" : "Женская обувь",
+	"third" : "Туфли"
+})
+
+
+@@include('../components/sidebar/sidebar.html')
+
+<div class="content">
+
+@@include('../components/filter/filter.html')
+
+@@include('../components/catalog/catalog.html', {
+	"full" : false,
+	"tag" : "h2",
+	"title" : "Лидеры продаж",
+	"sort" : false,
+	"row" : 1
+})
+
+@@include('../components/catalog/catalog.html', {
+	"full" : false,
+	"tag" : "h2",
+	"title" : "Всего 19189 товаров",
+	"sort" : false,
+	"row" : 1
+})
+
+</div>
+
+@@include('../components/paginator/paginator.html')
+
+@@include('../components/mail/mail-form.html', {
+	"title" : "Подпишитесь на новинки в этой категории, учитывая выбранные фильтры"
+})
+
+@@include('../components/footer/footer.html')
+
+</div>
+
+@@include('../components/scripts/scripts.html')
+
+</body>
+</html>
