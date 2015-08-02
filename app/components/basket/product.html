@@ -1,0 +1,58 @@
+<div class="basket__prod">
+	<div class="basket__col basket__col--img">
+		<a href="#" class="basket__prod--close"></a>
+		<div class="basket__img">
+			<img src="images/basket-img.jpg" alt="foto">
+		</div>
+	</div>
+	<div class="basket__col basket__col--name">
+		<h4>@@name</h4>
+		<span>Размер: <span class="size">@@size</span></span>
+	</div>
+	<div class="basket__col basket__col--price">
+		<span>@@cost руб.</span>
+	</div>
+	<div class="basket__col basket__col--quantity">
+		<label hidden for="quant1">Количество:</label>
+		<a href="#" class="basket__count basket__count--prev">–</a>
+		<input type="text" name="quant1" id="quant1" value="1">
+		<a href="#" class="basket__count basket__count--next">+</a>
+	</div>
+	<div class="basket__col basket__col--cost">
+		<span>12 500 р.</span>
+
+		@@if (!!sale == true) {
+			<div class="sale-box">
+				<p>
+					Экономия: <br>
+					<span class="sale-box--input">2435</span> руб.
+				</p>
+			</div>
+		}
+	</div>
+	<div class="basket__col basket__col--sale">
+
+	@@if (!!sale == true) {
+
+		<span class="sale">@@sale</span>%
+
+	}
+	@@if (!!sale === false) {
+
+		<div class="no-sale-box">
+			<p>Нет скидки</p>
+			<a href="#">Как получить?</a>
+			<div class="basket__tooltip">
+				<p>
+					Чтобы получить скидку введите номер
+					накопительной карты, промокод
+					или получите скидку по акции "Пирамида
+					скидок" на вторую и последующие пары
+					обуви.
+				</p>
+			</div>
+		</div>
+
+	}
+	</div>
+</div>

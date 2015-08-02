@@ -1,0 +1,37 @@
+@@include('../components/head/head.html')
+
+<body>
+
+@@include('../components/noscript/noscript.html')
+
+<div class="container">
+ 
+@@include('../components/header/header.html', {
+	"login" : false
+})
+
+
+
+@@include('../components/breadcrumbs/breadcrumbs.html', {
+	"title" : "Туфли",
+	"first" : "Главная",
+	"second" : "Женская обувь",
+	"third" : "Туфли"
+})
+
+@@include('../components/sidebar/sidebar-data.html')
+
+<div class="content">
+
+@@include('../components/history/history.html')
+
+</div>
+
+@@include('../components/footer/footer.html')
+        
+</div>
+
+@@include('../components/scripts/scripts.html')
+
+</body>
+</html>

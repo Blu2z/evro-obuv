@@ -1,0 +1,63 @@
+<div class="basket">
+	<h3>Ваш заказ:</h3>
+	<div class="basket__thead">
+		<div class="basket__col basket__col--img"></div>
+		<div class="basket__col basket__col--name">Наименование товара</div>
+		<div class="basket__col basket__col--price">Цена</div>
+		<div class="basket__col basket__col--quantity">Количество</div>
+		<div class="basket__col basket__col--cost">Стоимость для Вас</div>
+		<div class="basket__col basket__col--sale">
+			<a href="#">Пирамида скидок?</a>
+			<div class="basket__tooltip">
+				<span>Специальная акция!</span>
+				<p>
+					Скидка на вторую пару 5%,
+					на третью - 10%, на четвертую 15%!
+				</p>
+				<a href="#">Подробнее</a>
+			</div>
+		</div>
+	</div>
+
+	@@include('./product.html', {
+		"name" : "Туфли Tamaris",
+		"size" : "39",
+		"cost" : "12 500",
+		"sale" : false
+	})
+
+	@@include('./product.html', {
+		"name" : "Туфли Paris",
+		"size" : "37",
+		"cost" : "28 500",
+		"sale" : "5"
+	})
+
+	@@include('./product.html', {
+		"name" : "Туфли London",
+		"size" : "38",
+		"cost" : "18 500",
+		"sale" : "10"
+	})
+
+	@@include('./product.html', {
+		"name" : "Босоножки Alpina",
+		"size" : "36",
+		"cost" : "11 500",
+		"sale" : "15"
+	})
+
+</div>
+
+
+<div class="e-form e-form--bonus">
+	@@include('../evro-order/bonus.html')
+</div>
+
+<div class="summ">
+	Итого: <span class="summ__old">45 900</span> <span class="summ__new">36 800 р.</span>
+	<p class="summ__economy">Экономия 5 875 руб.</p>
+	<button type="submit" class="button button--yelow">Оформить заказ</button>
+</div>
+
+@@include('../sliders/slider-goods.html')

@@ -1,0 +1,34 @@
+.slider-goods {
+    @extend .slider-main;
+    overflow: hidden;
+    height: 420px;
+    margin-top: 50px;
+    & > ul {
+    	padding: 0 40px;
+    }
+
+	.cat__product {height: 355px;}
+	.cat__img {height: 215px; overflow: hidden;}
+}
+
+.goods {
+	@include e('title') {
+		font-size: 18px;
+		font-weight: bold;
+	}
+
+	@include e('link') {
+		background:transparent url('/images/slider-goods.png') 0 0 no-repeat;
+		height: 32px;
+		position: absolute;
+		top: 50%;
+		width: 32px;
+		z-index: 5;
+
+		@include m('next') {
+			right: 0;
+			background-position: -35px 0;
+		}
+	}
+}
+

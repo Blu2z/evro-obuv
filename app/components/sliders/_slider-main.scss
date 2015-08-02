@@ -2,13 +2,13 @@
 	position: relative;
 	width: 100%;
 
-    ul {
+    & > ul {
         overflow: hidden;
         position: absolute;
-    }
 
-    li {
-        box-sizing: border-box;
-        float: left;
+        & >li {
+            box-sizing: border-box;
+            float: left;
+        }
     }
 }

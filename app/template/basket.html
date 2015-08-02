@@ -1,0 +1,29 @@
+@@include('../components/head/head.html')
+
+<body>
+
+@@include('../components/noscript/noscript.html')
+
+<div class="container">
+ 
+@@include('../components/header/header.html', {
+	"login" : false
+})
+
+@@include('../components/breadcrumbs/breadcrumbs.html', {
+	"title" : "Корзина товаров",
+	"first" : "Главная",
+	"second" : "Корзина товаров",
+	"third" : false
+})
+
+@@include('../components/basket/basket.html')
+
+@@include('../components/footer/footer.html')
+        
+</div>
+
+@@include('../components/scripts/scripts.html')
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+.history {
+	position: relative;
+	width: 755px;
+	h3 {
+		font-size: 24px;
+		font-weight: bold;
+		line-height: 40px;
+	}
+
+	@include e('sort') {
+		position: absolute;
+		top: 0;
+		right: 0;
+		color: $clr-gray;
+		line-height: 40px;
+
+		.list {
+			height: 40px;
+			border: 1px solid $clr-gray-default;
+			border-radius: 10px;
+			display: inline-block;
+			padding: 0 65px 0 10px;
+			color: $clr-default;
+			font-weight: bold;
+		}
+	}
+
+	@include e('head') {
+		margin: 43px 0 5px; 
+		padding: 0 10px;
+		font-weight: bold;
+		font-size: 13px;
+	}
+
+	@include e('row') {
+		border-radius: 5px;
+		border: 1px solid $clr-gray-default;
+		height: 40px;
+		line-height: 40px;
+		margin-bottom: 10px;
+		padding: 0 20px 0 10px;
+		position: relative;
+		&:after {
+			content: '';
+			position: absolute;
+			right: 10px;
+			top: 12px;
+			height: 16px;
+			width: 16px;
+			background:transparent url('/images/icon-sl.png') 0 0 no-repeat;
+			transform: rotate(-90deg);
+		}
+	}
+
+	@include e('col') {
+		@extend .inline-block-vtop;
+	
+		@include m('numb') {width: 144px;}
+		@include m('date') {width: 270px;}
+		@include m('stat') {width: 200px;}
+		@include m('summ') {}
+		@include m('img') {
+			width: 90px;
+			img {
+				width: 49px;
+				border: 1px solid $clr-gray-default;
+				margin-left: 23px;
+			}
+		}
+		@include m('name') {
+			width: 337px;
+			font-weight: bold;
+		}
+		@include m('amount') {width: 87px;}
+		@include m('price') {width: 115px;}
+		@include m('cost') {}
+	}
+
+	@include e('details') {
+
+		@include m('head') {
+			padding-top: 35px;
+			font-size: 12px;
+		}
+
+		@include m('desc') {
+			padding: 17px 0;
+			font-size: 13px;
+			font-weight: bold;
+		}
+	}
+}
