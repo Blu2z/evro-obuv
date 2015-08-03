@@ -1,4 +1,5 @@
 .history {
+	margin-bottom: 65px;
 	position: relative;
 	width: 755px;
 	h3 {
@@ -50,6 +51,13 @@
 			background:transparent url('/images/icon-sl.png') 0 0 no-repeat;
 			transform: rotate(-90deg);
 		}
+
+		&.active {
+			background-color: $clr-gray-lite;
+			&:after {
+				transform: rotate(90deg);
+			}
+		}
 	}
 
 	@include e('col') {
@@ -70,6 +78,8 @@
 		@include m('name') {
 			width: 337px;
 			font-weight: bold;
+			p {padding: 0}
+			p:not(:last-child) {padding-bottom: 5px;}
 		}
 		@include m('amount') {width: 87px;}
 		@include m('price') {width: 115px;}
@@ -77,6 +87,7 @@
 	}
 
 	@include e('details') {
+		margin-bottom: 15px;
 
 		@include m('head') {
 			padding-top: 35px;
@@ -87,6 +98,9 @@
 			padding: 17px 0;
 			font-size: 13px;
 			font-weight: bold;
+			&:not(:last-child) {
+				border-bottom: 1px solid $clr-gray-default;
+			}
 		}
 	}
 }

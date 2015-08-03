@@ -1,0 +1,62 @@
+.availability {
+	h3 {
+		font-size: 24px;
+		font-weight: bold;
+		line-height: 70px;
+	}
+}
+
+.av {
+	@include e('box') {
+		@extend .inline-block-vtop;
+		font-size: 12px;
+
+		@include m('name') {
+			width: 265px;
+			padding-left: 37px;
+			position: relative;
+			&:before {
+				background:transparent url('/images/icon-sl.png') -120px 0 no-repeat;
+				content: '';
+				height: 16px;
+				left: 10px;
+				position: absolute;
+				width: 13px;
+			}
+		}
+		@include m('size') {
+			width: 240px;
+			li {
+				display: inline-block;
+				&:not(:last-child) {
+					padding-right: 20px;
+				}
+			}
+		}
+		@include m('amt') {
+			width: 125px;
+		}
+
+		@include m('timetable') {
+			width: 140px;
+		}
+
+		@include m('btn') {
+			width: 130px;
+		}
+
+	}
+
+	@include e('wrap') {
+		@extend .block--dark;
+		padding: 20px 20px 25px; 
+	}
+
+	@include e('row') {
+		padding: 15px 0;
+		&:not(:last-child) {
+			border-bottom: 1px solid $clr-separator-lite;
+			box-shadow: 0 1px 0 0 $clr-separator;
+		}
+	}
+}

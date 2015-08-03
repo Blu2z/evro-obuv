@@ -1,0 +1,11 @@
+.shops {
+
+}
+.shop {
+	@extend .inline-block-vtop;
+	width: 487px;
+	border: 1px solid $clr-gray;
+	border-radius: 5px;
+	padding: 20px;
+	box-sizing: border-box;
+}

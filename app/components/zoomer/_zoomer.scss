@@ -1,0 +1,44 @@
+.zoomer {
+	// @extend .inline-block-vtop;
+	position: relative;
+
+	@include e('list') {
+		li {
+			display: inline-block;
+			margin-left: 10px;
+			width: 60px;
+			height: 60px;
+			border: 1px solid $clr-gray-default;
+
+			&.active img {opacity: .4;}
+		}
+
+		li, li img {border-radius: 5px;}
+	}
+
+	@include e('tooltip') {
+		background: #fff url('/images/ajax-loader.gif') 50% 50% no-repeat;
+		border-radius: 10px;
+		border: 1px solid $clr-gray-default;
+		display: none;
+		height: 500px;
+		overflow: hidden;
+		position: absolute;
+		right: -495px;
+		top: 0;
+		width: 500px;
+
+		img {
+			position: absolute;
+			top: -355px;
+			left: -125px;
+			max-width: 1000px;
+			max-height: 1000px;
+		}
+	}
+
+	@include e('main') {
+		cursor: crosshair;
+		&:hover + .zoomer__tooltip {display: block;}
+	}
+}

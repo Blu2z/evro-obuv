@@ -10,7 +10,7 @@
 	"login" : false
 })
 
-
+@@include('../components/sliders/slider-row.html')
 
 @@include('../components/breadcrumbs/breadcrumbs.html', {
 	"title" : "Туфли",
@@ -19,15 +19,18 @@
 	"third" : "Туфли"
 })
 
-@@include('../components/sidebar/sidebar-data.html')
 
 <div class="content">
 
-@@include('../components/history/history.html')
+@@include('../components/item/item.html')
 
 </div>
 
-@@include('../components/paginator/paginator.html')
+@@include('../components/advantages/adv-vertical.html')	
+
+@@include('../components/availability/availability.html')
+
+@@include('../components/sliders/slider-goods-item.html')
 
 @@include('../components/footer/footer.html')
         

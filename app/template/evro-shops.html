@@ -10,27 +10,19 @@
 	"login" : false
 })
 
-
-
 @@include('../components/breadcrumbs/breadcrumbs.html', {
-	"title" : "Туфли",
+	"title" : "Магазины",
 	"first" : "Главная",
-	"second" : "Женская обувь",
-	"third" : "Туфли"
+	"second" : "Магазины",
+	"third" : false
 })
 
-@@include('../components/sidebar/sidebar-data.html')
-
-<div class="content">
-
-@@include('../components/history/history.html')
-
-</div>
+@@include('../components/shops/evro-shops.html')
 
 @@include('../components/paginator/paginator.html')
 
 @@include('../components/footer/footer.html')
-        
+
 </div>
 
 @@include('../components/scripts/scripts.html')

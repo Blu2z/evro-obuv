@@ -1,0 +1,30 @@
+.slider-goods--item {
+	.cat__product {
+		height: 320px;
+		&:hover {
+			.button,
+			.cat__sizes {
+				display: block;
+				margin: 0 auto;
+			}
+			.cat__cost,
+			.cat__desc {
+				display: none;
+			}	
+		}
+		.button {
+			width: 200px;
+			font-size: 12px;
+			
+			display: none;
+		}
+		.cat__sizes {
+			display: none;
+			padding: 0 40px;
+		}
+		.cat__desc {
+			font-size: 14px;
+			margin-top: 10px;
+		}
+	}
+}

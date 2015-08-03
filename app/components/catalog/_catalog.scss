@@ -11,6 +11,8 @@
 			}
 		}
 	}
+
+	@include e('big') {font-size: 14px;}
 	
 	@include e('product') {
 		width: 260px;

@@ -1,0 +1,152 @@
+.item {
+	margin: 23px 0 0 38px;
+	max-width: 470px;
+	@extend .inline-block-vtop;
+
+	@include e('wrap') {
+		@extend .inline-block-vtop;
+		max-width: 320px;
+	}
+
+	@include e('title') {
+		font-size: 30px;
+		font-weight: bold;
+		display: inline-block;
+	}
+	@include e('brand-logo') {
+		display: inline-block;
+		margin-left: 40px;
+	}
+	@include e('size') {
+		margin: 32px 0;
+		font-size: 12px;
+
+		ul, li {
+			user-select: none;
+			display: inline-block;
+    		font-size: 14px;
+		}
+
+		ul {
+			margin: 0 10px;
+		}
+
+		li {
+			margin: 0 3px;
+		}
+
+		input[type="checkbox"] + label {
+    		border: 2px solid $clr-default;
+   			padding: 3px;
+		}
+
+		input[type="checkbox"]:checked + label {
+    		background-color: $clr-red;
+    		color: #fff;
+    		border-color: #fff;
+		}
+
+		input[type="checkbox"]:disabled + label {
+			border-color: $clr-gray-default;
+			color: $clr-gray-default;
+		}
+
+	}
+	@include e('cost') {
+		font-size: 24px;
+		font-weight: bold;
+		padding: 3px 0 23px;
+	}
+	@include e('basket') {
+		font-size: 13px; 
+		.button {
+			width: 130px;
+			font-size: 12px;
+			margin-right: 14px;
+		}
+	}
+	@include e('desc') {
+		margin-bottom: 70px;
+		display: table;
+		margin-top: 30px;
+	}
+}
+
+.desc {
+	@include e('row') {
+		display: table-row;
+		font-size: 12px;
+		line-height: 2.5em;
+	}
+
+	@include e('name') {
+		display: table-cell;
+		font-weight: bold;
+	}
+
+	@include e('prop') {
+		display: table-cell;
+	}
+}
+
+.col1 {
+	width: 180px;
+}
+
+.qq {
+	font-size: 12px;
+	width: 395px;
+	@include e('title') {
+		font-weight: bold;
+		font-size: 24px;
+		line-height: 45px;
+
+		.button {
+			width: 80px;
+			height: 40px;
+			vertical-align: middle;
+			float: right;
+		}
+	}
+
+	@include e('message') {
+		margin: 27px 0;
+	}
+
+	@include e('name') {
+		color: $clr-gray;
+	}
+
+	@include e('text') {
+		line-height: 1.85em;
+	}
+}
+
+.related {
+	margin-top: 90px;
+
+	h3 {
+		font-size: 24px;
+		font-weight: bold;
+	}
+
+	.cat{
+		@include e('img') {
+			height: 100%;
+			margin-bottom: 15px;
+			img {
+				position: relative;
+    			margin: 0 auto;
+    			display: block;
+			}
+		}
+
+		@include e('product') {
+			width: 250px;
+			height: 100%;
+			padding: 20px;
+		}
+
+		@include e('desc') {padding: 0;}
+	}
+}
