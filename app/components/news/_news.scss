@@ -23,6 +23,21 @@
 			}
 		}
 
+		@include m('big') {
+			max-width: 300px;
+			margin: 0;
+			margin: 0 -4px;
+			font-size: 14px;
+			&:nth-child(even) {
+				margin: 0 50px;
+			}
+		}
+
+		@include m('s-big') {
+			max-width: 350px;
+			margin: 0 50px 0 0;
+		}
+
 		a, a:hover, a:focus {
 			text-decoration: none;
 		}

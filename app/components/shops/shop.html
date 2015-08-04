@@ -4,22 +4,34 @@
 	</div>
 	<div class="shop__map"></div>
 	@@include('../sliders/slider-shop.html')
-	<a href="#">фото</a>
-	<a href="#">Карта проезда</a>
+	<div class="shop__tab">
+		<a href="#" class="active">фото</a>
+		<a href="#">Карта проезда</a>
+	</div>
 	<p>
 		Магазин в самом центре Пятигорска. Работает с 2012 года.
 		Широкий ассортимент всех марок немецкой обуви.
 	</p>
 	<div class="shop__adress">
-		<p>Адресс:</p>
-		<p>Пятигорск, ул. Дзержинского, Тц Детский мир</p>
-		<p>Часы работы: 09:00 - 20:00</p>
-		<p>Телефон 8 (8793) 3-47-98</p>
-		<p>Как добраться:</p>
-		<p>Номера трамваев: 4,7,8,7; Маршрутки: 1,6,7</p>
-		<p>Остановка Держинского</p>
+
+		<div class="shop__ico shop__ico--adds">
+			<span>Адресс:</span>
+			<p>Пятигорск, ул. Дзержинского, Тц Детский мир</p>
+		</div>
+
+		<div class="shop__ico shop__ico--hours">
+			<span>Часы работы: 09:00 - 20:00</span>
+			<p>Телефон 8 (8793) 3-47-98</p>
+		</div>
+
+		<div class="shop__ico shop__ico--way">
+			<span>Как добраться:</span>
+			<p>Номера трамваев: 4,7,8,7; Маршрутки: 1,6,7</p>
+			<p>Остановка Держинского</p>
+		</div>
 	</div>
 	<div class="shop__recall">
+	<span class="shop__last-recall">Последний отзыв:</span>
 		<div class="qq__message">
 			<span class="qq__name">Марина (3 недели назад)</span>
 			<p class="qq__text">
@@ -27,5 +39,7 @@
 				значит ли это, что ее не будет большее в продаже?
 			</p>
 		</div>
+		<a href="#" class="button button--fix button--yelow"></a>
+		<a href="#">Все отзывы</a>
 	</div>
 </div>

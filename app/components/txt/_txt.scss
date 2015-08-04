@@ -1,0 +1,96 @@
+.txt {
+	@include e('wrap') {
+		margin: 40px 0;
+	}
+	
+	@include e('block') {
+		margin: 30px 0;
+		p {
+			line-height: 1.2em;
+		}
+	}	
+
+	@include e('img') {
+		@include m('fl-l') {
+			float: left;
+			margin: 0 45px 45px 0;
+		}
+	}
+
+	@include e('list') {
+		line-height: 1.5em;
+		@include m('numb') {list-style: decimal inside;}
+		@include m('marker') {list-style: disc inside}
+	}
+
+	@include e('quote') {
+		margin: 20px 0 20px 20px;
+		padding: 30px 60px;
+		border-radius: 5px;
+		border: 1px solid $clr-gray-lite;
+		position: relative;
+		&:before,
+		&:after {
+			position: absolute;
+			font-size: 72px;
+			color: $clr-gray;
+		}
+		&:before {
+			content: '“';
+			left: 22px;
+			top: 52px;
+		}
+		&:after {
+			content: '”';
+			right: 25px;
+			bottom: 15px;
+		}
+	}
+
+	@include e('warn') {
+		margin: 20px 0 20px 20px;
+		border-radius: 5px;
+		border: 1px solid $clr-red;
+		padding: 30px 25px;
+	}
+
+	@include e('colont') {
+		margin: 20px 0;
+		padding: 30px 90px 30px 0;
+		border-top: 1px solid $clr-default;
+		border-bottom: 1px solid $clr-default;
+	}
+
+	@include e('table') {
+		display: table;
+		margin: 40px 0;
+	}
+
+	@include e('trow') {
+		line-height: 35px;
+		&:not(:first-child):not(:last-child) {
+			border-bottom: 1px solid $clr-gray-default;	
+		}
+		&:hover {
+			background-color: $clr-red;
+			color: #fff;
+			cursor: pointer;
+			margin: 0 -50px;
+			padding: 0 50px;
+		}
+
+		@include m('caption') {
+			font-weight: bold;
+			line-height: 45px;
+		}
+	}
+
+	@include e('tcell') {
+		padding-left: 20px;
+		display: table-cell;
+		width: 200px;
+		&:last-child {
+			width: 100px;
+		}
+	}
+}

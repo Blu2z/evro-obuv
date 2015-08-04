@@ -47,6 +47,7 @@
 @import "../components/sliders/slider-goods-item";
 @import "../components/sliders/slider-shop";
 @import "../components/shops/shops";
+@import "../components/txt/txt";
 
 /* layouts */
 @import "layouts/details";
@@ -93,23 +94,24 @@ strong {
 }
 
 h1, h2, h3, h4, h5 {
-    font-family:  sans-serif;
+    font-family:  arial;
     line-height: 1.5em;
+    font-weight: bold
 }
 h1 {
-    font-size: 44px;
+    font-size: 30px;
 }
 h2 {
-    font-size: 38px;
+    font-size: 24px;
 }
 h3 {
-    font-size: 32px;
+    font-size: 18px;
 }
 h4 {
-    font-size: 26px;
+    font-size: 16px;
 }
 h5 {
-    font-size: 22px;
+    font-size: 15px;
 }
 
 hr {
@@ -119,6 +121,7 @@ hr {
 }
 p {
     padding: 5px 0;
+    line-height: 1.2em;
 }
 
 .clearfix:before,

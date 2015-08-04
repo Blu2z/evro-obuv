@@ -257,12 +257,12 @@
 
 <div class="slider-row">
 	<div class="sl sl__nav">
-		<a href="#" class="nav sl__nav--link" data-nav="prev"></a>
-		<a href="#" class="nav sl__nav--link" data-nav="next"></a>
+		<a href="#" class="nav sl__nav--link nav--prev" data-nav="prev"></a>
+		<a href="#" class="nav sl__nav--link nav--next" data-nav="next"></a>
 	</div>
 	<div class="sl sl__text">
 		<ul>
-			<li data-btn="Условия акции">Покупай в одну покупку 3 пары и получай скидку до 20%</li>
+			<li data-btn="Условия акции">Покупай в одну покупку 3 пары и получай скидку до 20% </li>
 			<li data-btn="Узнать подробности">Купи 2 пары по цене 3!</li>
 			<li data-btn="Налетай! Покупай!">Осенне - Весенняя - Летняя - Зимняя распродажа!</li>
 		</ul>
@@ -459,10 +459,7 @@
 
 <div class="news-sm">
 
-
-
 	<h2 class="news__title">Новости</h2>
-
 
 	<div class="news-sm__wrap">
 		<div class="news-sm__container">
@@ -626,12 +623,22 @@
 
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
+    <script src="components/sliders/slider.js"></script>
     <!-- endbuild -->
 
 
 
 
 
+
+<script>
+    $('div.slider-row').sliderShop({
+        caseLimit: 1,
+        category: 'false',
+        autoHeight: 'false',
+        spaceSection: 0
+    });
+</script>
 
 </body>
 </html>

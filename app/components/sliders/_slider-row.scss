@@ -31,6 +31,9 @@
 	}
 
 	@include e('text') {
+		@extend .slider-main;
+		height: 80px;
+		overflow: hidden;
 		font-size: 16px;
 		font-weight: bold;
 		text-transform: uppercase;
@@ -38,7 +41,7 @@
 		vertical-align: middle;
 
 		li:not(:first-child) {
-			display: none;
+			// display: none;
 		}
 	}
 

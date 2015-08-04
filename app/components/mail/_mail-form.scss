@@ -75,6 +75,16 @@
 	
 	.button {
 		height: 40px;
+		position: relative;
+		&:after {
+			position: absolute;
+			content: '';
+			width: 16px;
+			height: 16px;
+			left: 32px;
+			top: 11px;
+			background: url('/images/icon-sl.png') -156px 0 no-repeat;
+		}
 	}
 
 }

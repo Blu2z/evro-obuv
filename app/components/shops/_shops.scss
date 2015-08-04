@@ -1,11 +1,117 @@
 .shops {
+	margin-bottom: 50px;
+	& > p {
+		margin: 10px 0 30px;
+		padding-right: 90px;
+		line-height: 1.2em;
+	}
 
+	.button {
+		width: 200px;
+		margin-right: 20px;
+		&.disable {
+			background-color: $clr-gray-default;
+			cursor: default;
+		}
+	}
+	@include e('tabs') {
+		margin: 45px 0;
+	}
 }
+
 .shop {
 	@extend .inline-block-vtop;
-	width: 487px;
-	border: 1px solid $clr-gray;
 	border-radius: 5px;
-	padding: 20px;
+	border: 1px solid $clr-gray;
 	box-sizing: border-box;
+	padding: 20px;
+	width: 487px;
+	margin-bottom: 25px;
+	&:nth-child(odd) {
+		margin-left: 25px;
+	}
+
+	@include e('title') {
+		font-size: 18px;
+		font-weight: bold;
+		line-height: 2.2em;
+
+		span {color: $clr-red}
+	}
+
+	@include e('tab') {
+		font-size: 12px;
+		padding: 10px 0;
+
+		.active,
+		.active:hover,
+		.active:focus {
+			color: $clr-default-lite;
+			cursor: default;
+			text-decoration: none;
+		}
+
+		
+	}
+
+	@include e('adress') {
+		margin-top: 30px;
+		padding-left: 30px;
+		font-size: 12px;
+		font-weight: bold;
+		line-height: 1.5em;
+	}
+
+	@include e('ico') {
+		position: relative;
+		&:before {
+			background:transparent url('/images/icons-shop.png') 0 0 no-repeat;
+			content: '';
+			height: 16px;
+			position: absolute;
+			width: 16px;
+			left: -22px;
+    		top: -5px;
+		}
+
+		@include m('adds') {}
+		@include m('hours') {&:before {background-position: -17px 0;}}
+		@include m('way') {
+			margin-top: 15px;
+			&:before {
+				background-position: -37px 0;
+			}
+		}
+	}
+
+	@include e('recall') {
+		margin-top: 35px;
+	}
+
+	@include e('last-recall') {
+		font-size: 18px;
+		font-weight: bold;
+	}
+
+	.button {
+		width: 80px;
+		height: 40px;
+		vertical-align: middle;
+		position: relative;
+		&:after {
+			position: absolute;
+			content: '';
+			width: 16px;
+			height: 16px;
+			left: 35px;
+			background: url('/images/icon-sl.png') -136px 0 no-repeat;
+		}
+		
+	}
+
+	a + a {
+		margin-left: 15px;
+		font-size: 12px;}
+
+	& > p {line-height: 1.5em;}
 }
