@@ -1,5 +1,46 @@
 .shop-slider {
-	@extend .slider-main;
-    overflow: hidden;
-    height: 235px;
+	position: relative;
+
+   	@include e('nav') {
+   		.nav {
+   			position: absolute;
+   			height: 16px;
+   			width: 16px;
+   			background:transparent url('/images/icon-sl.png') 0 0 no-repeat;
+   			bottom: -20px;
+
+   			@include m('prev') {
+				right: 75px;
+
+   			}
+
+   			@include m('next') {
+				background-position: -21px 0;
+				right: 5px;
+   			}
+   		}
+   	}
+
+   	@include e('vitrin') {
+   		position: relative;
+   		overflow: hidden;
+    	height: 235px;
+   	}
+
+   	ul {
+        overflow: hidden;
+        position: absolute;
+
+        & >li {
+            box-sizing: border-box;
+            float: left;
+            width: 445px;
+        }
+    }
+    .slider__input {
+		position: absolute;
+		right: 35px;
+		bottom: -20px;
+	}
 }
+

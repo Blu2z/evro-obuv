@@ -1,4 +1,20 @@
 /* jshint devel:true */
+
+/* 
+Структура слайдера:
+<div> --контейнер с классом/ид
+    <div> --обертка окна показа слайдов. Если ее нет ширирна считается от контейнера
+        <ul class="slider__wrapper"> --простенький список
+            <li> --любое содержимое
+        </ul>
+    </div>
+    .nav nav--prev --навигация
+    .nav nav--next
+    .slider__input --счетчик слайдов
+</div>
+ */
+
+
 'use strict';
 
 if (typeof Object.create !== 'function') {
@@ -15,92 +31,59 @@ if (typeof Object.create !== 'function') {
         init: function (options, elem) {
 
             var self = this;
+            var swither, wrapper;
 
             self.maxScrollPosition = 0;
-            self.switcher = 0;   
             self.elem = elem;
-            self.$elem = $ (elem);
 
             self.options = $.extend({}, $.fn.sliderShop.options, options);
 
-            console.log(self);
-
-            $.extend(self, $.fn.sliderShop.prot);
-
-            console.log('sliderShop');
-
             self.calcConst();
 
-            $(this.elem).find('.nav--prev').on('click', function (e) {
+            $(this.elem).find('.nav').on('click', function (e) {
                 e.preventDefault();
-                var $targetItem = self.$elem.find('.swither__item--edge').prev();
 
-                self.toGalleryItem($targetItem);
+                var $targetItem = $(elem).find('.swither__item--edge');
+
+                $(this).hasClass('nav--prev') 
+                    ? self.toGalleryItem($targetItem.prev())
+                    : self.toGalleryItem($targetItem.next());
             });
-
-            $(this.elem).find('.nav--next').on('click', function (e) {
-                e.preventDefault();
-                var $targetItem = self.$elem.find('.swither__item--edge').next();
-
-                self.toGalleryItem($targetItem);
-
-                // console.log(self);
-
-                // self.animHide($targetItem);
-                // self.animClose($targetItem);
-            });
-
         },
 
         calcConst: function () {
             var self = this,
                 totalWidth = 0,
-                totalHeigt = 0,
-                totalTitle = 0,
-                section = $(this.elem).outerWidth() - 40,
-                contentWidth = section / this.options.caseLimit - this.options.spaceSection * 2;
-             
-            $(this.elem).find('li').addClass('swither__item');
-            $(this.elem).find('ul').addClass('slider__wrapper');
+                section = $(this.elem).outerWidth() - 40;
+            
+            this.wrapper = $(this.elem).find('.slider__wrapper');
+            this.swither = this.wrapper.children().addClass('swither__item'); 
 
+            var space = this.wrapper.parent().width() - this.swither.outerWidth(true)*this.options.caseLimit,
+                elspace =(this.options.spaceSection === 'auto') 
+                                                ? space / (this.options.caseLimit * 2) 
+                                                : this.options.spaceSection;
 
-            $(this.elem).width(section);
+                elspace = ( space < 0 ) ? 0 : elspace;
 
-            $(this.elem).find('.swither__item')
-                            .css({
-                                    width:contentWidth + this.options.spaceSection * 2,
-                                    'padding-left': this.options.spaceSection,
-                                    'padding-right': this.options.spaceSection
-                                })
-                                .each(function() {
-                                    totalWidth = totalWidth + $(this).outerWidth(true);
-                                });
+                this.swither
+                    .css({
+                        'margin-left': elspace,
+                        'margin-right': elspace
+                    })
+                    .each(function() {
+                        totalWidth = totalWidth + $(this).outerWidth(true);
+                    });
 
-            this.options.title
-                ? totalTitle += $(this.elem).find('.slider__title').outerHeight()
-                : $(this.elem).find('.slider__title').hide();
-
-            // !this.options.category
-            //     ? category.hide()
-            //     : totalHeigt += category.outerHeight();
-
-            // totalHeigt += $(this.elem).find('.slider__wrapper p').outerHeight();
-
-            self.maxScrollPosition = totalWidth - $(this.elem).outerWidth();
-            self.switcher = $(this.elem).find('.slider__wrapper');
-
-            self.switcher.width(totalWidth + 20);
-
-            $(this.elem).find('.swither__item:first').addClass('swither__item--edge');
-
-            if (this.options.autoHeight === 'true') {
-                $(this.elem).find('.swither__item').height(contentWidth);
-                $(this.elem).height(totalHeigt + contentWidth);
-                $(this.elem).height(totalHeigt + contentWidth + 40 + totalTitle);
-            } else {
-                $(this.elem).find('.swither__item').height(this.options.autoHeight);
+            if (this.options.count == 1) {
+                $(this.elem).find('.slider__input').text('1 / ' + this.swither.length)
             }
 
+            self.maxScrollPosition = totalWidth - this.swither.outerWidth(true) * this.options.caseLimit;
+
+            this.wrapper.width(totalWidth + 20);
+
+            this.swither.first().addClass('swither__item--edge');
         },
 
         toGalleryItem:  function ($targetItem) {
@@ -110,46 +93,39 @@ if (typeof Object.create !== 'function') {
 
                 var newPosition = $targetItem.position().left;
 
-                console.log(newPosition + ',' + self.maxScrollPosition);
-
-                if(newPosition <= self.maxScrollPosition+3) {
+                if(newPosition <= self.maxScrollPosition+2) {
 
                     $targetItem.addClass('swither__item--edge');
                     $targetItem.siblings().removeClass('swither__item--edge');
-                    self.switcher.css({
-                        'opacity' : '0',
-                        'left' : - newPosition
-                    });
 
-                    self.switcher.animate({
-                        opacity : 1
-                        // left : - newPosition
-                    });
-                }// } else {
-                    
-                //     self.switcher.css({
-                //         'opacity' : '0',
-                //         'left' : - self.maxScrollPosition,
-                //     });
-                //     self.switcher.animate({
-                //         // left : - self.maxScrollPosition,
-                //         opacity : 1,
-                //     });
-                // }
+                    if (this.options.count == 1) {
+                        $(this.elem).find('.slider__input')
+                            .text($targetItem.prevAll().length + this.options.caseLimit + ' / ' + this.swither.length)
+                    }
+
+                    console.log($targetItem.prevAll().length + this.options.caseLimit);
+
+                    switch (this.options.animation) {
+
+                        case 'slide':
+                            this.wrapper.animate({left : - newPosition});
+                            console.log($targetItem.position());
+                            break;
+
+                        case 'hide-show':
+                            this.wrapper.css({
+                                'opacity' : '0',
+                                'left' : - newPosition
+                            }) 
+                            .animate({opacity : 1});
+                            break; 
+                    } 
+                }
             }
         } 
     };
 
-// var animHide = function () {
-//     console.log('animHide');
-//     return this;
-// }
-
-// Slider.__proto__ = animHide;
-
-
-
-   console.log(Slider);
+    
 
     $.fn.sliderShop = function (options) {
         return this.each(function() {
@@ -172,11 +148,10 @@ if (typeof Object.create !== 'function') {
    //     }
    // }
 
-    $.fn.sliderShop.options = {
-        autoHeight: 'false', // высота всего слайдера
+   $.fn.sliderShop.options = {
         caseLimit: 4, //кол-во товаров в витрине
-        spaceSection: 15, //расстояние между секциями
-        animation: "slide", //тип анимации
+        spaceSection: 'auto', //расстояние между секциями
+        animation: 'slide', //тип анимации
         count: false // счетчик слайдов
     };
 

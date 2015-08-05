@@ -1,5 +1,5 @@
 .container > .m-filter {
-	white-space: nowrap;
+	// white-space: nowrap;
 }
 .m-filter {
 	width: 1000px;
@@ -11,11 +11,16 @@
 	@include e('tabs') {
 		display: inline-block;
 		vertical-align: top;
-		margin-right: -8px;
+		margin-right: -4px;
+		float: left;
 	}
 
 	@include e('tab') {
 		display: inline-block;
+
+		@include m('man') {
+			display: none;
+		}
 	}
 
 	@include e('block') {
@@ -80,22 +85,28 @@
 		}
 
 		@include m('size') {
-			margin: 5px 0;
-			border-radius: 8px;
 			background-color: $clr-default;
+			border-radius: 8px;
+			box-sizing: border-box;
 			color: #fff;
-			padding: 7px 23px 20px;
 			font-size: 12px;
+			height: 163px;
+			margin: 5px 0;
+			padding: 7px 23px 20px;
+			width: 254px;
 
 			ul {
-				padding: 16px 0 44px;
+				// padding: 16px 0 44px;
 			}
 
 			li + li {
-				margin-left: 6px;
+				// margin-left: 6px;
 			}
 
 			li {
+				margin: 7px 3px 3px;
+				height: 26px;
+				width: 26px;
 				display: inline-block;
 				font-size: 14px;
 			}
@@ -112,6 +123,9 @@
 
 			.button {
 				font-size: 13px;
+				position: absolute;
+				bottom: 15px;
+				width: 210px;
 			}
 		}
 	}

@@ -32,16 +32,18 @@
 
 	@include e('text') {
 		@extend .slider-main;
+		width: 60%;
 		height: 80px;
 		overflow: hidden;
+		
 		font-size: 16px;
 		font-weight: bold;
 		text-transform: uppercase;
 		line-height: 75px;
 		vertical-align: middle;
 
-		li:not(:first-child) {
-			// display: none;
+		li {
+			width: 525px;
 		}
 	}
 
