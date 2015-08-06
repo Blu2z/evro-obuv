@@ -93,6 +93,7 @@
 			height: 163px;
 			margin: 5px 0;
 			padding: 7px 23px 20px;
+			position: relative;
 			width: 254px;
 
 			ul {
@@ -176,15 +177,22 @@
 			input[type="checkbox"] + label:before {
 				width: 65px;
 				height: 160px;
-				background-position: -375px 30px;
+				background-position: -451px 30px;
 			}
 		}
-
+		
 		@include m('type1') {input[type="checkbox"] + label:before {background-position: -300px -35px;} }
 		@include m('type2') {input[type="checkbox"] + label:before {background-position: 4px -35px;} }
 		@include m('type3') {input[type="checkbox"] + label:before {background-position: -67px -35px;} }
 		@include m('type4') {input[type="checkbox"] + label:before {background-position: -223px -35px;} }
 		@include m('type5') {input[type="checkbox"] + label:before {background-position: -144px -35px;} }
+
+		@include m('m-big') {input[type="checkbox"] + label:before {background-position: -522px 30px;} }
+		@include m('m-type1') {input[type="checkbox"] + label:before {background-position: -142px -35px;} }
+		@include m('m-type2') {input[type="checkbox"] + label:before {background-position: -65px -35px;} }
+		@include m('m-type3') {input[type="checkbox"] + label:before {background-position: -67px -35px;} }
+		@include m('m-type4') {input[type="checkbox"] + label:before {background-position: -373px -30px;} }
+		@include m('m-type5') {input[type="checkbox"] + label:before {background-position: -144px -35px;} }
 		@include m('type6') {
 			input[type="checkbox"] + label:before {
 				background-position: 0 25px;
@@ -197,7 +205,14 @@
 			input[type="checkbox"]:checked + label:before {
 				color: #fff;
 				content: "Все модели";
-			} 
+			}
+
+			a {
+				border-radius: 5px;
+				height: 76px;
+				position: absolute;
+				width: 76px;
+			}
 		}
 	}
 }

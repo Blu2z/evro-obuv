@@ -10,45 +10,77 @@ if (typeof Object.create !== 'function') {
 
 (function ($, window, document, undefined) {
 
-var Tabs = {
-	init: function (options, elem) {
+// ========================
 
-		console.log(elem);
+$.fn.tab = function (h,a,d) {
+	var hiden = h,
+		anim = a,
+		destroy = d;
 
-		var self = this,
-			btn = $(elem).children();
+	this.each(function() {
 
-		self.elem = elem;
-		self.options = $.extend({}, $.fn.tabs.options, options);
+		var btn = $(this).find('a');
+
+		if (destroy) {
+			btn.off();
+			return this
+		}
 
 		btn.on('click', function( e ) {
-		e.preventDefault();
+			e.preventDefault();
 
-		var $this = $(this);
+			if($(this).hasClass('active')) return;
 
-		if($this.hasClass('active')) return;
+			btn.removeClass('active')
+					.each(function() {
+						$('.' + $(this).data('tab')).hide();
+					});
 
-		
+			$(this).addClass('active');
+			$('.' + $(this).data('tab')).show();
 
-		btn.removeClass('active')
-				.each(function() {
-					$('.' + $(this).data('tab')).hide();
-				});
-
-		$this.addClass('active');
-		$('.' + $this.data('tab')).show();
+			if (hiden) {$('.' + $(this).data('tab')).close}
+		});
 	});
-	}
+
+	return this
+};
+
+$.fn.close = function() {
+	var self = this;
+
+	$(document).on('click', function (event) {
+		if ($(event.target).closest(self).length == 0)
+			self.hide();
+		return
+	});
+};
+
+$.fn.selectAll = function (dest) {
+	var destroy = dest;
+
+	this.each(function() {
+
+		var btn = $(this).find('.select--all'),
+			$this = $(this);
+
+		if (destroy) {
+			btn.off();
+			return 
+		}
+
+		btn.on('click', function( e ) {
+			e.preventDefault();
+
+			var check = btn.toggleClass('checked').hasClass('checked');
+
+			$this.find('input[type="checkbox"]').each(function(index, el) {
+				 this.checked = check;
+			});
+		});
+	});
+
+	return this
 }
-
-$.fn.tabs = function (options) {
-        return this.each(function() {
-            var tab = Object.create( Tabs );
-            tab.init( options, this );
-        });
-
-    };
-
-$.fn.tabs.options = {};
 
 })( jQuery, window, document );

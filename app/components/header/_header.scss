@@ -1,4 +1,6 @@
-.header{}
+.header{
+	position: relative;
+}
 
 .head {
 	@include e('wrap') {
@@ -21,13 +23,9 @@
 			padding: 0 5px; 
 		}
 
-		&:not(:first-child) {
-			margin-left: 35px;
-		}
+		&:not(:first-child) {margin-left: 35px;}
 
-		@include m('logo') {
-			position: absolute;
-		}
+		@include m('logo') {position: absolute;}
 
 		@include m('phone') {
 			font-size: 16px;
@@ -51,26 +49,78 @@
 		@include m('phone') {}
 
 		@include m('support') {
-			&:before {
-				background-position: -22px 0;
-			}
+			&:before {background-position: -22px 0;}
 		}
 
 		@include m('basket') {
-			&:before {
-				background-position: -43px -1px;
-			}
+			&:before {background-position: -43px -1px;}
 		}
 
 		@include m('login') {
 			display: block;
 			margin-top: 8px;
 			padding-left: 35px;
-			&:before {
-				background-position: -65px 2px;
-			}
+			&:before {background-position: -65px 2px;}
 		} 
 	}
+
+	@include e('tab') {
+		background-color: #fff;
+		border-radius: 0 0 10px 10px;
+		border: 1px solid $clr-default;
+		box-sizing: border-box;
+		display: none;
+		min-height: 395px;
+		padding: 20px 0 15px 40px;
+		position: absolute;
+		top: 100px;
+		width: 100%;
+		z-index: 20;
+
+		a {
+			text-decoration: none;
+			&:hover,
+			&:focus {
+				text-decoration: underline;
+			}
+		}
+    }
+
+    @include e('menu') {
+		@extend .block--dark;
+		box-sizing: border-box;
+		display: none;
+		padding: 13px;
+		position: absolute;
+		right: 0;
+		top: 115px;
+		width: 250px;
+		z-index: 30;
+		
+		&:after {
+			background-color: $clr-default;
+			content: '';
+			height: 20px;
+			position: absolute;
+			right: 0;
+			top: -10px;
+			width: 20px;
+		}
+
+		@include m('block') {
+			border-radius: 10px;
+			border: 1px solid #fff;
+			padding: 25px;
+
+			li {
+				padding: 10px 0;
+			}
+
+			a {text-decoration: none;}
+			a:hover, a:focus {color: $clr-yelow;}
+		}
+
+    }
 }
 .navbar {
 	width: 1000px;
@@ -82,10 +132,19 @@
     color: #fff;
     height: 50px;
     margin-top: 15px;
+    z-index: 25;
     ul {
-    	text-align: center;
-    	line-height: 50px;
-    	white-space: nowrap;
+		box-sizing: border-box;
+		line-height: 0;
+		margin: 0 10px;
+		padding: 0;
+		text-align: justify;
+    	&:after {
+			content: "";
+			display: inline-block;
+			width: 100%;
+			height: 0;
+    	}
     }
 
     li {
@@ -97,21 +156,81 @@
 			margin-left: 0
 		}
 
-		&:last-child a {
-			margin-right: 0
-		}
+		&:last-child a {margin-right: 0}
 
     	a {
     		text-decoration: none;
-    		padding: 8px 20px;
-    		margin: 0 11%;
+    		padding: 8px 15px;
+    		display: block;
+    		line-height: 1em;
+    		margin: 10px 0;
 
-    		&:hover,
-    		&:focus {
+    		&:hover {
     			background-color: $clr-default-lite;
     			text-decoration: none;
     			border-radius: 7px;
     		}
+
+    		&:focus {
+    			color: $clr-default-lite;
+    			background-color: $clr-default;
+    		}
     	}
     }
+}
+
+.h-tab {
+	@include e('wrap') {
+		@extend .inline-block-vtop;
+		width: 245px;
+		&:not(:last-child) {margin-right: 100px;}
+
+		@include m('full') {
+			width: 590px;
+		}
+
+		@include m('lblock') {
+			@extend .block--dark;
+			box-sizing: border-box;
+			font-size: 12px;
+			margin-left: 5px;
+			margin-top: 33px;
+			padding: 23px 37px;
+			text-transform: uppercase;
+			width: 222px;
+
+			li {padding: 12px 0;}
+		}
+	}
+
+	@include e('title') {
+		border-bottom: 1px solid $clr-default;
+		font-weight: bold;
+		color: $clr-red;
+		padding: 20px 0 20px 12px;
+	}
+
+	@include e('list') {
+		@extend .inline-block-vtop;
+		box-sizing: border-box;
+		font-size: 13px;
+		padding: 11px 0 10px 12px;
+		width: 115px;
+
+		&:last-child {margin-left: 14px;}
+
+		li {padding: 12px 0;}
+	}
+
+	@include e('all') {color: $clr-red;}
+
+	@include e('desc') {
+		font-size: 12px;
+		padding-top: 25px;
+	}
+
+	@include e('img') {
+		text-align: center;
+		margin: 20px auto;
+	}
 }
