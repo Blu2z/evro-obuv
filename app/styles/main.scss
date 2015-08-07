@@ -16,7 +16,7 @@
 
 
 /*vendor*/
-@import "vendor/font-awesome/font-awesome";
+// @import "vendor/font-awesome/font-awesome";
 
 
 /*comonents*/
@@ -57,7 +57,7 @@
 
 
 /* include fonts */
-@include font-face('FontAwesome', 'fontawesome-webfont', 'font-awesome');
+// @include font-face('FontAwesome', 'fontawesome-webfont', 'font-awesome');
 
 
 /* ==============================================
@@ -175,4 +175,16 @@ textarea:focus,
 input[type="text"]:focus {
     border: 1px solid $clr-default;
     outline: 0;
+}
+
+input[type="checkbox"] {
+    display:none;
+}
+input[type="checkbox"] + label:before {
+    content: ' ';
+    cursor:pointer;
+    display:inline-block;
+}
+input[type="checkbox"] + label {
+    cursor: pointer;
 }

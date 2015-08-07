@@ -38,7 +38,18 @@
 	}
 
 	@include e('main') {
+		background:transparent url('/images/no_image.png') 50% 50% no-repeat;
 		cursor: crosshair;
+		width: 320px;
+		height: 320px;
+		&:empty {cursor: default;}
 		&:hover + .zoomer__tooltip {display: block;}
+		&:hover + .zoomer__tooltip:empty {display: none}
+
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
 	}
 }

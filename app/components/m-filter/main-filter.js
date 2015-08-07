@@ -33,27 +33,41 @@ $.fn.tab = function (h,a,d) {
 
 			btn.removeClass('active')
 					.each(function() {
-						$('.' + $(this).data('tab')).hide();
+						$('.' + $(this).data('tab')).hide(anim);
+						console.log('.' + $(this).data('tab'));
 					});
 
 			$(this).addClass('active');
-			$('.' + $(this).data('tab')).show();
 
-			if (hiden) {$('.' + $(this).data('tab')).close}
+			if (hiden) {
+				$('.' + $(this).data('tab')).show(anim).close(this);
+			}else{
+				$('.' + $(this).data('tab')).show(anim);
+			}
 		});
 	});
 
 	return this
 };
 
-$.fn.close = function() {
-	var self = this;
+$.fn.close = function(link) {
+	var self = this,
+		active = link,
+		firstClick = true;
+
+	$(document).off('click');
 
 	$(document).on('click', function (event) {
-		if ($(event.target).closest(self).length == 0)
+		if (!firstClick && $(event.target).closest(self).length == 0 ) {
 			self.hide();
-		return
+
+			$(active).removeClass('active');
+			$(document).off('click');
+		}
+		firstClick = false;
 	});
+
+	return this
 };
 
 $.fn.selectAll = function (dest) {

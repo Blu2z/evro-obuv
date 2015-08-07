@@ -1,5 +1,5 @@
-.container > .m-filter {
-	// white-space: nowrap;
+.container>.m-filter {
+	white-space: nowrap;
 }
 .m-filter {
 	width: 1000px;
@@ -26,6 +26,7 @@
 	@include e('block') {
 		display: inline-block;
 		vertical-align: top;
+		white-space: normal;
 
 		@include m('shoes') {
 			white-space: normal;
@@ -107,7 +108,7 @@
 			li {
 				margin: 7px 3px 3px;
 				height: 26px;
-				width: 26px;
+				// width: 26px;
 				display: inline-block;
 				font-size: 14px;
 			}
@@ -115,6 +116,7 @@
 			input[type="checkbox"] + label {
 				border: 2px solid #fff;
 				padding: 3px;
+				&:before {position: absolute;}
 			}
 
 			input[type="checkbox"]:checked + label {
@@ -127,6 +129,7 @@
 				position: absolute;
 				bottom: 15px;
 				width: 210px;
+				white-space: nowrap;
 			}
 		}
 	}
@@ -269,14 +272,3 @@
 	@include m('9') {background-color: #dda41c;}
 }
 
-input[type="checkbox"] {
-	display:none;
-}
-input[type="checkbox"] + label:before {
-	content: ' ';
-	cursor:pointer;
-	display:inline-block;
-}
-input[type="checkbox"] + label {
-	cursor: pointer;
-}

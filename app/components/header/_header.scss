@@ -93,7 +93,7 @@
 		padding: 13px;
 		position: absolute;
 		right: 0;
-		top: 115px;
+		top: 100%;
 		width: 250px;
 		z-index: 30;
 		
@@ -132,6 +132,8 @@
     color: #fff;
     height: 50px;
     margin-top: 15px;
+    // white-space: nowrap;
+    overflow: hidden;
     z-index: 25;
     ul {
 		box-sizing: border-box;
@@ -152,6 +154,7 @@
     	font-size: 12px;
     	font-weight: bold;
     	text-transform: uppercase;
+    	vertical-align: middle;
     	&:first-child a {
 			margin-left: 0
 		}
@@ -170,8 +173,8 @@
     			text-decoration: none;
     			border-radius: 7px;
     		}
-
-    		&:focus {
+    		
+    		&.active{
     			color: $clr-default-lite;
     			background-color: $clr-default;
     		}
@@ -232,5 +235,14 @@
 	@include e('img') {
 		text-align: center;
 		margin: 20px auto;
+	}
+}
+
+.nav__menu {
+	position: relative;
+	text-indent: -9999px;
+	background:transparent url('/images/icon-sl.png') -182px 6px no-repeat;
+	&.active {
+		background-position: -208px 6px;
 	}
 }
