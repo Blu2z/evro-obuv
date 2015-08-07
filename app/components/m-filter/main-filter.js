@@ -13,7 +13,7 @@ if (typeof Object.create !== 'function') {
 // ========================
 
 $.fn.tab = function (h,a,d) {
-	var hiden = h,
+	var hidden = h,
 		anim = a,
 		destroy = d;
 
@@ -39,7 +39,7 @@ $.fn.tab = function (h,a,d) {
 
 			$(this).addClass('active');
 
-			if (hiden) {
+			if (hidden) {
 				$('.' + $(this).data('tab')).show(anim).close(this);
 			}else{
 				$('.' + $(this).data('tab')).show(anim);

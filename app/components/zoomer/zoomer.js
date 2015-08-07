@@ -46,17 +46,19 @@ if (typeof Object.create !== 'function') {
             var self = this;
 
             this.main = $(self.elem).find('.zoomer__main');
-            this.tooltip = $(this.elem).find('.zoomer__tooltip');
+            this.tooltip = $(self.elem).find('.zoomer__tooltip');
             this.list = $(self.elem).find('.zoomer__list');
 
-            console.log(this.list);
-
             this.list.find('a').each(function(index, el) {
-                var link = $(this).attr("data-zoom", 'zoom--' + index).attr('href');
-                self.main.append("<img src='" + link + "' alt='foto' class='zoom--" + index + "' >");
+                var link = $(this).attr("data-tab", 'zoom--' + index).attr('href');
+                var img = $(this).children('img').attr('src');
+                self.main.append("<img src='" + img + "' alt='foto' class='zoom--" + index + "' data-url='" + link + "'>");
             });
 
             this.list.tab();
+
+            // $("img[style*='display: block;']")
+
         },
     };
 
