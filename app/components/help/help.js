@@ -4,8 +4,8 @@
 		$(this)
 			.next()
 				.slideDown(300)
-				.siblings('dd')
-					.slideUp(300);
+					.siblings('dd')
+						.slideUp(300);
 	
 	})
 })();

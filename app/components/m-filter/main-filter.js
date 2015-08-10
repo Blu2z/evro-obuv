@@ -17,6 +17,8 @@ $.fn.tab = function (h,a,d) {
 		anim = a,
 		destroy = d;
 
+
+
 	this.each(function() {
 
 		var btn = $(this).find('a');
@@ -34,7 +36,7 @@ $.fn.tab = function (h,a,d) {
 			btn.removeClass('active')
 					.each(function() {
 						$('.' + $(this).data('tab')).hide(anim);
-						console.log('.' + $(this).data('tab'));
+						// console.log('.' + $(this).data('tab'));
 					});
 
 			$(this).addClass('active');
