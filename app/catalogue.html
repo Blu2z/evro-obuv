@@ -70,7 +70,7 @@
                 <li><a href="#" data-tab="head__menu" class="nav__menu">Меню</a></li>
             </ul>
         </div>
-    </nav>
+    
 
 <!-- =======TABS=========== -->
 
@@ -377,6 +377,7 @@
         </ul>
     </div>
 </div>
+</nav>
 </header>
 <!-- end: header -->
 
@@ -437,41 +438,63 @@
 	<form action="#">
 		<div class="filter__cont filter__cont--size">
 			<span>Размер: 36 - 36,5</span>
+			<div class="filter__drop filter__drop--size">
+				<select placeholder="Категория" name="select1" multiple="multiple" id="opt-category" hidden>
+	                <option title="size" name="1">36</option>
+	                <option title="size" name="2">37</option>
+	                <option title="size" name="3">38</option>
+	                <option title="size" name="4">39</option>
+	                <option title="size" name="4">40</option>
+	                <option title="size" name="5">41</option>
+		        </select>
+				<button type="submit" class="button button--lite button--fix">Применить</button>
+			</div>
 		</div>
 		<div class="filter__cont filter__cont--color">
 			<span>Цвет: любой</span>
 		</div>
+
 		<div class="filter__cont filter__cont--heel">
 			<span>Высота каблука: любая</span>
-			<div class="filter__drop" hidden>
-			<p>Высота каблука:</p>
-				<ul>
-					<li>
-						<input type="checkbox" name="heel1" id="heel1">
-						<label for="heel1">2-4 см</label>
-					</li>
-					<li>
-						<input type="checkbox" name="heel2" id="heel2">
-						<label for="heel2">4-6 см</label>
-					</li>
-					<li>
-						<input type="checkbox" name="heel3" id="heel3">
-						<label for="heel3">6-8 см</label>
-					</li>
-					<li>
-						<input type="checkbox" name="heel4" id="heel4">
-						<label for="heel4">8-10 см</label>
-					</li>
-				</ul></div>
+			<div class="filter__drop filter__drop--heel">
+				<select placeholder="Категория" name="select1" multiple="multiple" id="opt-category" hidden>
+	                <option title="heel" name="1">2-4 см.</option>
+	                <option title="heel" name="2">4-6 см.</option>
+	                <option title="heel" name="3">6-8 см.</option>
+	                <option title="heel" name="4">8-10 см.</option>
+		        </select>
+				<button type="submit" class="button button--lite button--fix">Применить</button>
+			</div>
 		</div>
 		<div class="filter__cont filter__cont--cost">
 			<span>Цена: 21 000-35 800 руб.</span>
 		</div>
+
 		<div class="filter__cont filter__cont--material">
 			<span>Материал: любой</span>
+			<div class="filter__drop filter__drop--material">
+				<select placeholder="Категория" name="select1" multiple="multiple" id="opt-category" hidden>
+	                <option title="material" name="1">Кожа</option>
+	                <option title="material" name="2">Кож-зам</option>
+	                <option title="material" name="3">Резина</option>
+	                <option title="material" name="4">Замша</option>
+		        </select>
+				<button type="submit" class="button button--lite button--fix">Применить</button>
+			</div>
 		</div>
 		<div class="filter__cont filter__cont--brand">
 			<span>Бренд: любой</span>
+			<div class="filter__drop filter__drop--brand">
+				<select placeholder="Категория" name="select1" multiple="multiple" id="opt-category" hidden>
+	                <option title="brand" name="1">Tamaris</option>
+	                <option title="brand" name="2">Rieker</option>
+	                <option title="brand" name="3">Lacoste</option>
+	                <option title="brand" name="4">Saucony</option>
+	                <option title="brand" name="4">Wrangler</option>
+	                <option title="brand" name="5">Accessorize</option>
+		        </select>
+				<button type="submit" class="button button--lite button--fix">Применить</button>
+			</div>
 		</div>
 	</form>
 </div>
@@ -794,6 +817,9 @@
     <script src="components/sliders/slider.js"></script>
     <script src="components/m-filter/main-filter.js"></script>
     <script src="components/zoomer/zoomer.js"></script>
+    <script src="components/basket/basket.js"></script>
+    <script src="components/filter/filter.js"></script>
+    
     <!-- endbuild -->
 
 <script>
@@ -804,6 +830,13 @@
 
 
 
+
+<script>
+	$('.filter__cont--material').selectToList();
+	$('.filter__cont--heel').selectToList();
+	$('.filter__cont--brand').selectToList();
+	$('.filter__cont--size').selectToList();
+</script>
 
 </body>
 </html>

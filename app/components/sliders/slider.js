@@ -103,13 +103,13 @@ if (typeof Object.create !== 'function') {
                             .text($targetItem.prevAll().length + this.options.caseLimit + ' / ' + this.swither.length)
                     }
 
-                    console.log($targetItem.prevAll().length + this.options.caseLimit);
+                    // console.log($targetItem.prevAll().length + this.options.caseLimit);
 
                     switch (this.options.animation) {
 
                         case 'slide':
                             this.wrapper.animate({left : - newPosition});
-                            console.log($targetItem.position());
+                            // console.log($targetItem.position());
                             break;
 
                         case 'hide-show':
@@ -132,7 +132,7 @@ if (typeof Object.create !== 'function') {
             
             var slider = Object.create( Slider );
             slider.init( options, this );
-            console.log(slider);
+            // console.log(slider);
         });
 
     }; 

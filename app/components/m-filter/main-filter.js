@@ -17,11 +17,10 @@ $.fn.tab = function (h,a,d) {
 		anim = a,
 		destroy = d;
 
-
-
 	this.each(function() {
 
-		var btn = $(this).find('a');
+		var btn = $(this).find('a'),
+			self = this;
 
 		if (destroy) {
 			btn.off();
@@ -35,16 +34,18 @@ $.fn.tab = function (h,a,d) {
 
 			btn.removeClass('active')
 					.each(function() {
-						$('.' + $(this).data('tab')).hide(anim);
-						// console.log('.' + $(this).data('tab'));
+						$(self).parent().find('.' + $(this).data('tab')).hide(anim);
 					});
 
 			$(this).addClass('active');
 
 			if (hidden) {
-				$('.' + $(this).data('tab')).show(anim).close(this);
-			}else{
-				$('.' + $(this).data('tab')).show(anim);
+				$(self).parent().find('.' + $(this).data('tab')).show(anim).close({
+					allow: true,
+				    link: this,
+				});
+			} else {
+				$(self).parent().find('.' + $(this).data('tab')).show(anim);
 			}
 		});
 	});
@@ -52,25 +53,62 @@ $.fn.tab = function (h,a,d) {
 	return this
 };
 
-$.fn.close = function(link) {
-	var self = this,
-		active = link,
-		firstClick = true;
+$.fn.close = function (options) {
+    return this.each(function() {
+    	var self = this;
+        var closed = Object.create( Close );
 
-	$(document).off('click');
-
-	$(document).on('click', function (event) {
-		if (!firstClick && $(event.target).closest(self).length == 0 ) {
-			self.hide();
-
-			$(active).removeClass('active');
-			$(document).off('click');
-		}
-		firstClick = false;
-	});
-
-	return this
+        closed.init( options, this );
+    });
 };
+
+$.fn.close.options = {
+    allow : false, //снять все обработчики перед стартом.
+    link: this, // элемент, с которого нужно удалить класс
+    class: 'active', // имя класса, который нужно удалить 
+    elements: false // закрыть все блоки с данным классом
+};
+
+var Close = {
+	// следим за переданными элементами, в зависимости от опций закрываем при клике на пустом месте
+	init: function (options, elem) {
+		var self = this,
+			firstClick = true,
+			name = Math.random() * (100 - 1) + 1;
+
+            self.elem = elem;
+            self.options = $.extend({}, $.fn.close.options, options);
+
+		if (this.options.allow) $(document).off('click');
+
+		if (self.options.elements) {
+			var el1 = $('.' + self.options.elements).not($(self.elem)),
+				el2 = $('.' + self.options.elements).not($(self.elem)).parent();
+
+				self.close(el1, el2)
+		}
+
+
+		$(document).on('click.name', function (e) {
+			e.stopPropagation()
+
+			if (!firstClick && $(event.target).closest(self.elem).length == 0 ) {
+
+				self.close(self.elem, self.options.link);
+				
+				$(document).off('click.name');
+			}
+
+			firstClick = false;
+		});
+	},
+
+	close: function (el1, el2) {
+		$(el1).hide();
+
+		$(el2).removeClass(this.options.class);
+	}
+}
 
 $.fn.selectAll = function (dest) {
 	var destroy = dest;

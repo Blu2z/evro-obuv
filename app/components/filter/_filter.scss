@@ -1,19 +1,31 @@
 .filter {
 	margin-bottom: 30px;
 	@include e('cont') {
+		// transition: all 1s ease-out 0.5s;
 		background-color: $clr-roze-slite;
 		border-radius: 16px;
 		border: 1px solid $clr-gray-r;
 		box-sizing: border-box;
+		cursor: pointer;
 		display: inline-block;
 		font-size: 13px;
 		font-weight: bold;
 		height: 34px;
+		margin-bottom: 6px;
 		min-width: 160px;
 		padding: 10px 30px 10px 15px;
 		position: relative;
-		margin-bottom: 6px;
-		cursor: pointer;
+		&.open {
+			// transition: all 1s ease-out 0.5s;
+			border-radius: 16px 16px 0 0;
+			border-bottom: 0;
+			border-left: 0;
+			border-right: 0;
+			&:after {
+				transition: transform .2s ease-out .1s;
+				transform: rotate(180deg);
+			}
+		}
 
 		&:after {
 			content: '';
@@ -23,7 +35,44 @@
 			background:transparent url('/images/icon-sl.png') -100px 0 no-repeat;
 			right: 8px;
 			top: 8px;
-			// transform: rotate(90deg);
+			transition: all .2s ease-out .1s;
+			transform: rotate(0deg);
 		}
+	}
+
+	@include e('drop') {
+		background-color: $clr-roze-slite;
+		border-radius: 0 0 16px 16px;
+		box-sizing: border-box;
+		left: 0;
+		padding: 30px 15px 10px 15px;
+		position: absolute;
+		top: 30px;
+		width: 200px;
+		z-index: 35;
+		display: none;
+
+		li {
+			margin: 10px 0;
+		}
+		ul {
+			margin-bottom: 30px;
+		}
+
+	}
+
+	input[type="checkbox"] + label:before {
+		background: url('/images/checkbox.png') 0 0 no-repeat;
+		content: ' ';
+		cursor:pointer;
+		display:inline-block;
+		height: 14px;
+		width: 14px;
+		border-radius: 2px; 
+		margin-right: 15px;
+	}
+
+	input[type="checkbox"]:checked + label:before {
+		background-position: -16px 0;
 	}
 }

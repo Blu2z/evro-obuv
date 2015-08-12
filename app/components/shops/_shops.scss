@@ -9,13 +9,17 @@
 	.button {
 		width: 200px;
 		margin-right: 20px;
-		&.disable {
+		&.active {
 			background-color: $clr-gray-default;
 			cursor: default;
 		}
 	}
 	@include e('tabs') {
 		margin: 45px 0;
+	}
+
+	@include e('tab') {
+		@include m(2) {display: none}
 	}
 }
 
@@ -27,7 +31,7 @@
 	padding: 20px;
 	width: 487px;
 	margin-bottom: 25px;
-	&:nth-child(odd) {
+	&:nth-child(even) {
 		margin-left: 25px;
 	}
 
@@ -50,8 +54,10 @@
 			cursor: default;
 			text-decoration: none;
 		}
+	}
 
-		
+	@include e('map') {
+		display: none;
 	}
 
 	@include e('adress') {

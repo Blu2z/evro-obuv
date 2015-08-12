@@ -1,4 +1,6 @@
 .basket	{
+	min-height: 400px;
+
 	h3 {
 		font-size: 24px;
 		font-weight: bold;
@@ -19,17 +21,59 @@
 		@include m('quantity') {width: 160px;}
 		@include m('cost') {width: 130px;}
 		@include m('sale') {
+			position: relative;
 			a {
 				text-decoration: none;
 				border-bottom: 1px dotted $clr-default;
 				font-size: 12px;
 				font-weight: 500;
+				&:hover,
+				&:focus {
+					& + .basket__tooltip {display: block;}
+				}
     		}
 		}
 	}
 
 	@include e('tooltip') {
+		background-color: #fff;
+		border-radius: 5px;
+		border: 1px solid $clr-gray-default;
+		bottom: 35px;
+		box-sizing: border-box;
 		display: none;
+		height: 110px;
+		left: -70%;
+		padding: 15px;
+		position: absolute;
+		text-align: left;
+		width: 270px;
+		z-index: 30;
+		&:after {
+			background-color: #fff;
+			border-bottom: 1px solid $clr-gray-default;
+			border-right: 1px solid $clr-gray-default;
+			bottom: -17px;
+			content: '';
+			left: 40%;
+			padding: 15px;
+			position: absolute;
+			transform: rotate(45deg);
+		}
+
+		span {
+			font-size: 14px;
+			font-weight: bold;
+			color: $clr-red;
+		}
+
+		p {
+			font-style: italic;
+			font-size: 12px;
+			padding: 5px 0 15px;
+			font-weight: 500;
+		}
+
 	}
 
 	@include e('prod') {
@@ -89,7 +133,6 @@
 				padding: 20px 0 20px 5px;
     			box-sizing: border-box;
     			font-weight: bold;
-
 			}
 		}
 	}
@@ -108,6 +151,10 @@
 			width: 103px;
 			height: 103px;
 			margin-left: 55px;
+	}
+
+	@include e('delete') {
+		display: none;
 	}
 }
 
@@ -143,4 +190,7 @@
 	.button {
 		font-size: 12px;
 	}
+}
+.no-sale-box {
+	position: relative;
 }

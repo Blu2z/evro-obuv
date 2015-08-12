@@ -2,11 +2,13 @@
 	<div class="shop__title">
 		Магазин <span>ЕвроОбувь</span> в Пятигорске
 	</div>
-	<div class="shop__map"></div>
+	<div class="shop__map">
+		<script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=Z6xPKYIKkqB44FNWGKzOUfJk8PI_4H_7&width=441&height=235"></script>
+	</div>
 	@@include('../sliders/slider-shop.html')
 	<div class="shop__tab">
-		<a href="#" class="active">фото</a>
-		<a href="#">Карта проезда</a>
+		<a data-tab="shop-slider" href="#" class="active">фото</a>
+		<a data-tab="shop__map" href="#">Карта проезда</a>
 	</div>
 	<p>
 		Магазин в самом центре Пятигорска. Работает с 2012 года.

@@ -7,11 +7,19 @@
 		тенденциям , но и адаптацией колодок обуви под особенности стопы российского потребителя.
 	</p>
 	<div class="shops__tabs">
-		<a href="#" class="button button--fix button--default">Магазины СКФО</a>
-		<a href="#" class="button button--fix button--default disable">Магазины ЮФО</a>
+		<a href="#" data-tab="shops__tab--1" class="button button--fix button--default active">Магазины СКФО</a>
+		<a href="#" data-tab="shops__tab--2" class="button button--fix button--default">Магазины ЮФО</a>
 	</div>
-	@@include('shop.html')
-	@@include('shop.html')
-	@@include('shop.html')
-	@@include('shop.html')
+	<div class="shops__tab shops__tab--1">
+		@@include('shop.html')
+		@@include('shop.html')
+		@@include('shop.html')
+		@@include('shop.html')
+	</div>
+	<div class="shops__tab shops__tab--2">
+		@@include('shop.html')
+		@@include('shop.html')
+		@@include('shop.html')
+		@@include('shop.html')
+	</div>
 </div>
