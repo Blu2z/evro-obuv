@@ -64,7 +64,7 @@
                 <li><a href="#" data-tab="head__menu" class="nav__menu">Меню</a></li>
             </ul>
         </div>
-    </nav>
+    
 
 <!-- =======TABS=========== -->
 
@@ -371,6 +371,7 @@
         </ul>
     </div>
 </div>
+</nav>
 </header>
 <!-- end: header -->
 
@@ -411,31 +412,27 @@
 
 <div class="item__wrap">
 <div class="zoomer">
-	<div class="zoomer__main">
-		<img src="./images/zoomer-img-def1.jpg" alt="foto">
-	</div>
-	<div class="zoomer__tooltip">
-		<img src="./images/zoomer-img-big1.jpg" alt="foto">
-	</div>
+	<div class="zoomer__main"></div>
+	<div class="zoomer__tooltip"></div>
 	<ul class="zoomer__list">
 		<li class="active">
-			<a href="#">
-				<img src="./images/zoomer-img-small1.jpg" alt="foto">
+			<a href="images/zoomer-img-big1.jpg">
+			<img src="./images/zoomer-img-def1.jpg" alt="foto">
 			</a>
 		</li>
 		<li>
-			<a href="#">
-				<img src="./images/zoomer-img-small1.jpg" alt="foto">
+			<a href="images/zoomer-img-big2.jpg">
+				<img src="./images/zoomer-img-def2.jpg" alt="foto">
 			</a>
 		</li>
 		<li>
-			<a href="#">
-				<img src="./images/zoomer-img-small1.jpg" alt="foto">
+			<a href="images/zoomer-img-big3.jpg">
+				<img src="./images/zoomer-img-def3.jpg" alt="foto">
 			</a>
 		</li>
 		<li>
-			<a href="#">
-				<img src="./images/zoomer-img-small1.jpg" alt="foto">
+			<a href="images/zoomer-img-big4.jpg">
+				<img src="./images/zoomer-img-def4.jpg" alt="foto">
 			</a>
 		</li>
 	</ul>
@@ -915,7 +912,11 @@
 	        autoHeight: 'false',
 	        spaceSection: 'auto'
 	    });
+
+	$('div.zoomer').zoomer();
 </script>
+
+
 
 </body>
 </html>

@@ -194,3 +194,31 @@
 .no-sale-box {
 	position: relative;
 }
+
+.get-card { 
+	position: relative;
+	font-size: 14px;
+	label {
+		padding-left: 40px;
+		font-size: 13px;
+	}
+
+	input[type="checkbox"] + label:before {
+		background-color: #fff;
+		border: 2px solid $clr-default; 
+		content: '';
+		cursor:pointer;
+		height: 26px;
+		left: 0;
+		position: absolute;
+		width: 26px;
+		top: 0;
+		box-sizing: border-box;
+	}
+
+	input[type="checkbox"]:checked + label:before {
+		background:transparent url('/images/icon-sl.png') -261px 3px no-repeat;
+	}
+}
+
+

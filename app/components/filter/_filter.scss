@@ -38,6 +38,10 @@
 			transition: all .2s ease-out .1s;
 			transform: rotate(0deg);
 		}
+
+		@include m('cost') {
+			min-width: 235px;
+		}
 	}
 
 	@include e('drop') {

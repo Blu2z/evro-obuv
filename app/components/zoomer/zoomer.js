@@ -1,16 +1,17 @@
 /* jshint devel:true */
 
 /*
-Структура слайдера:
-<div> --контейнер с классом/ид
-    <div> --обертка окна показа слайдов. Если ее нет ширирна считается от контейнера
-        <ul class="slider__wrapper"> --простенький список
-            <li> --любое содержимое
-        </ul>
-    </div>
-    .nav nav--prev --навигация
-    .nav nav--next
-    .slider__input --счетчик слайдов
+Структура зумера:
+<div class="zoomer"> --контейнер обертка
+    <div class="zoomer__main"></div> -- первью (должен быть пустым)
+    <div class="zoomer__tooltip"></div> -- окно большого изображения (должно быть пустым)
+    <ul class="zoomer__list"> - список миниатюр
+        <li class="active">
+            <a href="images/zoomer-img-big1.jpg"> -- ссылка на большое изображение
+                <img src="./images/zoomer-img-def1.jpg" alt="foto"> -- изображение превью
+            </a>
+        </li>
+    </ul>
 </div>
 */
 
@@ -30,7 +31,7 @@ if (typeof Object.create !== 'function') {
     var Zoom = {
         init: function (options, elem) {
 
-            var main, tooltip, list,
+            var main, tooltip, list, scale, imgTooltip, imgTooltipWidth, imgTooltipHeight,
                 self = this;
 
             self.elem = elem;
@@ -42,11 +43,13 @@ if (typeof Object.create !== 'function') {
             self.prepareImg();
 
             self.main.hover(function() {
+                self.tooltip.fadeIn(400);
                 self.addTooltip();
-                self.zoomOn();
             }, function () {
                 self.tooltip.fadeOut(400);
-            })
+            });
+
+            self.zoomMove();
 
         },
 
@@ -54,79 +57,73 @@ if (typeof Object.create !== 'function') {
             var self = this;
 
             this.list.find("a").each(function(index, el) {
-                var link = $(this).attr("data-tab", 'zoom--' + index).attr('href');
-                var img = $(this).children("img").attr("src");
+                var link = $(this).attr("data-tab", 'zoom--' + index).attr('href'),
+                    img = $(this).children("img").attr("src");
+
                 self.main.append("<img src='" + img + "' alt='foto' class='zoom--" + index + "' data-url='" + link + "'>");
             });
 
-            this.list.tab().find('a').first().trigger('click');
+            self.list.tab().find('a').first().trigger('click');
         },
 
-        zoomOn: function () {
+        zoomMove: function () {
             var self = this;
 
-            this.tooltip.hide().children().on('load', function() {
-                var scale,
-                imgTooltip = self.tooltip.children(),
-                imgTooltipWidth =  imgTooltip.outerWidth(),
-                imgTooltipHeight = imgTooltip.outerHeight();
-
-                //провереям размеры и ориентацию картинки,
-                // если нужно - "окводрачиваем" маржинами.
-                if (imgTooltipWidth <= 500 || imgTooltipHeight <= 500) {
-
-                    imgTooltip.css({
-                        'margin-left': (500 - imgTooltipWidth)/2,
-                        'margin-right': (500 - imgTooltipWidth)/2,
-                        'margin-top' : (500 - imgTooltipHeight)/2,
-                        'margin-bottom' : (500 - imgTooltipHeight)/2
-                    });
-
-                    scale = 0;
-
-                } else {
-
-                    var max = imgTooltip.outerHeight(true) >= imgTooltip.outerWidth(true)
-                    ? imgTooltip.outerHeight(true)
-                    : imgTooltip.outerWidth(true);
-
-                    imgTooltip.css({
-                        'margin-left': (max - imgTooltipWidth)/2,
-                        'margin-right': (max - imgTooltipWidth)/2,
-                        'margin-top' : (max - imgTooltipHeight)/2,
-                        'margin-bottom' : (max - imgTooltipHeight)/2
-                    });
-
-                    scale = max / 320;
-                }
-
-                self.main.on('mousemove', function(e) {
+            self.main.on('mousemove', function(e) {
                     var offset = $(this).offset(),
                     x = e.pageX - offset.left,
                     y = e.pageY - offset.top,
-                    ratio = scale === 0 ? 0 : 250;
+                    ratio = self.scale === 0 ? 0 : 250;
 
-                    imgTooltip.css({
-                        top: -y * scale + ratio,
-                        left: -x * scale + ratio
+                    $(self.imgTooltip).css({
+                        top: -y * self.scale + ratio,
+                        left: -x * self.scale + ratio
                     });
                 });
+        },
+
+        zoomOn: function (img, width, height) {
+            var self = this;
+
+            self.imgTooltip = $(img);
+            
+            //провереям размеры и ориентацию картинки,
+            // если нужно - "окводрачиваем" маржинами.
+            // 500px - сторона окна большого изображения.
+
+            if (width <= 500 || height <= 500) {
+                var max = 500;
+                self.scale = 0;
+            } else {
+                var max = height >= width ? height : width;
+                self.scale = max / 320;
+            }
+
+            self.imgTooltip.css({
+                'margin-left': (max - width)/2,
+                'margin-right': (max - width)/2,
+                'margin-top' : (max - height)/2,
+                'margin-bottom' : (max - height)/2
             });
+        },
 
-this.tooltip.fadeIn(400);
-},
+        addTooltip: function () {
+            var self = this,
+                imgBig = this.main.find('img').map(function(index, el) {
+                    if ( $(this).is(':visible')) return this;          
+                }).data('url');
 
-addTooltip: function () {
-    var self = this,
-    imgBig;
+            var img = new Image();
 
-    imgBig = self.main.find('img').map(function(index, el) {
-     if ( $(this).is(':visible')) return this;          
- }).data('url');
+            img.onload = function() {
+                self.tooltip.empty().append(img);
 
-    this.tooltip.html("<img src='" + imgBig + "' alt='foto' >");
-}
-};
+                self.zoomOn(this, this.width, this.height);
+            };
+
+            img.src = imgBig;
+        }
+    };
 
 $.fn.zoomer = function (options) {
     return this.each(function() {

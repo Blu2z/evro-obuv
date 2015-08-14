@@ -1,6 +1,6 @@
 <div class="filter">
 	<form action="#">
-		<div class="filter__cont filter__cont--size">
+		<div class="filter__cont filter__cont--size filter-label">
 			<span>Размер: 36 - 36,5</span>
 			<div class="filter__drop filter__drop--size">
 				<select placeholder="Категория" name="select1" multiple="multiple" id="opt-category" hidden>
@@ -14,11 +14,11 @@
 				<button type="submit" class="button button--lite button--fix">Применить</button>
 			</div>
 		</div>
-		<div class="filter__cont filter__cont--color">
+		<div class="filter__cont filter__cont--color filter-label">
 			<span>Цвет: любой</span>
 		</div>
 
-		<div class="filter__cont filter__cont--heel">
+		<div class="filter__cont filter__cont--heel filter-label">
 			<span>Высота каблука: любая</span>
 			<div class="filter__drop filter__drop--heel">
 				<select placeholder="Категория" name="select1" multiple="multiple" id="opt-category" hidden>
@@ -30,11 +30,16 @@
 				<button type="submit" class="button button--lite button--fix">Применить</button>
 			</div>
 		</div>
-		<div class="filter__cont filter__cont--cost">
-			<span>Цена: 21 000-35 800 руб.</span>
+		<div class="filter__cont filter__cont--cost filter-label">
+			Цена: <span class="enter-cost"> 21 000-35 800 </span>руб.
+			<div class="filter__drop filter__drop--cost">
+                <label for="range__slider" hidden></label>
+                <input type="text" id="range__slider" name="range__slider" value="" />
+                <button type="submit" class="button button--lite button--fix">Применить</button>
+            </div>
 		</div>
 
-		<div class="filter__cont filter__cont--material">
+		<div class="filter__cont filter__cont--material filter-label">
 			<span>Материал: любой</span>
 			<div class="filter__drop filter__drop--material">
 				<select placeholder="Категория" name="select1" multiple="multiple" id="opt-category" hidden>
@@ -46,7 +51,7 @@
 				<button type="submit" class="button button--lite button--fix">Применить</button>
 			</div>
 		</div>
-		<div class="filter__cont filter__cont--brand">
+		<div class="filter__cont filter__cont--brand filter-label">
 			<span>Бренд: любой</span>
 			<div class="filter__drop filter__drop--brand">
 				<select placeholder="Категория" name="select1" multiple="multiple" id="opt-category" hidden>

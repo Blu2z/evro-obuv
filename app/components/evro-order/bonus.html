@@ -7,19 +7,19 @@
 
 	<div class="e-form__valid">
 		<label for="numb-cards">Номер карты:</label>
-		<input type="text" name="numb-cards" id="numb-cards">
+		<input type="text" name="numb-cards" id="numb-cards" placeholder=".... .... .... ....">
 		<span class="e-form__prompt">Номер карты находится в верхнем левом углу и состоит из 4-х цифр</span>
 	</div>
 
 	<div class="e-form__valid">
 		<label for="phonecard">Телефон:</label>
-		<input type="text" name="phonecard" id="phonecard">
-		<span class="e-form__prompt e-form__prompt--red">Данная карта привязана к другому номеру телефона.
-		Проверьте правильность номера.</span>
+		<input type="text" name="phonecard" id="phonecard" placeholder="+7 ( ... ) ... - .. - ..">
+		<div class="e-form__prompt e-form__prompt--red">Данная карта привязана к другому номеру телефона.
+		Проверьте правильность номера.</div>
 	</div>
 
 	<div class="get-card">
-		<input type="checkbox" name="getMyCard" id="getMyCard">
+		<input type="checkbox" name="getMyCard" id="getMyCard" >
 		<label for="getMyCard">У меня нет карты, я хочу открыть ее чтобы получать дополнительную скидку
 		на последующие покупки. </label>
 	</div>
@@ -28,7 +28,9 @@
 	<p class="e-form__desc">
 		Если у вас есть промо-код, введите его, чтобы получить дополнительную скидку. 
 	</p>
-	
-	<label for="promo">Промо-код:</label>
-	<input type="text" name="promo" id="promo">
-	<button type="submit" class="button button--yelow">Использовать</button>
+
+	<div class="e-promo">
+		<label for="promo">Промо-код:</label>
+		<input type="text" name="promo" id="promo" placeholder=".... .... .... ....">
+		<button type="submit" class="button button--yelow">Использовать</button>
+	</div>

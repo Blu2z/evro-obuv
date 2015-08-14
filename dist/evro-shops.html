@@ -64,7 +64,7 @@
                 <li><a href="#" data-tab="head__menu" class="nav__menu">Меню</a></li>
             </ul>
         </div>
-    </nav>
+    
 
 <!-- =======TABS=========== -->
 
@@ -371,6 +371,7 @@
         </ul>
     </div>
 </div>
+</nav>
 </header>
 <!-- end: header -->
 
@@ -395,23 +396,28 @@
 		тенденциям , но и адаптацией колодок обуви под особенности стопы российского потребителя.
 	</p>
 	<div class="shops__tabs">
-		<a href="#" class="button button--fix button--default">Магазины СКФО</a>
-		<a href="#" class="button button--fix button--default disable">Магазины ЮФО</a>
+		<a href="#" data-tab="shops__tab--1" class="button button--fix button--default active">Магазины СКФО</a>
+		<a href="#" data-tab="shops__tab--2" class="button button--fix button--default">Магазины ЮФО</a>
 	</div>
-	<div class="shop">
+	<div class="shops__tab shops__tab--1">
+		<div class="shop">
 	<div class="shop__title">
 		Магазин <span>ЕвроОбувь</span> в Пятигорске
 	</div>
-	<div class="shop__map"></div>
+	<div class="shop__map">
+		<a href="#" class="map" data-coord="46.467208,30.711136">
+			<img src="https://api-maps.yandex.ru/services/constructor/1.0/static/?sid=Z6xPKYIKkqB44FNWGKzOUfJk8PI_4H_7&width=441&height=235" alt=""/>
+		</a>
+	</div>
 	<div class="shop-slider">
 	<div class="shop-slider__vitrin">
 		<ul class="slider__wrapper">
-			<li><a href="#"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
-			<li><a href="#"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
-			<li><a href="#"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
-			<li><a href="#"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
-			<li><a href="#"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
-			<li><a href="#"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
 		</ul>
 	</div>
 	<div class="shop-slider__nav">
@@ -421,8 +427,8 @@
     </div>
 </div>
 	<div class="shop__tab">
-		<a href="#" class="active">фото</a>
-		<a href="#">Карта проезда</a>
+		<a data-tab="shop-slider" href="#" class="active">фото</a>
+		<a data-tab="shop__map" href="#">Карта проезда</a>
 	</div>
 	<p>
 		Магазин в самом центре Пятигорска. Работает с 2012 года.
@@ -459,20 +465,26 @@
 		<a href="#">Все отзывы</a>
 	</div>
 </div>
-	<div class="shop">
+
+
+		<div class="shop">
 	<div class="shop__title">
 		Магазин <span>ЕвроОбувь</span> в Пятигорске
 	</div>
-	<div class="shop__map"></div>
+	<div class="shop__map">
+		<a href="#" class="map" data-coord="46.467208,30.711136">
+			<img src="https://api-maps.yandex.ru/services/constructor/1.0/static/?sid=Z6xPKYIKkqB44FNWGKzOUfJk8PI_4H_7&width=441&height=235" alt=""/>
+		</a>
+	</div>
 	<div class="shop-slider">
 	<div class="shop-slider__vitrin">
 		<ul class="slider__wrapper">
-			<li><a href="#"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
-			<li><a href="#"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
-			<li><a href="#"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
-			<li><a href="#"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
-			<li><a href="#"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
-			<li><a href="#"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
 		</ul>
 	</div>
 	<div class="shop-slider__nav">
@@ -482,8 +494,8 @@
     </div>
 </div>
 	<div class="shop__tab">
-		<a href="#" class="active">фото</a>
-		<a href="#">Карта проезда</a>
+		<a data-tab="shop-slider" href="#" class="active">фото</a>
+		<a data-tab="shop__map" href="#">Карта проезда</a>
 	</div>
 	<p>
 		Магазин в самом центре Пятигорска. Работает с 2012 года.
@@ -520,20 +532,26 @@
 		<a href="#">Все отзывы</a>
 	</div>
 </div>
-	<div class="shop">
+
+
+		<div class="shop">
 	<div class="shop__title">
 		Магазин <span>ЕвроОбувь</span> в Пятигорске
 	</div>
-	<div class="shop__map"></div>
+	<div class="shop__map">
+		<a href="#" class="map" data-coord="46.467208,30.711136">
+			<img src="https://api-maps.yandex.ru/services/constructor/1.0/static/?sid=Z6xPKYIKkqB44FNWGKzOUfJk8PI_4H_7&width=441&height=235" alt=""/>
+		</a>
+	</div>
 	<div class="shop-slider">
 	<div class="shop-slider__vitrin">
 		<ul class="slider__wrapper">
-			<li><a href="#"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
-			<li><a href="#"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
-			<li><a href="#"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
-			<li><a href="#"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
-			<li><a href="#"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
-			<li><a href="#"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
 		</ul>
 	</div>
 	<div class="shop-slider__nav">
@@ -543,8 +561,8 @@
     </div>
 </div>
 	<div class="shop__tab">
-		<a href="#" class="active">фото</a>
-		<a href="#">Карта проезда</a>
+		<a data-tab="shop-slider" href="#" class="active">фото</a>
+		<a data-tab="shop__map" href="#">Карта проезда</a>
 	</div>
 	<p>
 		Магазин в самом центре Пятигорска. Работает с 2012 года.
@@ -581,20 +599,26 @@
 		<a href="#">Все отзывы</a>
 	</div>
 </div>
-	<div class="shop">
+
+
+		<div class="shop">
 	<div class="shop__title">
 		Магазин <span>ЕвроОбувь</span> в Пятигорске
 	</div>
-	<div class="shop__map"></div>
+	<div class="shop__map">
+		<a href="#" class="map" data-coord="46.467208,30.711136">
+			<img src="https://api-maps.yandex.ru/services/constructor/1.0/static/?sid=Z6xPKYIKkqB44FNWGKzOUfJk8PI_4H_7&width=441&height=235" alt=""/>
+		</a>
+	</div>
 	<div class="shop-slider">
 	<div class="shop-slider__vitrin">
 		<ul class="slider__wrapper">
-			<li><a href="#"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
-			<li><a href="#"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
-			<li><a href="#"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
-			<li><a href="#"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
-			<li><a href="#"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
-			<li><a href="#"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
 		</ul>
 	</div>
 	<div class="shop-slider__nav">
@@ -604,8 +628,8 @@
     </div>
 </div>
 	<div class="shop__tab">
-		<a href="#" class="active">фото</a>
-		<a href="#">Карта проезда</a>
+		<a data-tab="shop-slider" href="#" class="active">фото</a>
+		<a data-tab="shop__map" href="#">Карта проезда</a>
 	</div>
 	<p>
 		Магазин в самом центре Пятигорска. Работает с 2012 года.
@@ -642,6 +666,279 @@
 		<a href="#">Все отзывы</a>
 	</div>
 </div>
+
+
+	</div>
+	<div class="shops__tab shops__tab--2">
+		<div class="shop">
+	<div class="shop__title">
+		Магазин <span>ЕвроОбувь</span> в Пятигорске
+	</div>
+	<div class="shop__map">
+		<a href="#" class="map" data-coord="46.467208,30.711136">
+			<img src="https://api-maps.yandex.ru/services/constructor/1.0/static/?sid=Z6xPKYIKkqB44FNWGKzOUfJk8PI_4H_7&width=441&height=235" alt=""/>
+		</a>
+	</div>
+	<div class="shop-slider">
+	<div class="shop-slider__vitrin">
+		<ul class="slider__wrapper">
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+		</ul>
+	</div>
+	<div class="shop-slider__nav">
+        <a href="#" class="nav nav--prev"></a>
+        <span class="slider__input"></span>
+        <a href="#" class="nav nav--next"></a>
+    </div>
+</div>
+	<div class="shop__tab">
+		<a data-tab="shop-slider" href="#" class="active">фото</a>
+		<a data-tab="shop__map" href="#">Карта проезда</a>
+	</div>
+	<p>
+		Магазин в самом центре Пятигорска. Работает с 2012 года.
+		Широкий ассортимент всех марок немецкой обуви.
+	</p>
+	<div class="shop__adress">
+
+		<div class="shop__ico shop__ico--adds">
+			<span>Адресс:</span>
+			<p>Пятигорск, ул. Дзержинского, Тц Детский мир</p>
+		</div>
+
+		<div class="shop__ico shop__ico--hours">
+			<span>Часы работы: 09:00 - 20:00</span>
+			<p>Телефон 8 (8793) 3-47-98</p>
+		</div>
+
+		<div class="shop__ico shop__ico--way">
+			<span>Как добраться:</span>
+			<p>Номера трамваев: 4,7,8,7; Маршрутки: 1,6,7</p>
+			<p>Остановка Держинского</p>
+		</div>
+	</div>
+	<div class="shop__recall">
+	<span class="shop__last-recall">Последний отзыв:</span>
+		<div class="qq__message">
+			<span class="qq__name">Марина (3 недели назад)</span>
+			<p class="qq__text">
+				Подскажите, пожалуйста, если сегодня модели нет в наличие,
+				значит ли это, что ее не будет большее в продаже?
+			</p>
+		</div>
+		<a href="#" class="button button--fix button--yelow"></a>
+		<a href="#">Все отзывы</a>
+	</div>
+</div>
+
+
+		<div class="shop">
+	<div class="shop__title">
+		Магазин <span>ЕвроОбувь</span> в Пятигорске
+	</div>
+	<div class="shop__map">
+		<a href="#" class="map" data-coord="46.467208,30.711136">
+			<img src="https://api-maps.yandex.ru/services/constructor/1.0/static/?sid=Z6xPKYIKkqB44FNWGKzOUfJk8PI_4H_7&width=441&height=235" alt=""/>
+		</a>
+	</div>
+	<div class="shop-slider">
+	<div class="shop-slider__vitrin">
+		<ul class="slider__wrapper">
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+		</ul>
+	</div>
+	<div class="shop-slider__nav">
+        <a href="#" class="nav nav--prev"></a>
+        <span class="slider__input"></span>
+        <a href="#" class="nav nav--next"></a>
+    </div>
+</div>
+	<div class="shop__tab">
+		<a data-tab="shop-slider" href="#" class="active">фото</a>
+		<a data-tab="shop__map" href="#">Карта проезда</a>
+	</div>
+	<p>
+		Магазин в самом центре Пятигорска. Работает с 2012 года.
+		Широкий ассортимент всех марок немецкой обуви.
+	</p>
+	<div class="shop__adress">
+
+		<div class="shop__ico shop__ico--adds">
+			<span>Адресс:</span>
+			<p>Пятигорск, ул. Дзержинского, Тц Детский мир</p>
+		</div>
+
+		<div class="shop__ico shop__ico--hours">
+			<span>Часы работы: 09:00 - 20:00</span>
+			<p>Телефон 8 (8793) 3-47-98</p>
+		</div>
+
+		<div class="shop__ico shop__ico--way">
+			<span>Как добраться:</span>
+			<p>Номера трамваев: 4,7,8,7; Маршрутки: 1,6,7</p>
+			<p>Остановка Держинского</p>
+		</div>
+	</div>
+	<div class="shop__recall">
+	<span class="shop__last-recall">Последний отзыв:</span>
+		<div class="qq__message">
+			<span class="qq__name">Марина (3 недели назад)</span>
+			<p class="qq__text">
+				Подскажите, пожалуйста, если сегодня модели нет в наличие,
+				значит ли это, что ее не будет большее в продаже?
+			</p>
+		</div>
+		<a href="#" class="button button--fix button--yelow"></a>
+		<a href="#">Все отзывы</a>
+	</div>
+</div>
+
+
+		<div class="shop">
+	<div class="shop__title">
+		Магазин <span>ЕвроОбувь</span> в Пятигорске
+	</div>
+	<div class="shop__map">
+		<a href="#" class="map" data-coord="46.467208,30.711136">
+			<img src="https://api-maps.yandex.ru/services/constructor/1.0/static/?sid=Z6xPKYIKkqB44FNWGKzOUfJk8PI_4H_7&width=441&height=235" alt=""/>
+		</a>
+	</div>
+	<div class="shop-slider">
+	<div class="shop-slider__vitrin">
+		<ul class="slider__wrapper">
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+		</ul>
+	</div>
+	<div class="shop-slider__nav">
+        <a href="#" class="nav nav--prev"></a>
+        <span class="slider__input"></span>
+        <a href="#" class="nav nav--next"></a>
+    </div>
+</div>
+	<div class="shop__tab">
+		<a data-tab="shop-slider" href="#" class="active">фото</a>
+		<a data-tab="shop__map" href="#">Карта проезда</a>
+	</div>
+	<p>
+		Магазин в самом центре Пятигорска. Работает с 2012 года.
+		Широкий ассортимент всех марок немецкой обуви.
+	</p>
+	<div class="shop__adress">
+
+		<div class="shop__ico shop__ico--adds">
+			<span>Адресс:</span>
+			<p>Пятигорск, ул. Дзержинского, Тц Детский мир</p>
+		</div>
+
+		<div class="shop__ico shop__ico--hours">
+			<span>Часы работы: 09:00 - 20:00</span>
+			<p>Телефон 8 (8793) 3-47-98</p>
+		</div>
+
+		<div class="shop__ico shop__ico--way">
+			<span>Как добраться:</span>
+			<p>Номера трамваев: 4,7,8,7; Маршрутки: 1,6,7</p>
+			<p>Остановка Держинского</p>
+		</div>
+	</div>
+	<div class="shop__recall">
+	<span class="shop__last-recall">Последний отзыв:</span>
+		<div class="qq__message">
+			<span class="qq__name">Марина (3 недели назад)</span>
+			<p class="qq__text">
+				Подскажите, пожалуйста, если сегодня модели нет в наличие,
+				значит ли это, что ее не будет большее в продаже?
+			</p>
+		</div>
+		<a href="#" class="button button--fix button--yelow"></a>
+		<a href="#">Все отзывы</a>
+	</div>
+</div>
+
+
+		<div class="shop">
+	<div class="shop__title">
+		Магазин <span>ЕвроОбувь</span> в Пятигорске
+	</div>
+	<div class="shop__map">
+		<a href="#" class="map" data-coord="46.467208,30.711136">
+			<img src="https://api-maps.yandex.ru/services/constructor/1.0/static/?sid=Z6xPKYIKkqB44FNWGKzOUfJk8PI_4H_7&width=441&height=235" alt=""/>
+		</a>
+	</div>
+	<div class="shop-slider">
+	<div class="shop-slider__vitrin">
+		<ul class="slider__wrapper">
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+			<li><a class="fancybox" rel="group1" href="./images/shop-slider-img.jpg"><img src="./images/shop-slider-img.jpg" alt="foto"></a></li>
+		</ul>
+	</div>
+	<div class="shop-slider__nav">
+        <a href="#" class="nav nav--prev"></a>
+        <span class="slider__input"></span>
+        <a href="#" class="nav nav--next"></a>
+    </div>
+</div>
+	<div class="shop__tab">
+		<a data-tab="shop-slider" href="#" class="active">фото</a>
+		<a data-tab="shop__map" href="#">Карта проезда</a>
+	</div>
+	<p>
+		Магазин в самом центре Пятигорска. Работает с 2012 года.
+		Широкий ассортимент всех марок немецкой обуви.
+	</p>
+	<div class="shop__adress">
+
+		<div class="shop__ico shop__ico--adds">
+			<span>Адресс:</span>
+			<p>Пятигорск, ул. Дзержинского, Тц Детский мир</p>
+		</div>
+
+		<div class="shop__ico shop__ico--hours">
+			<span>Часы работы: 09:00 - 20:00</span>
+			<p>Телефон 8 (8793) 3-47-98</p>
+		</div>
+
+		<div class="shop__ico shop__ico--way">
+			<span>Как добраться:</span>
+			<p>Номера трамваев: 4,7,8,7; Маршрутки: 1,6,7</p>
+			<p>Остановка Держинского</p>
+		</div>
+	</div>
+	<div class="shop__recall">
+	<span class="shop__last-recall">Последний отзыв:</span>
+		<div class="qq__message">
+			<span class="qq__name">Марина (3 недели назад)</span>
+			<p class="qq__text">
+				Подскажите, пожалуйста, если сегодня модели нет в наличие,
+				значит ли это, что ее не будет большее в продаже?
+			</p>
+		</div>
+		<a href="#" class="button button--fix button--yelow"></a>
+		<a href="#">Все отзывы</a>
+	</div>
+</div>
+
+
+	</div>
 </div>
 
 <nav class="pag">
@@ -739,6 +1036,8 @@
 
 
 
+<script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+
 <script>
 $( document ).ready(function() {
     $('div.shop-slider').sliderShop({
@@ -747,7 +1046,70 @@ $( document ).ready(function() {
         count: true
     });
 });
+$('.shop__tab').tab();
+$('.shops__tabs').tab();
+$('a.fancybox').fancybox();
+
+
+ymaps.ready(init);
+
+
+function init () {
+    var myMap;
+
+    $('.map').bind({
+        click: function (e) {
+        	e.preventDefault();
+        	var self = this;
+            var coord = $(this).data('coord').split(',');
+            console.log(coord);
+            $('.popup').show();
+            // if (!myMap) { myMap.destroy(); }
+                myMap = new ymaps.Map('map', {
+                    center: coord, 
+                    zoom: 15
+                }, {
+                    searchControlProvider: 'yandex#search'
+                });
+                $("#toggle").attr('value', 'Скрыть карту');
+    
+            
+            $('.map--close').one('click', function(e) {
+            	e.preventDefault();
+            	$('.popup').hide();
+            	myMap.destroy();// Деструктор карты
+                myMap = null;
+
+            });
+
+            var myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+        		balloonContentBody: [
+            '<address>',
+            '<strong>Магазин ЕвроОбувь в Одессе</strong>',
+            '<br/>',
+            'Адрес: 119021, Одесса, ул. Льва Толстого, 16',
+            '<br/>',
+            'Подробнее: <a href="http://eobuv.ru/">http://eobuv.ru/</a>',
+            '</address>'
+		        ].join('')
+		    }, {
+		        preset: 'islands#redDotIcon'
+		    });
+
+		    myMap.geoObjects.add(myPlacemark);
+		}
+       
+    });
+}
 </script>
+
+<div class="popup">
+	<p>
+       <div id="map">
+       		<a href="#" class="map--close"></a>
+       </div>
+    </p>
+</div>
 
 </body>
 </html>

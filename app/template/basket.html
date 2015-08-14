@@ -34,6 +34,33 @@
 
 	$('.basket__col--quantity').inputCount();
 	$('.basket__prod').closeGoods();
+
+	$('#numb-cards').inputmask( "9999 9999 9999 9999",
+		{ 
+			"placeholder": ".... .... .... ....",
+			onincomplete: function(){ $(this).parent().removeClass('e-form__valid--true') },
+			oncomplete: function (buffer, opts) {$(this).parent().addClass('e-form__valid--true');}
+		}		
+	);
+
+	$('#phonecard').inputmask("+7 ( 999 ) 999 - 99 - 99",
+		{ 
+			"placeholder": "+7 ( ... ) ... - .. - ..",
+			onincomplete: function(){ $(this).parent().removeClass('e-form__valid--false') },
+			oncomplete: function (buffer, opts) {
+				$(this).parent().addClass('e-form__valid--false');
+				$(this).parent().find('.e-form__prompt--red').show()
+			}
+		}
+	).parent().find('.e-form__prompt--red').hide();
+
+	$('#promo').inputmask( "9999 9999 9999 9999",
+		{ 
+			"placeholder": ".... .... .... ....",
+		}		
+	);
+
+
 </script>
 
 </body>

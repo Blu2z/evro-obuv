@@ -41,12 +41,15 @@ $.fn.tab = function (h,a,d) {
 
 			if (hidden) {
 				$(self).parent().find('.' + $(this).data('tab')).show(anim).close({
-					allow: true,
+					allow: false,
 				    link: this,
 				});
 			} else {
 				$(self).parent().find('.' + $(this).data('tab')).show(anim);
 			}
+
+			// $(document).trigger('tab');
+			// console.log('tab');
 		});
 	});
 
@@ -55,7 +58,8 @@ $.fn.tab = function (h,a,d) {
 
 $.fn.close = function (options) {
     return this.each(function() {
-    	var self = this;
+    	var self = this,
+    		name = 'close' + Math.random() * (100 - 1) + 1;
         var closed = Object.create( Close );
 
         closed.init( options, this );
@@ -66,7 +70,8 @@ $.fn.close.options = {
     allow : false, //снять все обработчики перед стартом.
     link: this, // элемент, с которого нужно удалить класс
     class: 'active', // имя класса, который нужно удалить 
-    elements: false // закрыть все блоки с данным классом
+    elements: false, // закрыть все блоки с данным классом
+    forced: false //закрыть при любом клике
 };
 
 var Close = {
@@ -88,15 +93,20 @@ var Close = {
 				self.close(el1, el2)
 		}
 
+		$(document).on('click.name', function (event) {
+			event.stopPropagation()
 
-		$(document).on('click.name', function (e) {
-			e.stopPropagation()
+			console.log(!firstClick + ',' + self.options.forced);
 
-			if (!firstClick && $(event.target).closest(self.elem).length == 0 ) {
+			if(!firstClick){
 
-				self.close(self.elem, self.options.link);
-				
-				$(document).off('click.name');
+				if (self.options.forced  || $(event.target).closest(self.elem).length == 0 ) {
+
+					self.close(self.elem, self.options.link);
+					
+					$(document).off('click.name');
+				}
+
 			}
 
 			firstClick = false;

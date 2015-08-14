@@ -1,37 +1,64 @@
 <div class="e-form e-form__evro-order">
-<a href="#" class="button button--default button--fix">Регистрация</a>
-<a href="#" class="button button--default button--fix">Вход и оформление</a>
+	<div class="e-form__tabs">
+		<a href="#" data-tab="e-form__tab1" class="button button--default button--fix active">Регистрация</a>
+		<a href="#" data-tab="e-form__tab2" class="button button--default button--fix">Вход и оформление</a>
+	</div>
+<div class="e-form__tab1">
 	<p class="e-form__desc">
 		Если вы ранее совершали покупки в нашем магазине, для оформления заказа введите логин и пароль. <br>
 		После этого контактные данные и данные о доставке заполнятс автоматически.
 	</p>
-	<form action="#" name="personal">
-		<div class="e-form--wrap">
-			<div class="e-form--inline">
-				<label for="name">Ваше имя:</label>
-				<input type="text" name="name" id="name">
-			</div>
+		<form action="#" name="personal">
+			<div class="e-form--wrap">
+				<div class="e-form--inline">
+					<label for="name">Ваше имя:</label>
+					<input type="text" name="name" id="name">
+				</div>
 
-			<div class="e-form--inline">
-				<label for="surname">Фамилия:</label>
-				<input type="text" name="surname" id="surname">
+				<div class="e-form--inline">
+					<label for="surname">Фамилия:</label>
+					<input type="text" name="surname" id="surname">
+				</div>
 			</div>
-		</div>
-		<div class="e-form--wrap">
-			<div class="e-form--inline">
-				<label for="e-mail">E-mail:</label>
-				<input type="text" name="e-mail" id="e-mail">
-			</div>
+			<div class="e-form--wrap">
+				<div class="e-form--inline">
+					<label for="e-mail">E-mail:</label>
+					<input type="text" name="e-mail" id="e-mail">
+				</div>
 
-			<div class="e-form--inline">
-				<label for="phone">Телефон:</label>
-				<input type="text" name="phone" id="phone">
+				<div class="e-form--inline">
+					<label for="phone">Телефон:</label>
+					<input type="text" name="phone" id="phone">
+				</div>
 			</div>
-		</div>
-		<div class="e-form--wrap">
-			<button type="submit" class="button button--yelow">Продолжить</button>
-		</div>
-	</form>
+			<div class="e-form--wrap">
+				<button type="submit" class="button button--yelow">Продолжить</button>
+			</div>
+		</form>
+	</div>
+	<div class="e-form__tab2">
+		<p class="e-form__desc">
+		Если вы ранее не совершали покупки в нашем магазине, для оформления заказа введите имя, фамилию, почту и телефон.
+		<br>
+		После этого сможете продолжить оформление.
+		</p>
+		<form action="#" name="personal">
+			<div class="e-form--wrap">
+				<div class="e-form--inline">
+					<label for="name">Логин:</label>
+					<input type="text" name="name" id="name">
+				</div>
+
+				<div class="e-form--inline">
+					<label for="e-mail">Пароль</label>
+					<input type="text" name="e-mail" id="e-mail">
+				</div>
+			</div>
+			<div class="e-form--wrap">
+				<button type="submit" class="button button--yelow">Продолжить</button>
+			</div>
+		</form>
+	</div>
 
 	<h3>Получение заказа</h3>
 	<div class="e-form--wrap">
@@ -40,8 +67,17 @@
 			<input type="text" name="delivery" id="delivery">
 		</div>
 		<div class="e-form--inline">
-			<label for="method">Способ доставки:</label>
-			<input type="text" name="method" id="method">
+			<div class="e__dropList">
+				<p>Способ доставки:</p>
+				<span class="filter-label">aaaaa</span>
+				<div class="filter__drop">
+					<select placeholder="Категория" name="select1" multiple="multiple" id="opt-category" hidden>
+		                <option title="delivery" name="1">Почта России</option>
+		                <option title="delivery" name="2">Куръерская доставка</option>
+		                <option title="delivery" name="3">Магазин</option>
+			        </select>
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -67,15 +103,24 @@
 			</div>
 		</div>
 
-	<h3>Стоимость доставки <span>300 руб.</span></h3>
+	<h3>Стоимость доставки <span class="red">300 руб.</span></h3>
 <form action="#">
-	<label for="house">Способ оплаты:</label>
-	<input type="text" name="house" id="house" class="input-small">
+	<div class="e__dropList">
+				<p>Способ оплаты:</p>
+				<span class="filter-label">Visa / mastercard</span>
+				<div class="filter__drop">
+					<select placeholder="Категория" name="select1" multiple="multiple" id="opt-category" hidden>
+		                <option title="cash" name="1">Visa / master-card</option>
+		                <option title="cash" name="2">Яндекс.Деньги</option>
+		                <option title="cash" name="3">Наличными</option>
+			        </select>
+				</div>
+			</div>
 
 	<div class="e-form--wrap">
 			<div class="e-form--inline">
 				<label for="comment">Комментарий к заказу:</label>
-				<textarea name="comment" id="comment"></textarea>
+				<textarea class="e-form__textarea" name="comment" id="comment"></textarea>
 			</div>
 			<div class="e-form--inline">
 				<span class="e-form__prompt">
@@ -88,11 +133,11 @@
 
 @@include('./bonus.html')
 
-	<h4>Дополнительная скидка к заказу по карте - 10%</h4>
+	<h4 class="e-form__cost">Дополнительная скидка к заказу по карте - 10%</h4>
 
-	<h4>Итого сумма без скидки: 7589 рублей</h4>
+	<h4 class="e-form__cost">Итого сумма без скидки: 7589 рублей</h4>
 
-	<h3>Итого к оплате: 5674 рубля</h3>
+	<h3>Итого к оплате: <span class="red">5674 рубля</span></h3>
 
 	<button type="submit" class="button button--yelow">Оформить заказ</button>
 	</form>

@@ -25,5 +25,39 @@
 
 @@include('../components/scripts/scripts.html')
 
+<script>
+	$('.e-form__tabs').tab();
+	$('.e__dropList').selectToList({
+		selection : "single",
+    	title: true,
+    	closed: 'forse'
+	});
+
+	$('#numb-cards').inputmask( "9999 9999 9999 9999",
+		{ 
+			"placeholder": ".... .... .... ....",
+			onincomplete: function(){ $(this).parent().removeClass('e-form__valid--true') },
+			oncomplete: function (buffer, opts) {$(this).parent().addClass('e-form__valid--true');}
+		}		
+	);
+
+	$('#phonecard').inputmask("+7 ( 999 ) 999 - 99 - 99",
+		{ 
+			"placeholder": "+7 ( ... ) ... - .. - ..",
+			onincomplete: function(){ $(this).parent().removeClass('e-form__valid--false') },
+			oncomplete: function (buffer, opts) {
+				$(this).parent().addClass('e-form__valid--false');
+				$(this).parent().find('.e-form__prompt--red').show()
+			}
+		}
+	).parent().find('.e-form__prompt--red').hide();
+
+	$('#promo').inputmask( "9999 9999 9999 9999",
+		{ 
+			"placeholder": ".... .... .... ....",
+		}		
+	);
+</script>
+
 </body>
 </html>

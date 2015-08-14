@@ -27,9 +27,16 @@
 	}
 
 	@include e('prompt') {
+		display: inline-block;
 		font-size: 12px;
 		font-style:italic;
 		line-height: 1em;
+		vertical-align: top;
+		width: 160px;
+
+		@include m('red') {
+			color: $clr-red;
+		}
 	}
 
 	@include e('desc') {
@@ -59,6 +66,11 @@
 
 	textarea, input[type="text"] {
 		margin-right: 10px;
+
+		&::-webkit-input-placeholder { color: $clr-default;}
+		&::-moz-placeholder { color: $clr-default;}
+		&:-moz-placeholder { color: $clr-default;}
+		&:-ms-input-placeholder { color: $clr-default;}
 	}
 
 	@include m('radio') {
@@ -101,12 +113,119 @@
 		}
 	}
 
-	@include e('evro-order') {
-		& >.button {
+	@include e('textarea') {
+		width: 420px;
+		height: 215px;
+	}
+
+	@include e('evro-order') {}
+
+	@include e('tabs') {
+		.button {
 			width: 200px;
 			font-size: 12px;
 			padding: 7px 0;
-			margin: 0 20px 0 0; 
+			margin: 0 20px 0 0;
+			&.active {
+				background-color: $clr-default-lite;
+			}
+		}
+	}
+
+	@include e('valid') {
+		display: inline-block;
+		padding: 10px 10px 10px 35px;
+		position: relative;
+		vertical-align: top;
+		width: 415px;
+		min-height: 100px;
+		&:before {
+			content: '';
+			position: absolute;
+			height: 16px;
+			width: 16px;
+			left: 0;
+			top: 50px;
+		}
+
+		@include m('true') {
+			&:before {
+				background:transparent url('/images/icon-sl.png') -245px 0 no-repeat;
+			}
+		}
+
+		@include m('false') {
+			&:before {
+				background:transparent url('/images/icon-sl.png') -80px 0 no-repeat;
+			}
+		}
+	}
+
+	@include e('cost') {
+		padding: 20px 0;
+	}
+}
+
+.e-promo {
+	.button	{margin-top: 0}
+}
+
+.e__dropList {
+	position: relative;
+
+	.filter__drop {
+		top: 70px;
+		border: 1px solid $clr-gray-lite;
+		background-color: #fff;
+		padding: 0;
+
+		ul, li {margin: 0;}
+
+		input[type="radio"] + label {padding-left: 15px}
+
+		input[type="radio"]{display: none;}
+
+		input[type="radio"]:checked + label {
+			font-weight: bold;
+		}
+
+		input[type="radio"] + label:hover {
+			background-color: $clr-default;
+			color: #fff;
+			cursor: pointer;
+		}
+	}
+
+	p {
+		height: 20px;
+		padding: 5px 0;
+	}
+	.filter-label {
+		box-sizing: border-box;
+		height: 40px;
+		width: 200px;
+		border-radius: 5px;
+		border: 1px solid $clr-gray-default;
+		display: inline-block;
+		padding: 8px 10px;
+		position: relative;
+		cursor: pointer;
+		font-weight: bold;
+		&:before {
+			content: '';
+			position: absolute;
+			width: 16px;
+			height: 16px;
+			right: 10px;
+			top: 10px;
+			background:transparent url('/images/icon-sl.png') 0 0 no-repeat;
+			transform: rotate(-90deg);
+			transition: transform .2s ease-out .1s;
+		}
+	}
+	&.open {
+		.filter-label:before {
+			transform: rotate(90deg);
 		}
 	}
 }

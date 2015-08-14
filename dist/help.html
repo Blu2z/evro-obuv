@@ -64,7 +64,7 @@
                 <li><a href="#" data-tab="head__menu" class="nav__menu">Меню</a></li>
             </ul>
         </div>
-    </nav>
+    
 
 <!-- =======TABS=========== -->
 
@@ -371,6 +371,7 @@
         </ul>
     </div>
 </div>
+</nav>
 </header>
 <!-- end: header -->
 
@@ -418,7 +419,7 @@
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate vel ipsa saepe non et nesciunt nisi rem ea officiis alias assumenda perspiciatis, omnis expedita repellendus in itaque repudiandae quia earum.</p>
 			</dd>
 			<dt class="active">Есть ли у скидочной карты срок действия?</dt>
-			<dd class="test">
+			<dd>
 				<p class="help__admin">служба поддержки</p>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 			</dd>
@@ -600,6 +601,21 @@
 
 
 
+
+<script>
+(function() {
+	$('dd').filter(':nth-child(n+4)').addClass('hide');
+	$('dl').on('click', 'dt', function() {
+		$(this)
+			.next()
+				.slideDown(300)
+					.siblings('dd')
+						.slideUp(300);
+	
+	})
+})();
+	
+</script>
 
 </body>
 </html>
