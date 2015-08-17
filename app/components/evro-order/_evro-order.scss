@@ -2,31 +2,5 @@
 	display: none;
 }
 .e-form--inline {
-	p {
-		height: 20px;
-		padding: 5px 0;
-	}
-	.filter-label {
-		box-sizing: border-box;
-		height: 40px;
-		width: 200px;
-		border-radius: 5px;
-		border: 1px solid $clr-gray-default;
-		display: inline-block;
-		padding: 8px 10px;
-		position: relative;
-		cursor: pointer;
-		font-weight: bold;
-		&:before {
-			content: '';
-			position: absolute;
-			width: 16px;
-			height: 16px;
-			right: 10px;
-			top: 10px;
-			background:transparent url('/images/icon-sl.png') 0 0 no-repeat;
-			transform: rotate(-90deg);
-			transition: transform .2s ease-out .1s;
-		}
-	}
+	
 }

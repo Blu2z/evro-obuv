@@ -1,0 +1,129 @@
+.popup {
+	background-color: rgba(0, 0, 0, 0.34);
+	display: none;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+
+	@include e('add') {.popup__wrap {max-width: 760px;}}
+	@include e('cheap') {.popup__wrap {max-width: 900px;}}
+	@include e('ask') {.popup__wrap {max-width: 960px;}}
+
+
+	@include e('close') {
+		background:transparent url('/images/icon-sl.png') -80px 0 no-repeat;
+		height: 16px;
+		position: absolute;
+		right: 15px;
+		top: 15px;
+		width: 16px;
+	}
+
+	@include e('img') { @extend .inline-block-vtop;}
+
+	@include e('desk') {
+		@extend .inline-block-vtop;
+		min-width: 435px;
+	}
+
+	@include e('img') {
+		height: 210px;
+		width: 210px;
+		border-radius: 5px;
+		border: 1px solid $clr-gray-default;
+		margin-right: 35px;
+		img {
+			border-radius: 5px;
+		}
+	}
+
+	@include e('goods') {
+		margin: 30px 0 30px;
+	}
+
+	@include e('product') {
+		@extend .inline-block-vtop;
+		width: 210px;
+
+		&:not(:last-child) {margin-right: 30px;}
+		&:last-child {margin-right: -30px;}
+
+		.button {
+			width: 125px;
+			font-size: 12px;
+		}
+
+	}
+
+	@include e('wrap') {
+		background-color: #fff;
+		border-radius: 5px;
+		border: 1px solid $clr-gray-lite;
+		margin: auto;
+		max-height: 100%;
+		padding: 10px 30px 30px;
+		position: relative;
+		box-sizing: border-box;
+		overflow-x: hidden;
+	}
+
+	@include e('map') {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.64);
+		z-index: 100;
+
+		#map {
+			margin: 10% auto;
+			height: 100%;
+			width: 100%;
+			max-width: 1000px;
+			max-height: 590px;
+			border-radius: 10px;
+			border: 1px solid $clr-default-lite;
+			position: relative;
+		}
+
+		.map--close {
+			@extend .popup__close;
+			top: -25px;
+			right: -25px;
+		}
+	}
+}
+
+.p {
+	@include e('order') {
+		margin-top: 60px;
+	}
+
+	@include e('cost') {
+		font-size: 18px;
+		font-weight: bold;
+		margin: 10px 0;
+	}
+
+	@include e('order') {
+		font-size: 12px;
+		.button {
+			margin-right: 20px;
+		}
+	}
+
+	@include e('desc') {
+		font-size: 14px;
+		font-weight: bold;
+		margin: 10px 0;
+	}
+}
+
+input[type="text"].input--link {
+	width: 375px;
+}

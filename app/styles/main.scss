@@ -51,6 +51,7 @@
 @import "../components/shops/shops";
 @import "../components/txt/txt";
 @import "../components/evro-order/evro-order";
+@import "../components/popup/popup";
 
 /* layouts */
 @import "layouts/details";
@@ -160,13 +161,14 @@ visibility: hidden;
     visibility: hidden;
 }
 
-
+input[type="password"],
 input[type="text"] {
     height: 40px;
     width: 200px;
 }
 
-textarea, 
+textarea,
+input[type="password"],
 input[type="text"] {
     border-radius: 8px;
     border: 1px solid $clr-gray-default;
@@ -174,7 +176,8 @@ input[type="text"] {
     box-sizing: border-box;
 }
 
-textarea:focus, 
+textarea:focus,
+input[type="password"]:focus,
 input[type="text"]:focus {
     border: 1px solid $clr-default;
     outline: 0;

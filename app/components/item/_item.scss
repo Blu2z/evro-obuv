@@ -96,16 +96,26 @@
 .qq {
 	font-size: 12px;
 	width: 395px;
+
 	@include e('title') {
 		font-weight: bold;
 		font-size: 24px;
 		line-height: 45px;
 
 		.button {
-			width: 80px;
-			height: 40px;
-			vertical-align: middle;
 			float: right;
+			height: 40px;
+			position: relative;
+			vertical-align: middle;
+			width: 80px;
+			&:after {
+				background: transparent url('/images/icon-sl.png') -136px 0 no-repeat;
+				content: '';
+				height: 16px;
+				left: 43%;
+				position: absolute;
+				width: 16px;
+			}
 		}
 	}
 

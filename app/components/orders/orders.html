@@ -11,15 +11,41 @@
 
 		<div class="e-form--inline">
 			<label for="phone">Телефон:</label>
-			<input type="text" name="phone" id="phone">
+			<input type="text" name="phone" id="phone" placeholder="+7 ( ... ) ... - .. - ..">
 		</div>
 
-		<label for="delivery">Населенный пункт:</label>
-		<input type="text" name="delivery" id="delivery">
-		<span class="e-form__prompt">В зависимости от вашего места проживания мы предложим варианты доставки заказа.</span>
+		<div class="e-form--wrap">
+			<div class="e-form--inline">
+				<div class="e__dropList">
+					<p>Населенный пункт:</p>
+					<span class="filter-label">Пятигорск</span>
+					<div class="filter__drop">
+						<select placeholder="Категория" name="select1" multiple="multiple" id="opt-category" hidden>
+			                <option title="city" name="1">Пятигорск1</option>
+			                <option title="city" name="2">Пятигорск2</option>
+			                <option title="city" name="3">Пятигорск3</option>
+				        </select>
+					</div>
+				</div>
+			</div>
+			<div class="e-form--inline">
+				<span class="e-form__prompt e-form__prompt--big e-form__prompt--bottom">В зависимости от вашего места проживания мы предложим варианты доставки заказа.</span>
+			</div>
+		</div>
 
-		<label for="method">Способ доставки:</label>
-		<input type="text" name="method" id="method">
+		<div class="e-form--wrap">
+			<div class="e__dropList">
+				<p>Способ доставки:</p>
+				<span class="filter-label">Почта России</span>
+				<div class="filter__drop">
+					<select placeholder="Категория" name="select1" multiple="multiple" id="opt-category" hidden>
+		                <option title="delivery" name="1">Почта России</option>
+		                <option title="delivery" name="2">Куръерская доставка</option>
+		                <option title="delivery" name="3">Магазин</option>
+			        </select>
+				</div>
+			</div>
+		</div>
 
 		<h3>Адрес:</h3>
 
@@ -52,7 +78,7 @@
 				<textarea name="comment" id="comment"></textarea>
 			</div>
 			<div class="e-form--inline">
-				<span class="e-form__prompt">
+				<span class="e-form__prompt e-form__prompt--big">
 					Если есть какие-то дополнительные данные о вашем расположении,
 					например, корпус, укажите эту информацию в данном поле
 				</span>

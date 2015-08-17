@@ -1,8 +1,6 @@
 $.fn.inputCount = function () {
-	this.each(function() {
-
+	return this.each(function() {
 		var input = $(this).find('input[type="text"]');
-			btn = $(this).find('.basket__count');
 
 		input.on('keypress', function (e) {
 			if( e.which > 57 || e.which < 48 || input.val().length >=2 ) e.preventDefault();
@@ -17,7 +15,7 @@ $.fn.inputCount = function () {
 		});
 	
 
-		btn.on('click', function (e) {
+		$(this).find('.basket__count').on('click', function (e) {
 			e.preventDefault();
 
 			if ($(this).hasClass('basket__count--next')) {
@@ -29,19 +27,14 @@ $.fn.inputCount = function () {
 			}
 		})
 	});
-	return this;
 };
 
 
 $.fn.closeGoods = function () {
-	this.each(function() {
+	return this.each(function() {
+		var self = this;
 
-		var self = this,
-			btn = $(this).find('.basket__prod--close');
-
-		console.log(btn);
-
-		btn.on('click', function (e) {
+		$(this).find('.basket__prod--close').on('click', function (e) {
 			e.preventDefault();	
 
 			$(self)
@@ -50,7 +43,7 @@ $.fn.closeGoods = function () {
 				.slideUp(400)
 				.after('<p class="basket__delete">Товар удален <a href="#">восстановить</a></p>')
 				.next()
-				.delay(800)
+				.delay(700)
 				.show(300)
 				.delay(40000)
 				.fadeOut(6000)
@@ -72,28 +65,25 @@ $.fn.closeGoods = function () {
 };
 
 
-var Validator = {
-    init: function (options, elem) {
+// var Validator = {
+//     init: function (options, elem) {
 
-        var self = this;
+//         var self = this;
 
-        self.elem = elem;
-        self.options = $.extend({}, $.fn.validator.options, options);
-    }
-}
+//         self.elem = elem;
+//         self.options = $.extend({}, $.fn.validator.options, options);
+//     }
+// }
 
+// $.fn.validator = function (options) {
+//     return this.each(function() {
 
+//         var valid = Object.create( Validator );
+//         valid.init( options, this );
+//     });
 
+// };
 
-$.fn.validator = function (options) {
-    return this.each(function() {
-
-        var valid = Object.create( Validator );
-        valid.init( options, this );
-    });
-
-};
-
-$.fn.validator.options = {
-    //здесь будут опции
-};
+// $.fn.validator.options = {
+//     //здесь будут опции
+// };

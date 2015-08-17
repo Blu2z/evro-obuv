@@ -23,6 +23,8 @@
 
 @@include('../components/footer/footer.html')
 
+@@include('../components/popup/ask.html')
+
 </div>
 
 @@include('../components/scripts/scripts.html')
@@ -41,60 +43,14 @@ $('.shop__tab').tab();
 $('.shops__tabs').tab();
 $('a.fancybox').fancybox();
 
+@@include('../components/popup/popup.js')
 
-ymaps.ready(init);
+@@include('../components/shops/map.js')
 
 
-function init () {
-    var myMap;
-
-    $('.map').bind({
-        click: function (e) {
-        	e.preventDefault();
-        	var self = this;
-            var coord = $(this).data('coord').split(',');
-            console.log(coord);
-            $('.popup').show();
-            // if (!myMap) { myMap.destroy(); }
-                myMap = new ymaps.Map('map', {
-                    center: coord, 
-                    zoom: 15
-                }, {
-                    searchControlProvider: 'yandex#search'
-                });
-                $("#toggle").attr('value', 'Скрыть карту');
-    
-            
-            $('.map--close').one('click', function(e) {
-            	e.preventDefault();
-            	$('.popup').hide();
-            	myMap.destroy();// Деструктор карты
-                myMap = null;
-
-            });
-
-            var myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-        		balloonContentBody: [
-            '<address>',
-            '<strong>Магазин ЕвроОбувь в Одессе</strong>',
-            '<br/>',
-            'Адрес: 119021, Одесса, ул. Льва Толстого, 16',
-            '<br/>',
-            'Подробнее: <a href="http://eobuv.ru/">http://eobuv.ru/</a>',
-            '</address>'
-		        ].join('')
-		    }, {
-		        preset: 'islands#redDotIcon'
-		    });
-
-		    myMap.geoObjects.add(myPlacemark);
-		}
-       
-    });
-}
 </script>
 
-<div class="popup">
+<div class="popup__map">
 	<p>
        <div id="map">
        		<a href="#" class="map--close"></a>

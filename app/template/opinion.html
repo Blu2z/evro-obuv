@@ -33,5 +33,31 @@
 
 @@include('../components/scripts/scripts.html')
 
+<script>
+	$('.filter__cont--material').selectToList();
+	$('.filter__cont--heel').selectToList();
+	$('.filter__cont--brand').selectToList();
+	$('.filter__cont--size').selectToList();
+	$('.filter__cont--cost').selectToList({
+    	selection : false
+	});
+
+	var inp = $('.enter-cost');
+	
+	$('#range__slider').ionRangeSlider({
+	    type: "double",
+	    min: 2000,
+	    max: 11000,
+	    from: 3000,
+	    to: 10000,
+	    step: 10,
+	    force_edges: true,
+	    hide_min_max: true,
+	    onChange: function (data) {
+	        inp.html(data.from + '-' + data.to);
+    	}
+	});
+</script>
+
 </body>
 </html>

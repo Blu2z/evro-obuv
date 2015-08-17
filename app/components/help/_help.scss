@@ -60,6 +60,7 @@
 			position: absolute;
 			top: 12px;
 			left: 0;
+			transition: all .3s ease-out 0.1s;
 		}
 		&:hover {
 			color: $clr-gray;
@@ -70,6 +71,7 @@
 		&.active:before {
 			transform: rotate(-90deg);
 			opacity: .5;
+			transition: all .3s ease-out 0.1s;
 		}
 	}
 

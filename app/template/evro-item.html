@@ -33,6 +33,10 @@
 @@include('../components/sliders/slider-goods-item.html')
 
 @@include('../components/footer/footer.html')
+
+@@include('../components/popup/ask.html')
+@@include('../components/popup/add.html')
+@@include('../components/popup/cheap.html')
         
 </div>
 
@@ -47,6 +51,18 @@
 	    });
 
 	$('div.zoomer').zoomer();
+
+	$('#phone').inputmask("+7 ( 999 ) 999 - 99 - 99",
+		{ "placeholder": "+7 ( ... ) ... - .. - .."}
+	);
+
+	 $('div.slider-row').sliderShop({
+        caseLimit: 1,
+        animation: "hide-show",
+        spaceSection: 'auto'
+    });
+
+	@@include('../components/popup/popup.js')
 </script>
 
 

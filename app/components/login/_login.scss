@@ -34,6 +34,14 @@
 		vertical-align: top;
 		width: 160px;
 
+		@include m('big') {
+			width: 380px;
+		}
+
+		@include m('bottom') {
+			margin-top: 25px;
+		}
+
 		@include m('red') {
 			color: $clr-red;
 		}
@@ -64,6 +72,7 @@
 		padding: 13px 40px;
 	}
 
+	input[type="password"],
 	textarea, input[type="text"] {
 		margin-right: 10px;
 
@@ -221,6 +230,10 @@
 			background:transparent url('/images/icon-sl.png') 0 0 no-repeat;
 			transform: rotate(-90deg);
 			transition: transform .2s ease-out .1s;
+		}
+
+		@include m('help') {
+			width: 320px;
 		}
 	}
 	&.open {

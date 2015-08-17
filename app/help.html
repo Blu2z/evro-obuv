@@ -404,17 +404,17 @@
 <div class="help">
 	<div class="help__theme">
 		<form action="#">
-			<p>Тематика вопроса:</p>
-			<div class="help__list">
-				<span>Информация по акциям</span>
+			<div class="e__dropList e-form">
+				<p>Тематика вопроса:</p>
+				<span class="filter-label filter-label--help">Информация по акциям</span>
+				<div class="filter__drop">
+					<select placeholder="Категория" name="select1" multiple="multiple" id="opt-category" hidden>
+		                <option title="delivery" name="1">Информация по акциям</option>
+		                <option title="delivery" name="2">Курьерская доставка</option>
+		                <option title="delivery" name="3">Доставка товара</option>
+			        </select>
+				</div>
 			</div>
-			<label hidden for="select1">Тематика вопроса</label>
-            <select hidden placeholder="Информация по акциям" name="select1"  id="select1" >
-                <option value="1" title="Информация по акциям" name="spa">Информация по акциям</option>
-                <option value="2"  title="Информация о покупках">Информация о покупках</option>
-                <option value="3"  title="Цены">Цены</option>
-                <option value="4"  title="Доставка">Доставка</option>
-            </select>
 		</form>
 	</div>
 	<div class="help__text">
@@ -627,13 +627,24 @@
 	$('dd').filter(':nth-child(n+4)').addClass('hide');
 	$('dl').on('click', 'dt', function() {
 		$(this)
-			.next()
-				.slideDown(300)
-					.siblings('dd')
-						.slideUp(300);
+			.siblings('dt')
+				.removeClass('active');
+
+		$(this)
+			.addClass('active')
+				.next()
+					.slideDown(300)
+						.siblings('dd')
+							.slideUp(300);
 	
 	})
 })();
+
+$('.e__dropList').selectToList({
+		selection : "single",
+    	title: true,
+    	closed: 'forse'
+	});
 	
 </script>
 

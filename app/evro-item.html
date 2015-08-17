@@ -512,8 +512,8 @@
 	</div>
 	<div class="item__cost">12 500 руб.</div>
 	<div class="item__basket">
-		<a href="#" class="button button--fix button--yelow">В корзину</a>
-		<a href="#">Нашли дешевле?</a>
+		<a href="#" class="button button--fix button--yelow popup__link" data-popup="popup__add">В корзину</a>
+		<a href="#" data-popup="popup__cheap" class="popup__link">Нашли дешевле?</a>
 	</div>
 	<div class="item__desc">
 		<div class="desc__row">
@@ -561,7 +561,7 @@
 <div class="qq">
 	<div class="qq__title">
 		Вопросы и отзывы:
-		<a href="#" class="button button--fix button--yelow"></a>
+		<a href="#" class="button button--fix button--yelow popup__link" data-popup="popup__ask"></a>
 	</div>
 	<div class="qq__message">
 		<span class="qq__name">Ксения(4недели назад)</span>
@@ -885,6 +885,170 @@
     </div>
     <div class="copyright">&copy; 2012-2015 &laquo;ЕвроОбувь&raquo;</div>      
 </footer>
+
+<div class="popup popup__ask">
+	<div class="popup__wrap">
+	<a href="#" class="popup__close"></a>
+	<form action="#" class="e-form">
+		<h2>Оставтьте отзыв или задайте вопрос</h2>
+		<p class="e-form__desc">
+			Мы рады, что вы проявили интерес к данной модели. 
+			Если у вас возник вопрос по данной модели обуви, наша служба поддержки с радостью поможет вам разобраться. 
+			Напишите свой вопрос ниже. Если мы посчитаем ваш вопрос полезным для других пользователей,
+			мы опубликуем его на сайте.
+		</p>
+		
+		<div class="e-form--wrap">
+			<div class="e-form--inline">
+				<label for="comment">Вопрос:</label>
+				<textarea class="e-form__textarea" name="comment" id="comment"></textarea>
+			</div>
+			<div class="e-form--inline">
+				<span class="e-form__prompt e-form__prompt--big">
+					Напишите, что вас интересует. Возможно вы затрудняетесь
+					с выбором размера. Или вас интересуют более подробно 
+					характеристики данной модели.
+
+					Например, подойдет ли она на ногу с большой полнотой.
+					Опишите как можно точно ваши сомнения.
+				</span>
+			</div>
+		</div>
+		<div class="e-form--wrap">
+			<div class="e-form--inline">
+			<label for="name">Ваше имя:</label>
+				<input type="text" name="name" id="name">
+			</div>
+
+			<div class="e-form--inline">
+				<label for="e-mail">E-mail:</label>
+				<input type="text" name="e-mail" id="e-mail">
+			</div>
+			<div class="e-form--inline">
+				<span class="e-form__prompt e-form__prompt--big e-form__prompt--bottom">
+					Пожалуйста, укажите e-mail, который вы проверяете регулярно,
+					чтобы не пропустить ответ на ваш вопрос.
+				</span>
+			</div>
+		</div>
+		<button type="submit" class="button button--yelow">Отправить</button>
+		</form>
+	</div>
+</div>
+<div class="popup popup__add">
+	<div class="popup__wrap">
+		<a href="#" class="popup__close"></a>
+		<h2>Товар добавлен в корзину</h2>
+		<div class="popup__goods">
+			<div class="popup__img">
+				<img src="./images/product1.jpg" alt="foto">
+			</div>
+			<div class="popup__desk">
+				<div class="p__title"><h3>Туфли Tamaris</h3></div>
+				<div class="p__size"><p>Размер: 39</p></div>
+				<div class="p__amount"><p>Количество: 1</p></div>
+				<div class="p__cost"><p>12500 руб.</p></div>
+				<div class="p__order">
+					<a href="evro-order.html" class="button button--yelow">Оформить</a>
+					<a href="#" class="continue p__close">Продолжить покупки</a>
+				</div>
+			</div>
+		</div>
+
+
+		<h3>Для ухода подойдут:</h3>
+		<div class="popup__product">
+	<div class="popup__img">
+		<img src="./images/product1.jpg" alt="foto">
+	</div>
+	<div class="p__desc">
+		<p>Лосьон для ухода
+		за всеми видами кож
+		и материалов</p>
+	</div>
+	<p class="p__cost red">230 руб.</p>
+	<a href="#" class="button button--fix button--yelow">В корзину</a>
+</div>
+		<div class="popup__product">
+	<div class="popup__img">
+		<img src="./images/product1.jpg" alt="foto">
+	</div>
+	<div class="p__desc">
+		<p>Лосьон для ухода
+		за всеми видами кож
+		и материалов</p>
+	</div>
+	<p class="p__cost red">230 руб.</p>
+	<a href="#" class="button button--fix button--yelow">В корзину</a>
+</div>
+		<div class="popup__product">
+	<div class="popup__img">
+		<img src="./images/product1.jpg" alt="foto">
+	</div>
+	<div class="p__desc">
+		<p>Лосьон для ухода
+		за всеми видами кож
+		и материалов</p>
+	</div>
+	<p class="p__cost red">230 руб.</p>
+	<a href="#" class="button button--fix button--yelow">В корзину</a>
+</div>
+	</div>
+</div>
+<div class="popup popup__cheap">
+	<div class="popup__wrap">
+	<a href="#" class="popup__close"></a>
+	<form class="e-form" action="#">
+	<h3>Видели товар дешевле?</h3>
+	<p class="e-form__desc">
+		Отправьте ссылку на данный товар. У конкурента будет цена ниже — вернем разницу!
+		Промокод будет отправлен на телефон и е-mail.
+	</p>
+	
+	<div class="e-form--wrap">
+		<div class="e-form--inline">
+			<label for="name">Ссылка на товар (например: <span class="blue">http://www.site.ru/boleedeshevle</span>)</label>
+			<input type="text" name="name" class="input--link" id="name">
+		</div>
+		<div class="e-form--inline">
+			<span class="e-form__prompt e-form__prompt--big e-form__prompt--bottom">
+				Скопируйте в поле ссылку с сайта, где вы нашли этот же товар дешевле,
+				чтобы мы могли в этом удостовериться.
+			</span>
+		</div>
+	</div>
+	<div class="e-form--wrap">
+		<div class="e-form--inline">
+			<label for="name">Ваше имя:</label>
+			<input type="text" name="name" id="name">
+		</div>
+
+		<div class="e-form--inline">
+			<label for="name">E-mail:</label>
+			<input type="text" name="name" id="name">
+		</div>
+		<div class="e-form--inline">
+			<span class="e-form__prompt e-form__prompt--big e-form__prompt--bottom">
+				Оставьте свой адрес и мы пришлем вам промо-код.
+			</span>
+		</div>
+	</div>
+	<div class="e-form--wrap">
+		<div class="e-form--inline">
+			<label for="phone">Телефон:</label>
+			<input type="text" name="phone" id="phone">
+		</div>
+		<div class="e-form--inline">
+			<span class="e-form__prompt e-form__prompt--big e-form__prompt--bottom">
+				Оставьте номер телефона, мы уведомим вас о промо-коде,
+				чтобы вы не забыли о своей скидке.
+			</span>
+		</div>
+	</div>
+	<button type="submit" class="button button--yelow">Отправить</button>
+	</form>
+</div>
+</div>
         
 </div>
 
@@ -934,6 +1098,46 @@
 	    });
 
 	$('div.zoomer').zoomer();
+
+	$('#phone').inputmask("+7 ( 999 ) 999 - 99 - 99",
+		{ "placeholder": "+7 ( ... ) ... - .. - .."}
+	);
+
+	 $('div.slider-row').sliderShop({
+        caseLimit: 1,
+        animation: "hide-show",
+        spaceSection: 'auto'
+    });
+
+	;(function popup () {
+	$('a.popup__link').on('click', function (e) {
+		e.preventDefault();
+		var winHeight = $(document).height(),
+		elem = $('.' + $(this).data('popup'))
+
+		elem.css('height', winHeight).fadeIn(400);
+
+		var top = ($(window).height() - elem.children('div').outerHeight(true)) / 2;
+
+		elem.children('div').animate({'top' : top >= 0 ? top : 0}, 400);
+
+		if(elem.children('div').outerHeight(true) > $(window).height()) {
+			elem.children('div').css({
+				'height': $(window).height(),
+				'overflow-y': 'scroll'
+			});
+		}
+	});
+
+	$('.popup__close, .p__close').on('click', function (e) {
+		e.preventDefault();
+
+		$(this).closest('.popup').fadeOut(400).children('div').css({
+			'height': 'auto',
+			'overflow-y': 'hidden'
+		});
+	})
+})()
 </script>
 
 
