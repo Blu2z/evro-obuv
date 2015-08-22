@@ -15,14 +15,16 @@
 		color: $clr-gray;
 		line-height: 40px;
 
-		.list {
-			height: 40px;
-			border: 1px solid $clr-gray-default;
-			border-radius: 10px;
-			display: inline-block;
-			padding: 0 65px 0 10px;
-			color: $clr-default;
-			font-weight: bold;
+		.filter-label {padding: 0 20px;}
+		.filter__drop {
+			top: 40px;
+
+			input[type="radio"] + label {
+				padding-left: 20px;
+    			width: 100%;
+    			display: block;
+    			box-sizing: border-box;
+			}
 		}
 	}
 
@@ -41,6 +43,7 @@
 		margin-bottom: 10px;
 		padding: 0 20px 0 10px;
 		position: relative;
+		cursor: pointer;
 		&:after {
 			content: '';
 			position: absolute;
@@ -50,12 +53,14 @@
 			width: 16px;
 			background:transparent url('/images/icon-sl.png') 0 0 no-repeat;
 			transform: rotate(-90deg);
+			transition: all .2s ease-out 0.1s;
 		}
 
 		&.active {
 			background-color: $clr-gray-lite;
 			&:after {
 				transform: rotate(90deg);
+				transition: all .3s ease-out 0.1s;
 			}
 		}
 	}
@@ -88,6 +93,7 @@
 
 	@include e('details') {
 		margin-bottom: 15px;
+		display: none;
 
 		@include m('head') {
 			padding-top: 35px;

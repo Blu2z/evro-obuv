@@ -41,7 +41,7 @@ $.fn.tab = function (h,a,d) {
 
 			if (hidden) {
 				$(self).parent().find('.' + $(this).data('tab')).show(anim).close({
-					allow: false,
+					allow: true,
 				    link: this,
 				});
 			} else {
@@ -96,7 +96,7 @@ var Close = {
 		$(document).on('click.name', function (event) {
 			event.stopPropagation()
 
-			console.log(!firstClick + ',' + self.options.forced);
+			// console.log(!firstClick + ',' + self.options.forced);
 
 			if(!firstClick){
 

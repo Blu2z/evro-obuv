@@ -1,5 +1,5 @@
 ;(function popup () {
-	$('a.popup__link').on('click', function (e) {
+	$('.popup__link').on('click', function (e) {
 		e.preventDefault();
 		var winHeight = $(document).height(),
 		elem = $('.' + $(this).data('popup'))

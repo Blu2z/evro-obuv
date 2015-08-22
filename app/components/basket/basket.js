@@ -1,6 +1,7 @@
 $.fn.inputCount = function () {
 	return this.each(function() {
-		var input = $(this).find('input[type="text"]');
+		var input = $(this).find('input[type="text"]'),
+			summ = $(this).find('.basket__col--cost > span').text().replace(/\s+/g, '');
 
 		input.on('keypress', function (e) {
 			if( e.which > 57 || e.which < 48 || input.val().length >=2 ) e.preventDefault();
@@ -21,9 +22,11 @@ $.fn.inputCount = function () {
 			if ($(this).hasClass('basket__count--next')) {
 
 				if (+input.val() < 99) input.val(+input.val() + 1)
+					console.log(+input.val() * summ)
 
 			} else if (+input.val() > 1) {
 				input.val(+input.val() - 1);
+				console.log(+input.val() * summ)
 			}
 		})
 	});

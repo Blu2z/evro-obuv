@@ -20,13 +20,13 @@
 
 			<div class="e-form--inline">
 				<label for="phone">Телефон:</label>
-				<input type="text" name="phone" id="phone">
+				<input type="text" name="phone" id="phone" placeholder="+7 ( ... ) ... - .. - ..">
 			</div>
 		</div>
 		<div class="e-form--wrap">
-			<div class="e-form--inline">
+			<div class="e-form--inline e-form--mr10">
 				<div class="e__dropList">
-					<p>Пол:</p>
+					<p class="e__label">Пол:</p>
 					<span class="filter-label">Женский</span>
 					<div class="filter__drop">
 						<select placeholder="Категория" name="sex1" multiple="multiple" id="opt-category" hidden>
@@ -37,10 +37,10 @@
 					</div>
 				</div>
 			</div>
-			<div class="e-form--inline">
+			<div class="e-form--inline e-form--mr10">
 				<div class="e__dropList">
-					<p>Дата рождения:</p>
-					<span class="filter-label">День</span>
+					<p class="e__label">Дата рождения:</p>
+					<span class="filter-label filter-label--small">День</span>
 					<div class="filter__drop">
 						<select placeholder="Категория" name="day1" multiple="multiple" id="opt-category" hidden>
 			                <option title="day" name="1">1</option>
@@ -79,9 +79,10 @@
 					</div>
 				</div>
 			</div>
-			<div class="e-form--inline">
+			<div class="e-form--inline e-form--mr10">
 				<div class="e__dropList">
-					<span class="filter-label">месяц</span>
+				<p></p>
+					<span class="filter-label filter-label--month">месяц</span>
 					<div class="filter__drop">
 						<select placeholder="Категория" name="month1" multiple="multiple" id="opt-category" hidden>
 			                <option title="month" name="1">Январь</option>
@@ -102,7 +103,8 @@
 			</div>
 			<div class="e-form--inline">
 				<div class="e__dropList">
-					<span class="filter-label">Год</span>
+				<p></p>
+					<span class="filter-label filter-label--small">Год</span>
 					<div class="filter__drop">
 						<select placeholder="Категория" name="year1" multiple="multiple" id="opt-category" hidden>
 			                <option title="year" name="2000">2000</option>
@@ -124,22 +126,6 @@
 				        </select>
 					</div>
 				</div>
-			</div>
-			
-		</div>
-
-
-		<div class="e-form--wrap">
-			<div class="e-form--inline">
-				<label for="sex">Пол:</label>
-				<input type="text" name="sex" id="sex">
-			</div>
-
-			<div class="e-form--inline">
-				<label for="birthday">Дата рождения:</label>
-				<input type="text" name="birthday" id="birthday" placeholder="День" class="input-small">
-				<input type="text" name="birthmonth" id="birthmonth" placeholder="Месяц" class="input-small">
-				<input type="text" name="birthyear" id="birthyear" placeholder="Год" class="input-small">
 			</div>
 		</div>
 		<div class="e-form--wrap">

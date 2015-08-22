@@ -70,10 +70,11 @@
 		border: 1px solid $clr-default;
 		box-sizing: border-box;
 		display: none;
+		margin-top: -20px;
 		min-height: 395px;
 		padding: 20px 0 15px 40px;
 		position: absolute;
-		top: 100px;
+		top: 100%;
 		width: 100%;
 		z-index: 20;
 

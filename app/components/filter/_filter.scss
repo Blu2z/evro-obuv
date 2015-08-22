@@ -46,7 +46,7 @@
 
 	@include e('drop') {
 		background-color: $clr-roze-slite;
-		border-radius: 0 0 16px 16px;
+		border-radius: 0 0 5px 5px;
 		box-sizing: border-box;
 		left: 0;
 		padding: 30px 15px 10px 15px;
@@ -54,6 +54,7 @@
 		top: 30px;
 		width: 200px;
 		z-index: 35;
+		// height: 150px;
 		display: none;
 
 		li {

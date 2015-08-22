@@ -52,9 +52,7 @@
             </div>
             <div class="head__container head__container--basket">
                 <span class="head__icon head__icon--basket"><strong>6</strong> <a href="#">товаров</a> на <strong>56 750</strong> руб.</span>
-
-                
-
+                    <a href="#" class="head__icon head__icon--login">Личный кабинет</a>
             </div>
         </div>
     </div>
@@ -1069,6 +1067,7 @@
     <script src="scripts/fancybox/jquery.fancybox.js"></script>
     <script src="scripts/jquery.inputmask.js"></script>
     <script src="scripts/ion.rangeSlider.min.js"></script>
+    <script src="scripts/jquery.custom-scrollbar.js"></script>
     <!-- endbuild -->
 
     <!-- build:js scripts/main.js -->
@@ -1110,7 +1109,7 @@
     });
 
 	;(function popup () {
-	$('a.popup__link').on('click', function (e) {
+	$('.popup__link').on('click', function (e) {
 		e.preventDefault();
 		var winHeight = $(document).height(),
 		elem = $('.' + $(this).data('popup'))

@@ -4,7 +4,7 @@
 	padding: 12px 20px;
 	border: none;
 	cursor: pointer;
-	transition: all .2s ease-out 0.1s;
+	transition: all .1s ease-out 0.1s;
 	text-decoration: none;
 	font-weight: bold;
 	box-sizing: border-box;
@@ -29,6 +29,10 @@
 	@include m('yelow') {
 		background-color: $clr-yelow;
 		color: $clr-default;
+
+		&:hover {
+			background-color: $clr-yelow-lite;
+		}
 	}
 
 	@include m('fix') {

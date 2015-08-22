@@ -1,7 +1,20 @@
 <div class="history">
 	<h3>История заказов</h3>
 	<div class="history__sort">
-		Показывать по: <span class="list">20</span>
+		Показывать по: 
+		<!-- <span class="list">20</span> -->
+		<div class="e-form--inline e-form--mr10">
+				<div class="e__dropList">
+					<span class="filter-label filter-label--small">20</span>
+					<div class="filter__drop">
+						<select placeholder="Категория" name="filter1" multiple="multiple" id="opt-category" hidden>
+			                <option title="filter" name="20">20</option>
+			                <option title="filter" name="50">50</option>
+			                <option title="filter" name="100">100</option>			         		
+				        </select>
+					</div>
+				</div>
+			</div>
 	</div>
 	<div class="history__head">
 		<div class="history__col history__col--numb">Заказ №:</div>
@@ -9,5 +22,15 @@
 		<div class="history__col history__col--stat">Статус:</div>
 		<div class="history__col history__col--summ">Сумма:</div>
 	</div>
+	@@include('history-row.html')
+	@@include('history-row.html')
+	@@include('history-row.html')
+	@@include('history-row.html')
+	@@include('history-row.html')
+	@@include('history-row.html')
+	@@include('history-row.html')
+	@@include('history-row.html')
+	@@include('history-row.html')
+	@@include('history-row.html')
 	@@include('history-row.html')
 </div>

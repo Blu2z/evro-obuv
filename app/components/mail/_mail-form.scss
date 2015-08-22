@@ -24,20 +24,18 @@
 			}
 
 			input[type="checkbox"] + label:before {
-				background-color: #fff;
-				border-radius: 8px;
-				border: 5px solid #fff; 
+				background: url("/images/checkbox.png") 0 0 no-repeat;
 				content: ' ';
 				cursor:pointer;
-				height: 7px;
-				left: 0;
+				height: 16px;
+				left: 5px;
 				position: absolute;
-				width: 7px;
-    			top: 0;
+				width: 16px;
+    			top: 5px;
 			}
 
 			input[type="checkbox"]:checked + label:before {
-				background-color: $clr-default;
+				background-position: -16px 0;
 			}
 		}
 		@include m('area') {

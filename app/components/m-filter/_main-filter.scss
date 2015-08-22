@@ -201,7 +201,7 @@
 				background-position: 0 25px;
 				box-sizing: border-box;
 				color: $clr-default-lite;
-				content: "Все модели";
+				content: '';
 				padding: 20px 0 0 7px;
 			}
 
@@ -215,6 +215,7 @@
 				height: 76px;
 				position: absolute;
 				width: 76px;
+				padding: 20px 10px;
 			}
 		}
 	}

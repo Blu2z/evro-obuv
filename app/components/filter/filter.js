@@ -1,7 +1,7 @@
 var SelectToList = {
         init: function (options, elem) {
 
-            var optGroup, dropList, main,
+            var optGroup, dropList, main, scroll,
                 self = this;
 
             self.elem = elem;
@@ -18,9 +18,7 @@ var SelectToList = {
             self.prepareList();
 
             self.main.on('click', function (e) {
-                // e.stopPropagation();
                 self.dropped();
-                console.log('click');
             })
         },
 
@@ -37,6 +35,26 @@ var SelectToList = {
                         + $(this).attr('title') + index + '">' 
                         + $(this).html() + '</label></li>');
                 });
+
+                 $(this.elem).find('input[type="checkbox"] + label').on('click', function () {
+                    var inText = ' ';
+                    console.log($(self.elem).find('input[type="checkbox"]:checked + label'));
+
+                    setTimeout(function () {
+                        var check = $(self.elem).find('input[type="checkbox"]:checked + label').each(function(index, el) {
+
+                        inText += $(this).text() + ' ';
+
+                        });
+
+                        if(inText.length > 15) {
+                            inText = ' выбрано:' + check.length
+                        }
+
+                        $(self.main).find('span').html(inText);
+                    },200)
+                })
+
             } else if(this.options.selection === "single") {
                 ul = $('<ul/>').prependTo(this.dropList);
                 this.optGroup.each(function(index, el) {
@@ -49,23 +67,31 @@ var SelectToList = {
                 });
 
                 $(this.elem).find('input[type="radio"] + label').on('click', function () {
-                   var text = $(this).text();
-                   console.log(text);
-                   console.log($(self.main));
-                   $(self.main).html(text);
+
+                   $(self.main).html($(this).text());
                 })
 
             }
+            
             this.dropList.innerWidth( $(this.main).innerWidth() );
+
+            if(this.options.scroll && this.dropList.show().children('ul').height() > 150) {
+                ul.wrap('<div class="scroll__wrapper"></div>');
+
+                this.dropList
+                    .children('div')
+                        .css('min-height', 150)
+                            .customScrollbar({
+                                skin : 'modern-skin',
+                                updateOnWindowResize : true,
+                                vScroll: true
+                            });
+            };
+
+            this.dropList.hide();
         },
 
         dropped: function () {
-            // if ($(this.elem).hasClass('open') && this.dropList.is(":visible")) {
-            //     this.dropList.slideUp(400);
-            //     $(this.elem).removeClass('open');
-            //     return
-            // }
-
             if (!$(this.elem).hasClass('open')) {
                 $(this.elem).addClass('open');
 
@@ -88,7 +114,6 @@ var SelectToList = {
                    });
                 }
             }
-
         }
     }
 
@@ -102,9 +127,10 @@ $.fn.selectToList = function (options) {
 };
 
 $.fn.selectToList.options = {
-    title: false,
+    // title: false,
     selection : "multi",
-    closed: true
+    closed: true,
+    scroll : true
 };
 
 

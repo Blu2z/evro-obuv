@@ -409,7 +409,7 @@
 <div class="filter">
 	<form action="#">
 		<div class="filter__cont filter__cont--size filter-label">
-			<span>Размер: 36 - 36,5</span>
+			Размер:<span> 36 - 36,5</span>
 			<div class="filter__drop filter__drop--size">
 				<select placeholder="Категория" name="select1" multiple="multiple" id="opt-category" hidden>
 	                <option title="size" name="1">36</option>
@@ -424,10 +424,22 @@
 		</div>
 		<div class="filter__cont filter__cont--color filter-label">
 			<span>Цвет: любой</span>
+			<div class="filter__drop filter__drop--color">
+				<select placeholder="Категория" name="color1" multiple="multiple" id="opt-category" hidden>
+	                <option title="color" name="1">Красный</option>
+	                <option title="color" name="2">Оранжевый</option>
+	                <option title="color" name="3">Желтый</option>
+	                <option title="color" name="4">Зеленый</option>
+	                <option title="color" name="5">Голубой</option>
+	                <option title="color" name="6">Синий</option>
+	                <option title="color" name="7">Фиолетовый</option>
+		        </select>
+				<button type="submit" class="button button--lite button--fix">Применить</button>
+			</div>
 		</div>
 
 		<div class="filter__cont filter__cont--heel filter-label">
-			<span>Высота каблука: любая</span>
+			Высота каблука:<span> любая</span>
 			<div class="filter__drop filter__drop--heel">
 				<select placeholder="Категория" name="select1" multiple="multiple" id="opt-category" hidden>
 	                <option title="heel" name="1">2-4 см.</option>
@@ -448,7 +460,7 @@
 		</div>
 
 		<div class="filter__cont filter__cont--material filter-label">
-			<span>Материал: любой</span>
+			Материал:<span> любой</span>
 			<div class="filter__drop filter__drop--material">
 				<select placeholder="Категория" name="select1" multiple="multiple" id="opt-category" hidden>
 	                <option title="material" name="1">Кожа</option>
@@ -460,7 +472,7 @@
 			</div>
 		</div>
 		<div class="filter__cont filter__cont--brand filter-label">
-			<span>Бренд: любой</span>
+			Бренд:<span> любой</span>
 			<div class="filter__drop filter__drop--brand">
 				<select placeholder="Категория" name="select1" multiple="multiple" id="opt-category" hidden>
 	                <option title="brand" name="1">Tamaris</option>
@@ -744,6 +756,7 @@
 
 
 <script>
+	$('.filter__cont--color').selectToList();
 	$('.filter__cont--material').selectToList();
 	$('.filter__cont--heel').selectToList();
 	$('.filter__cont--brand').selectToList();

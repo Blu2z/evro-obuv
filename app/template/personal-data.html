@@ -36,5 +36,22 @@
 
 @@include('../components/scripts/scripts.html')
 
+<script>
+	$('.e__dropList').selectToList({
+		selection : "single",
+    	title: true,
+    	closed: 'forse'
+	});
+	$('div.slider-row').sliderShop({
+        caseLimit: 1,
+        animation: "hide-show",
+        spaceSection: 'auto'
+    });
+    $('#phone').inputmask("+7 ( 999 ) 999 - 99 - 99",
+		{ "placeholder": "+7 ( ... ) ... - .. - .."}
+	);
+
+</script>
+
 </body>
 </html>

@@ -22,6 +22,10 @@
 		vertical-align: middle;
 	}
 
+	@include m('mr10') {
+		margin-right: 10px;
+	}
+
 	@include m('wrap') {
 		margin: 10px 0;
 	}
@@ -53,8 +57,10 @@
 
 	label {
 		display: block;
-    	font-size: 12px;
-    	padding: 4px 0;
+		box-sizing: border-box;
+		font-size: 12px;
+		padding: 4px 0;
+		width: 100%;
 	}
 
 	p {
@@ -179,14 +185,18 @@
 	.button	{margin-top: 0}
 }
 
+.e__label {
+	font-size: 12px;
+}
+
 .e__dropList {
 	position: relative;
 
 	.filter__drop {
-		top: 70px;
-		border: 1px solid $clr-gray-lite;
 		background-color: #fff;
+		border: 1px solid $clr-gray-lite;
 		padding: 0;
+		top: 70px;
 
 		ul, li {margin: 0;}
 
@@ -194,14 +204,13 @@
 
 		input[type="radio"]{display: none;}
 
-		input[type="radio"]:checked + label {
-			font-weight: bold;
-		}
+		input[type="radio"]:checked + label {font-weight: bold;}
 
 		input[type="radio"] + label:hover {
 			background-color: $clr-default;
 			color: #fff;
 			cursor: pointer;
+			border-radius: 5px;
 		}
 	}
 
@@ -230,6 +239,14 @@
 			background:transparent url('/images/icon-sl.png') 0 0 no-repeat;
 			transform: rotate(-90deg);
 			transition: transform .2s ease-out .1s;
+		}
+
+		@include m('small') {
+			width: 100px;
+		}
+
+		@include m('month') {
+			width: 125px;
 		}
 
 		@include m('help') {

@@ -53,3 +53,22 @@
         @include m('6') {background-position: -672px 42px;}
     }
 }
+
+.slider__nav {
+    .nav {
+        top: 50%;
+        z-index: 5;
+    }
+    .nav--prev {
+        left: 0;
+        background-position: 0 0;
+    }
+    .nav--next {
+        right: 0;
+        background-position: -21px 0;
+    }
+}
+
+.brand--small {
+    height: 120px;
+}
