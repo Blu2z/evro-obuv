@@ -19,17 +19,26 @@
 	}
 
 	@include e('tooltip') {
-		// background: #fff url('/images/ajax-loader.gif') 50% 50% no-repeat;
+		background: #fff url('/images/ajax-loader.gif') 50% 50% no-repeat;
 		background-color: #fff;
 		border-radius: 10px;
 		border: 1px solid $clr-gray-default;
-		display: none;
+		visibility: hidden;
+		transition: opacity .3s cubic-bezier(0, 0, 0.8, 0.83) .1s;
+		opacity: 0;
 		height: 500px;
 		overflow: hidden;
 		position: absolute;
 		right: -505px;
 		top: 0;
 		width: 500px;
+
+		&:not(:empty) {
+			background: none;
+			background-color: #fff;
+
+		}
+		
 
 		img {
 			position: absolute;
@@ -44,8 +53,12 @@
 		width: 320px;
 		height: 320px;
 		&:empty {cursor: default;}
-		&:hover + .zoomer__tooltip {display: block;}
-		&:hover + .zoomer__tooltip:empty {display: none}
+		&:hover + .zoomer__tooltip {
+			visibility: visible;
+			transition: opacity .3s cubic-bezier(0, 0, 0.8, 0.83) .1s;
+			opacity: 1;
+		}
+		// &:hover + .zoomer__tooltip:empty {display: none}
 
 		img {
 			position: absolute;

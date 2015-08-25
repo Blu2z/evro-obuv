@@ -46,9 +46,7 @@
             </div>
             <div class="head__container head__container--basket">
                 <span class="head__icon head__icon--basket"><strong>6</strong> <a href="#">товаров</a> на <strong>56 750</strong> руб.</span>
-
-                
-
+                    <a href="#" class="head__icon head__icon--login">Личный кабинет</a>
             </div>
         </div>
     </div>
@@ -545,16 +543,17 @@
 		<label for="getMyCard">У меня нет карты, я хочу открыть ее чтобы получать дополнительную скидку
 		на последующие покупки. </label>
 	</div>
+	<div class="e-form__bonus">
+		<h4 class="e-form__bonus-title">Промо-код</h4>
+		<p class="e-form__desc">
+			Если у вас есть промо-код, введите его, чтобы получить дополнительную скидку. 
+		</p>
 
-	<h3>Промо-код</h3>
-	<p class="e-form__desc">
-		Если у вас есть промо-код, введите его, чтобы получить дополнительную скидку. 
-	</p>
-
-	<div class="e-promo">
-		<label for="promo">Промо-код:</label>
-		<input type="text" name="promo" id="promo" placeholder=".... .... .... ....">
-		<button type="submit" class="button button--yelow">Использовать</button>
+		<div class="e-promo">
+			<label for="promo">Промо-код:</label>
+			<input type="text" name="promo" id="promo" placeholder=". . . .">
+			<button type="submit" class="button button--yelow">Использовать</button>
+		</div>
 	</div>
 
 
@@ -671,9 +670,9 @@
 		}
 	).parent().find('.e-form__prompt--red').hide();
 
-	$('#promo').inputmask( "9999 9999 9999 9999",
+	$('#promo').inputmask( "9 9 9 9",
 		{ 
-			"placeholder": ".... .... .... ....",
+			"placeholder": ". . . .",
 		}		
 	);
 </script>

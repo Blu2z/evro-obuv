@@ -52,6 +52,14 @@
 			color: $clr-default-lite;
 		}
 	}
+
+	@include e('link') {
+		line-height: 40px;
+	}
+
+	@include e('title') {
+		display: inline-block;
+	}
 }
 
 .news {

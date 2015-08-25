@@ -46,12 +46,7 @@
             </div>
             <div class="head__container head__container--basket">
                 <span class="head__icon head__icon--basket"><strong>6</strong> <a href="#">товаров</a> на <strong>56 750</strong> руб.</span>
-
-                
-
                     <a href="#" class="head__icon head__icon--login">Личный кабинет</a>
-                
-
             </div>
         </div>
     </div>
@@ -451,7 +446,7 @@
 				<div class="m-filter__cell m-filter__cell--type6">
 					<input type="checkbox" name="checkbox6" id="checkbox6">
 					<label for="checkbox6" class="select--all"></label>
-					<a href="#" class="select--all"></a>
+					<a href="catalogue.html" class="select--all">Все модели</a>
 				</div>
 			</div>
 			<div class="m-filter__block m-filter__block--heel">
@@ -591,7 +586,7 @@
 				<div class="m-filter__cell m-filter__cell--type6">
 					<input type="checkbox" name="m-checkbox-6" id="m-checkbox-6">
 					<label for="m-checkbox-6"></label>
-					<a href="#" class="select--all"></a>
+					<a href="catalogue.html" class="select--all">Все модели</a>
 				</div>
 			</div>
 			<div class="m-filter__block m-filter__block--heel">
@@ -914,7 +909,9 @@
 
 <div class="news-sm">
 
-	<h2 class="news__title">Новости</h2>
+	<h2 class="news-sm__title">Новости</h2>
+	<a href="news.html"class="fl-r news-sm__link">Все новости</a>
+
 
 	<div class="news-sm__wrap">
 		<div class="news-sm__container">
@@ -1086,19 +1083,23 @@
     $('div.slider-row').sliderShop({
         caseLimit: 1,
         animation: "hide-show",
-        spaceSection: 'auto'
+        spaceSection: 'auto',
+        timer: 5000,
+        repeat: true
     });
 
     $('div.brand').sliderShop({
         caseLimit: 6,
-        spaceSection: 'auto'
+        spaceSection: 'auto',
+        timer: 5000,
+        repeat: true
     });
 
     $('div.m-filter__tabs').tab();
     
 
     $('div.m-filter__block--color').selectAll();
-    $('div.m-filter__block--shoes').selectAll();
+    // $('div.m-filter__block--shoes').selectAll();
 
 </script>
 

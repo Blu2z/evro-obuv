@@ -1,7 +1,10 @@
 $.fn.inputCount = function () {
 	return this.each(function() {
 		var input = $(this).find('input[type="text"]'),
-			summ = $(this).find('.basket__col--cost > span').text().replace(/\s+/g, '');
+			summ = $(this).find('.basket__col--cost > span').text().replace(/\s+/g, ''),
+			inSumm = $(this).find('.basket__col--cost > span'),
+			sale = $(this).find('.sale-box--input').text(),
+			inSale = $(this).find('.sale-box--input');
 
 		input.on('keypress', function (e) {
 			if( e.which > 57 || e.which < 48 || input.val().length >=2 ) e.preventDefault();
@@ -13,6 +16,8 @@ $.fn.inputCount = function () {
 				e.preventDefault();
 				input.val(1);
 			}
+
+			serialise(input.val())
 		});
 	
 
@@ -22,13 +27,27 @@ $.fn.inputCount = function () {
 			if ($(this).hasClass('basket__count--next')) {
 
 				if (+input.val() < 99) input.val(+input.val() + 1)
-					console.log(+input.val() * summ)
+
+				serialise(input.val())
 
 			} else if (+input.val() > 1) {
 				input.val(+input.val() - 1);
-				console.log(+input.val() * summ)
+
+				serialise(input.val())
 			}
 		})
+
+		function serialise (val) {
+			var totalSumm = val * summ,
+				totalSale = val * sale;
+
+			totalSumm = totalSumm.toString();
+			totalSale = totalSale.toString();
+
+			//отделяем тысячи от сотен
+			inSumm.text(totalSumm.substr(0, totalSumm.length - 3) + ' ' + totalSumm.substr(-3,3));
+			inSale.text(totalSale.substr(0, totalSale.length - 3) + ' ' + totalSale.substr(-3,3))
+		}
 	});
 };
 

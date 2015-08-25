@@ -74,6 +74,11 @@
 			font-weight: 500;
 		}
 
+		a {
+			border: 0;
+			text-decoration: underline;
+		}
+
 	}
 
 	@include e('prod') {

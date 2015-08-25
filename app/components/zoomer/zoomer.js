@@ -43,10 +43,11 @@ if (typeof Object.create !== 'function') {
             self.prepareImg();
 
             self.main.hover(function() {
-                self.tooltip.fadeIn(400);
+
                 self.addTooltip();
+
             }, function () {
-                self.tooltip.fadeOut(400);
+                self.tooltip.empty()
             });
 
             self.zoomMove();
@@ -85,11 +86,16 @@ if (typeof Object.create !== 'function') {
         zoomOn: function (img, width, height) {
             var self = this;
 
+            console.log(width + ',' + height);
+
             self.imgTooltip = $(img);
             
-            //провереям размеры и ориентацию картинки,
-            // если нужно - "окводрачиваем" маржинами.
-            // 500px - сторона окна большого изображения.
+            /*
+            провереям размеры и ориентацию картинки,
+            если нужно - "окводрачиваем" паддингами.
+            500px - сторона окна большого изображения.
+            320px - сторона окна предпросмотра.
+            */
 
             if (width <= 500 || height <= 500) {
                 var max = 500;
@@ -100,28 +106,34 @@ if (typeof Object.create !== 'function') {
             }
 
             self.imgTooltip.css({
-                'margin-left': (max - width)/2,
-                'margin-right': (max - width)/2,
-                'margin-top' : (max - height)/2,
-                'margin-bottom' : (max - height)/2
+                'padding-left': (max - width)/2,
+                'padding-right': (max - width)/2,
+                'padding-top' : (max - height)/2,
+                'padding-bottom' : (max - height)/2
             });
         },
 
         addTooltip: function () {
             var self = this,
-                imgBig = this.main.find('img').map(function(index, el) {
-                    if ( $(this).is(':visible')) return this;          
-                }).data('url');
-
-            var img = new Image();
+                imgBig = this.main.find('img:visible').data('url'),
+                img = new Image();
 
             img.onload = function() {
                 self.tooltip.empty().append(img);
 
-                self.zoomOn(this, this.width, this.height);
+                self.zoomOn(this, $(this).width(), $(this).height()); // $(this) - fix ie
             };
 
             img.src = imgBig;
+
+            $(img).error(function(){
+                var erImg = self.main.find('img:visible'),
+                    zImg = self.tooltip.append(erImg.clone()).children('img');
+
+                self.zoomOn(zImg, zImg.width(), zImg.height());
+
+                console.error('image not found!');
+            });
         }
     };
 

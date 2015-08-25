@@ -34,11 +34,26 @@
 @@include('../components/scripts/scripts.html')
 
 <script>
-	$('.filter__cont--color').selectToList();
-	$('.filter__cont--material').selectToList();
-	$('.filter__cont--heel').selectToList();
-	$('.filter__cont--brand').selectToList();
-	$('.filter__cont--size').selectToList();
+	$('.filter__cont--color').selectToList({
+		choice : true,
+		button : true
+	});
+	$('.filter__cont--material').selectToList({
+		choice : true,
+		button : true
+	});
+	$('.filter__cont--heel').selectToList({
+		choice : true,
+		button : true
+	});
+	$('.filter__cont--brand').selectToList({
+		choice : true,
+		button : true
+	});
+	$('.filter__cont--size').selectToList({
+		choice : true,
+		button : true
+	});
 	$('.filter__cont--cost').selectToList({
     	selection : false
 	});

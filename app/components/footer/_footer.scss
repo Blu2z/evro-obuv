@@ -20,6 +20,11 @@
 
 		li {
 			line-height: 2.45em;
+
+			a:hover,
+			a:focus {
+				color: $clr-yelow;
+			}
 		}
 
 		@include m('social') {

@@ -46,9 +46,7 @@
             </div>
             <div class="head__container head__container--basket">
                 <span class="head__icon head__icon--basket"><strong>6</strong> <a href="#">товаров</a> на <strong>56 750</strong> руб.</span>
-
-                
-
+                    <a href="#" class="head__icon head__icon--login">Личный кабинет</a>
             </div>
         </div>
     </div>
@@ -441,7 +439,7 @@
 	<div class="related">
 	<h3>К Вашим туфлям подойдут:</h3>
 	<div class="cat__product">
-
+<a href="#">
 
 
 	<div class="cat__img">
@@ -451,11 +449,11 @@
 		<p class="cat__big">Сумка David Jones пудрового цвета</p>
 	</div>
 	<span class="cat__cost">5 500 р.</span>
+</a>
 </div>
 
 <div class="cat__product">
-
-
+<a href="#">
 
 
 	<div class="cat__img">
@@ -465,6 +463,7 @@
 		<p class="cat__big">Изящные перчатки бежевого цвета от Fabretti</p>
 	</div>
 	<span class="cat__cost">2 300 р.</span>
+</a>
 </div>
 	</div>
 
@@ -478,27 +477,27 @@
 	<span>Размер:</span>
 		<ul>
 			<li>
-				<input type="checkbox" name="size36" id="size36">
+				<input type="radio" name="size" id="size36">
 				<label for="size36">36</label>
 			</li>
 			<li>
-				<input type="checkbox" name="size37" id="size37">
+				<input type="radio" name="size" id="size37">
 				<label for="size37">37</label>
 			</li>
 			<li>
-				<input type="checkbox" name="size38" id="size38">
+				<input type="radio" name="size" id="size38">
 				<label for="size38">38</label>
 			</li>
 			<li>
-				<input type="checkbox" name="size39" id="size39">
+				<input type="radio" name="size" id="size39">
 				<label for="size39">39</label>
 			</li>
 			<li>
-				<input type="checkbox" name="size40" id="size40">
+				<input type="radio" name="size" id="size40">
 				<label for="size40">40</label>
 			</li>
 			<li class="disable">
-				<input type="checkbox" name="size41" id="size41" disabled>
+				<input type="radio" name="size" id="size41" disabled>
 				<label for="size41">41</label>
 			</li>
 		</ul>
@@ -616,7 +615,7 @@
 </div>	
 
 <div class="availability">
-<h3>Наличие в магазинах:</h3>
+	<h3>Наличие в магазинах:</h3>
 	<div class="av__wrap">
 		<div class="av__row">
 			<div class="av__box av__box--name">
@@ -626,10 +625,26 @@
 			<div class="av__box av__box--size">
 				<p>Размеры:</p>
 				<ul>
-					<li>37</li>
-					<li>38</li>
-					<li>39</li>
-					<li>40</li>
+					<li>
+						<input type="radio" name="size" id="shop1-size36">
+						<label for="shop1-size36">36</label>
+					</li>
+					<li>
+						<input type="radio" name="size" id="shop1-size37">
+						<label for="shop1-size37">37</label>
+					</li>
+					<li>
+						<input type="radio" name="size" id="shop1-size38">
+						<label for="shop1-size38">38</label>
+					</li>
+					<li>
+						<input type="radio" name="size" id="shop1-size39">
+						<label for="shop1-size39">39</label>
+					</li>
+					<li>
+						<input type="radio" name="size" id="shop1-size40">
+						<label for="shop1-size40">40</label>
+					</li>
 				</ul>
 			</div>
 			<div class="av__box av__box--amt">
@@ -653,12 +668,30 @@
 			<div class="av__box av__box--size">
 				<p>Размеры:</p>
 				<ul>
-					<li>37</li>
-					<li>38</li>
-					<li>39</li>
-					<li>40</li>
-					<li>41</li>
-					<li>42</li>
+					<li>
+						<input type="radio" name="size" id="shop2-size36">
+						<label for="shop2-size36">36</label>
+					</li>
+					<li>
+						<input type="radio" name="size" id="shop2-size37">
+						<label for="shop2-size37">37</label>
+					</li>
+					<li>
+						<input type="radio" name="size" id="shop2-size38">
+						<label for="shop2-size38">38</label>
+					</li>
+					<li>
+						<input type="radio" name="size" id="shop2-size39">
+						<label for="shop2-size39">39</label>
+					</li>
+					<li>
+						<input type="radio" name="size" id="shop2-size40">
+						<label for="shop2-size40">40</label>
+					</li>
+					<li class="disable">
+					<input type="radio" name="size" id="shop2-size41">
+						<label for="shop2-size41">41</label>
+					</li>
 				</ul>
 			</div>
 			<div class="av__box av__box--amt">
@@ -1090,7 +1123,7 @@
     });
 
 	;(function popup () {
-	$('a.popup__link').on('click', function (e) {
+	$('.popup__link').on('click', function (e) {
 		e.preventDefault();
 		var winHeight = $(document).height(),
 		elem = $('.' + $(this).data('popup'))

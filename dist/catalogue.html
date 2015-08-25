@@ -46,9 +46,7 @@
             </div>
             <div class="head__container head__container--basket">
                 <span class="head__icon head__icon--basket"><strong>6</strong> <a href="#">товаров</a> на <strong>56 750</strong> руб.</span>
-
-                
-
+                    <a href="#" class="head__icon head__icon--login">Личный кабинет</a>
             </div>
         </div>
     </div>
@@ -445,7 +443,7 @@
 			</div>
 		</div>
 		<div class="filter__cont filter__cont--color filter-label">
-			<span>Цвет: любой</span>
+			Цвет:<span> любой</span>
 			<div class="filter__drop filter__drop--color">
 				<select placeholder="Категория" name="color1" multiple="multiple" id="opt-category" hidden>
 	                <option title="color" name="1">Красный</option>
@@ -455,13 +453,20 @@
 	                <option title="color" name="5">Голубой</option>
 	                <option title="color" name="6">Синий</option>
 	                <option title="color" name="7">Фиолетовый</option>
+	                <option title="color" name="8">Красный</option>
+	                <option title="color" name="9">Оранжевый</option>
+	                <option title="color" name="10">Желтый</option>
+	                <option title="color" name="11">Зеленый</option>
+	                <option title="color" name="12">Голубой</option>
+	                <option title="color" name="13">Синий</option>
+	                <option title="color" name="14">Фиолетовый</option>
 		        </select>
 				<button type="submit" class="button button--lite button--fix">Применить</button>
 			</div>
 		</div>
 
 		<div class="filter__cont filter__cont--heel filter-label">
-			Высота каблука:<span> любая</span>
+			Платформа:<span> любая</span>
 			<div class="filter__drop filter__drop--heel">
 				<select placeholder="Категория" name="select1" multiple="multiple" id="opt-category" hidden>
 	                <option title="heel" name="1">2-4 см.</option>
@@ -829,11 +834,34 @@
 
 
 <script>
-	$('.filter__cont--color').selectToList();
-	$('.filter__cont--material').selectToList();
-	$('.filter__cont--heel').selectToList();
-	$('.filter__cont--brand').selectToList();
-	$('.filter__cont--size').selectToList();
+	$('div.slider-row').sliderShop({
+		caseLimit: 1,
+		animation: "hide-show",
+		spaceSection: 'auto',
+		timer: 5000,
+		repeat: true
+	});
+
+	$('.filter__cont--color').selectToList({
+		choice : true,
+		button : true
+	});
+	$('.filter__cont--material').selectToList({
+		choice : true,
+		button : true
+	});
+	$('.filter__cont--heel').selectToList({
+		choice : true,
+		button : true
+	});
+	$('.filter__cont--brand').selectToList({
+		choice : true,
+		button : true
+	});
+	$('.filter__cont--size').selectToList({
+		choice : true,
+		button : true
+	});
 	$('.filter__cont--cost').selectToList({
     	selection : false
 	});

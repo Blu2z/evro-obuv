@@ -40,6 +40,7 @@ $.fn.tab = function (h,a,d) {
 			$(this).addClass('active');
 
 			if (hidden) {
+				$(document).trigger('close');
 				$(self).parent().find('.' + $(this).data('tab')).show(anim).close({
 					allow: true,
 				    link: this,
@@ -47,9 +48,6 @@ $.fn.tab = function (h,a,d) {
 			} else {
 				$(self).parent().find('.' + $(this).data('tab')).show(anim);
 			}
-
-			// $(document).trigger('tab');
-			// console.log('tab');
 		});
 	});
 
@@ -71,7 +69,7 @@ $.fn.close.options = {
     link: this, // элемент, с которого нужно удалить класс
     class: 'active', // имя класса, который нужно удалить 
     elements: false, // закрыть все блоки с данным классом
-    forced: false //закрыть при любом клике
+    forced: false, //закрыть при любом клике
 };
 
 var Close = {
@@ -96,14 +94,11 @@ var Close = {
 		$(document).on('click.name', function (event) {
 			event.stopPropagation()
 
-			// console.log(!firstClick + ',' + self.options.forced);
-
 			if(!firstClick){
 
 				if (self.options.forced  || $(event.target).closest(self.elem).length == 0 ) {
 
-					self.close(self.elem, self.options.link);
-					
+					self.close(self.elem, self.options.link);		
 					$(document).off('click.name');
 				}
 
@@ -111,6 +106,11 @@ var Close = {
 
 			firstClick = false;
 		});
+
+		$(document).on('close', function() {
+			self.close(self.elem, self.options.link);
+			$(document).off('click.name');
+		})
 	},
 
 	close: function (el1, el2) {
@@ -118,7 +118,7 @@ var Close = {
 
 		$(el2).removeClass(this.options.class);
 	}
-}
+};
 
 $.fn.selectAll = function (dest) {
 	var destroy = dest;

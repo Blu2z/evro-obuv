@@ -179,6 +179,19 @@
 	@include e('cost') {
 		padding: 20px 0;
 	}
+
+	@include e('bonus-title') {
+		font-size: 18px;
+	}
+
+	@include e('bonus') {
+		margin-top: 20px;
+
+		.e-form__desc {
+			font-size: 14px;
+			margin: 15px 0;
+		}
+	}
 }
 
 .e-promo {

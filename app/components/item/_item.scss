@@ -35,20 +35,26 @@
 			margin: 0 3px;
 		}
 
-		input[type="checkbox"] + label {
-    		border: 2px solid $clr-default;
-   			padding: 3px;
+		input[type="radio"] {
+			display: none;
 		}
 
-		input[type="checkbox"]:checked + label {
-    		background-color: $clr-red;
-    		color: #fff;
-    		border-color: #fff;
+		input[type="radio"] + label {
+			cursor: pointer;
+			padding: 3px;
+			border: 2px solid $clr-default;
 		}
 
-		input[type="checkbox"]:disabled + label {
+		input[type="radio"]:checked + label {
+			background-color: $clr-red;
+			border-color: #fff;
+			color: #fff;
+		}
+
+		input[type="radio"]:disabled + label {
 			border-color: $clr-gray-default;
 			color: $clr-gray-default;
+			cursor: default;
 		}
 
 	}
@@ -134,6 +140,9 @@
 
 .related {
 	margin-top: 90px;
+	a {
+		text-decoration: none;
+	}
 
 	h3 {
 		font-size: 24px;

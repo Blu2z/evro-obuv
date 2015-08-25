@@ -46,9 +46,7 @@
             </div>
             <div class="head__container head__container--basket">
                 <span class="head__icon head__icon--basket"><strong>6</strong> <a href="#">товаров</a> на <strong>56 750</strong> руб.</span>
-
-                
-
+                    <a href="#" class="head__icon head__icon--login">Личный кабинет</a>
             </div>
         </div>
     </div>
@@ -429,7 +427,7 @@
 		<a href="#" class="basket__count basket__count--next">+</a>
 	</div>
 	<div class="basket__col basket__col--cost">
-		<span>12 500 р.</span>
+		<span>12 500</span>р.
 
 		
 	</div>
@@ -477,13 +475,13 @@
 		<a href="#" class="basket__count basket__count--next">+</a>
 	</div>
 	<div class="basket__col basket__col--cost">
-		<span>12 500 р.</span>
+		<span>12 500</span>р.
 
 		
 			<div class="sale-box">
 				<p>
 					Экономия: <br>
-					<span class="sale-box--input">2435</span> руб.
+					<span class="sale-box--input">35</span> руб.
 				</p>
 			</div>
 		
@@ -520,13 +518,13 @@
 		<a href="#" class="basket__count basket__count--next">+</a>
 	</div>
 	<div class="basket__col basket__col--cost">
-		<span>12 500 р.</span>
+		<span>12 500</span>р.
 
 		
 			<div class="sale-box">
 				<p>
 					Экономия: <br>
-					<span class="sale-box--input">2435</span> руб.
+					<span class="sale-box--input">35</span> руб.
 				</p>
 			</div>
 		
@@ -563,13 +561,13 @@
 		<a href="#" class="basket__count basket__count--next">+</a>
 	</div>
 	<div class="basket__col basket__col--cost">
-		<span>12 500 р.</span>
+		<span>12 500</span>р.
 
 		
 			<div class="sale-box">
 				<p>
 					Экономия: <br>
-					<span class="sale-box--input">2435</span> руб.
+					<span class="sale-box--input">35</span> руб.
 				</p>
 			</div>
 		
@@ -614,16 +612,17 @@
 		<label for="getMyCard">У меня нет карты, я хочу открыть ее чтобы получать дополнительную скидку
 		на последующие покупки. </label>
 	</div>
+	<div class="e-form__bonus">
+		<h4 class="e-form__bonus-title">Промо-код</h4>
+		<p class="e-form__desc">
+			Если у вас есть промо-код, введите его, чтобы получить дополнительную скидку. 
+		</p>
 
-	<h3>Промо-код</h3>
-	<p class="e-form__desc">
-		Если у вас есть промо-код, введите его, чтобы получить дополнительную скидку. 
-	</p>
-
-	<div class="e-promo">
-		<label for="promo">Промо-код:</label>
-		<input type="text" name="promo" id="promo" placeholder=".... .... .... ....">
-		<button type="submit" class="button button--yelow">Использовать</button>
+		<div class="e-promo">
+			<label for="promo">Промо-код:</label>
+			<input type="text" name="promo" id="promo" placeholder=". . . .">
+			<button type="submit" class="button button--yelow">Использовать</button>
+		</div>
 	</div>
 
 </div>
@@ -853,7 +852,7 @@
 	        spaceSection: 'auto'
 	    });
 
-	$('.basket__col--quantity').inputCount();
+	$('.basket__prod').inputCount();
 	$('.basket__prod').closeGoods();
 
 	$('#numb-cards').inputmask( "9999 9999 9999 9999",
@@ -875,9 +874,9 @@
 		}
 	).parent().find('.e-form__prompt--red').hide();
 
-	$('#promo').inputmask( "9999 9999 9999 9999",
+	$('#promo').inputmask( "9 9 9 9",
 		{ 
-			"placeholder": ".... .... .... ....",
+			"placeholder": ". . . .",
 		}		
 	);
 

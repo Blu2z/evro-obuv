@@ -28,9 +28,26 @@
 			width: 240px;
 			li {
 				display: inline-block;
+				line-height: 25px;
 				&:not(:last-child) {
-					padding-right: 20px;
+					padding-right: 5px;
 				}
+			}
+
+			input[type="radio"] {
+				display: none;
+			}
+
+			input[type="radio"] + label {
+				cursor: pointer;
+				padding: 3px;
+				border: 2px solid $clr-default;
+			}
+
+			input[type="radio"]:checked + label {
+				background-color: $clr-red;
+				border-color: #fff;
+				color: #fff;
 			}
 		}
 		@include m('amt') {

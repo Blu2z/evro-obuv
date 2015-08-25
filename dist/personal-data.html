@@ -46,9 +46,7 @@
             </div>
             <div class="head__container head__container--basket">
                 <span class="head__icon head__icon--basket"><strong>6</strong> <a href="#">товаров</a> на <strong>56 750</strong> руб.</span>
-
-                
-
+                    <a href="#" class="head__icon head__icon--login">Личный кабинет</a>
             </div>
         </div>
     </div>
@@ -642,7 +640,9 @@
 	$('div.slider-row').sliderShop({
         caseLimit: 1,
         animation: "hide-show",
-        spaceSection: 'auto'
+        spaceSection: 'auto',
+        timer: 5000,
+        repeat: true
     });
     $('#phone').inputmask("+7 ( 999 ) 999 - 99 - 99",
 		{ "placeholder": "+7 ( ... ) ... - .. - .."}

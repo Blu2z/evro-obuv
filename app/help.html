@@ -422,7 +422,7 @@
 				<p class="help__admin">служба поддержки</p>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate vel ipsa saepe non et nesciunt nisi rem ea officiis alias assumenda perspiciatis, omnis expedita repellendus in itaque repudiandae quia earum.</p>
 			</dd>
-			<dt class="active">Есть ли у скидочной карты срок действия?</dt>
+			<dt>Есть ли у скидочной карты срок действия?</dt>
 			<dd>
 				<p class="help__admin">служба поддержки</p>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
@@ -484,10 +484,10 @@
 </div>
 <aside class="promo">
 	<a href="#">
-		<img src="./images/adv2.jpg" alt="foto">	
+		<img src="./images/prom2.jpg" alt="foto">	
 	</a>
 	<a href="#">
-		<img src="./images/adv.jpg" alt="foto">
+		<img src="./images/prom.jpg" alt="foto">
 	</a>
 </aside>
 
@@ -624,7 +624,15 @@
 <script>
 (function() {
 	$('dd').filter(':nth-child(n+4)').addClass('hide');
+
 	$('dl').on('click', 'dt', function() {
+		if($(this).hasClass('active')) {
+			$(this).removeClass('active')
+				.next()
+					.slideUp(300);
+			return
+		}
+
 		$(this)
 			.siblings('dt')
 				.removeClass('active');

@@ -56,7 +56,10 @@ if (typeof Object.create !== 'function') {
 
             if (this.options.timer) {
                 setInterval(function () {
-                   $(elem).find('.nav--next').trigger('click');
+
+                var $targetItem = $(elem).find('.swither__item--edge');
+                    
+                    self.toGalleryItem($targetItem.next());
                 },this.options.timer)
             }
         },
@@ -64,12 +67,8 @@ if (typeof Object.create !== 'function') {
         calcConst: function () {
             var self = this,
                 totalWidth = 0,
-                section = $(this.elem).outerWidth() - 40;
-            
-            // this.wrapper = $(this.elem).find('.slider__wrapper');
-            // this.swither = this.wrapper.children().addClass('swither__item'); 
-
-            var space = this.wrapper.parent().width() - this.swither.outerWidth(true)*this.options.caseLimit,
+                section = $(this.elem).outerWidth() - 40,
+                space = this.wrapper.parent().width() - this.swither.outerWidth(true)*this.options.caseLimit,
                 elspace =(this.options.spaceSection === 'auto') 
                                                 ? space / (this.options.caseLimit * 2) 
                                                 : this.options.spaceSection;
@@ -98,7 +97,6 @@ if (typeof Object.create !== 'function') {
 
         toGalleryItem:  function ($targetItem) {
             var self = this;
-            console.log($targetItem.length)
 
             if($targetItem.length) {
 
@@ -128,7 +126,9 @@ if (typeof Object.create !== 'function') {
                             .animate({opacity : 1});
                             break; 
                     } 
-                }else if(this.options.repeat) {
+                }
+                else if(this.options.repeat) {
+                    if(!this.swither) {return}
                 
                     var first = this.swither.removeClass('swither__item--edge').first().addClass('swither__item--edge')
                     self.toGalleryItem(first)
@@ -136,6 +136,7 @@ if (typeof Object.create !== 'function') {
                 }
 
             } else if(this.options.repeat) {
+                if(!this.swither) {return}
                 
                 var first = this.swither.removeClass('swither__item--edge').first().addClass('swither__item--edge')
                 self.toGalleryItem(first)

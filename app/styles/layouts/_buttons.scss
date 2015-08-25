@@ -39,4 +39,9 @@
 		display: inline-block;
 		width: 100%;
 	}
+	&:hover:disabled,
+	&:disabled {
+			background-color: $clr-gray-lite;
+			color: #fff;
+		}
 }
